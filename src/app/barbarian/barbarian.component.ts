@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-barbarian',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./barbarian.component.css']
 })
 export class BarbarianComponent implements OnInit {
+
+  @ViewChild(MatAccordion) accordion!: MatAccordion;
 
   constructor() { }
 
