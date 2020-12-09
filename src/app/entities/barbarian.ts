@@ -150,6 +150,14 @@ export const HELMS : Item[] = [
         "name": "<span>Socket</span>"
       }
     ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
   }
 ]
 
@@ -203,5 +211,13 @@ export const SHOULDERS : Item[] = [
           "name": "<span>CDR</span>"
         }
       ]
+    },
+    {
+      "ancient": false,
+      "name": "placeholder",
+      "type": "",
+      "rarity": "",
+      "image": "",
+      "stats": []
     }
 ]

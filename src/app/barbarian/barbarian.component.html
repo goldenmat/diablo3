@@ -22,7 +22,7 @@
 <div class="content">
     <mat-accordion #helmsAccordion="matAccordion" multi>
         <div *ngFor="let helm of helms" class="card">
-            <mat-expansion-panel [class]="helm.rarity" [ngClass]="{'ancient': helm.ancient}">
+            <mat-expansion-panel *ngIf="helm.name !== 'placeholder'" [class]="helm.rarity" [ngClass]="{'ancient': helm.ancient}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{helm.type | uppercase}}
@@ -60,7 +60,7 @@
 <div class="content">
     <mat-accordion #shouldersAccordion="matAccordion" multi>
         <div *ngFor="let shoulder of shoulders" class="card">
-            <mat-expansion-panel [class]="shoulder.rarity" [ngClass]="{'ancient': shoulder.ancient}">
+            <mat-expansion-panel *ngIf="shoulder.name !== 'placeholder'" [class]="shoulder.rarity" [ngClass]="{'ancient': shoulder.ancient}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{shoulder.type | uppercase}}
