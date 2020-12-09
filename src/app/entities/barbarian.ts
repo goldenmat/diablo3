@@ -1,6 +1,6 @@
 import { Item } from './item'
 
-export const HELMS : Item[] = [
+export const HELMS: Item[] = [
   {
     "ancient": false,
     "name": "Eyes of the Earth",
@@ -14,11 +14,11 @@ export const HELMS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Vitality</span>"
+        "name": "<span>Critical Hit Chance</span>"
       },
       {
         "present": false,
-        "name": "<span>CHC</span>"
+        "name": "<span>SeismicSlam%</span>"
       },
       {
         "present": false,
@@ -43,7 +43,7 @@ export const HELMS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>CHC</span>"
+        "name": "<span>Critical Hit Chance</span>"
       },
       {
         "present": false,
@@ -68,7 +68,7 @@ export const HELMS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>CHC</span>"
+        "name": "<span>Critical Hit Chance</span>"
       },
       {
         "present": false,
@@ -93,7 +93,7 @@ export const HELMS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>CHC</span>"
+        "name": "<span>Critical Hit Chance</span>"
       },
       {
         "present": false,
@@ -118,7 +118,7 @@ export const HELMS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>CHC</span>"
+        "name": "<span>Critical Hit Chance</span>"
       },
       {
         "present": false,
@@ -139,11 +139,11 @@ export const HELMS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Vitality</span>"
+        "name": "<span>Critical Hit Chance</span>"
       },
       {
         "present": false,
-        "name": "<span>CHC</span>"
+        "name": "<span>HammerOfTheAncients%</span>"
       },
       {
         "present": false,
@@ -161,63 +161,667 @@ export const HELMS : Item[] = [
   }
 ]
 
-export const SHOULDERS : Item[] = [
-    {
-      "ancient": false,
-      "name": "Spires of the Earth",
-      "type": "Shoulders",
-      "rarity": "set",
-      "image": "./assets/shoulders/barbarian/spiresoftheearth.png",
-      "stats": [
-        {
-          "present": false,
-          "name": "<span>Strength</span>"
-        },
-        {
-          "present": false,
-          "name": "<span>Vitality</span>"
-        },
-        {
-          "present": false,
-          "name": "<span>AD</span>"
-        },
-        {
-          "present": false,
-          "name": "<span>CDR</span>"
-        }
-      ]
-    },
-    {
-      "ancient": false,
-      "name": "Pauldrons of the Wastes",
-      "type": "Shoulders",
-      "rarity": "set",
-      "image": "./assets/shoulders/barbarian/pauldronsofthewastes.png",
-      "stats": [
-        {
-          "present": false,
-          "name": "<span>Strength</span>"
-        },
-        {
-          "present": false,
-          "name": "<span>Vitality</span>"
-        },
-        {
-          "present": false,
-          "name": "<span>AD</span>"
-        },
-        {
-          "present": false,
-          "name": "<span>CDR</span>"
-        }
-      ]
-    },
-    {
-      "ancient": false,
-      "name": "placeholder",
-      "type": "",
-      "rarity": "",
-      "image": "",
-      "stats": []
-    }
+export const SHOULDERS: Item[] = [
+  {
+    "ancient": false,
+    "name": "Aughild's Power",
+    "type": "Shoulders",
+    "rarity": "set",
+    "image": "./assets/shoulders/aughildspower.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "Pauldrons of the Wastes",
+    "type": "Shoulders",
+    "rarity": "set",
+    "image": "./assets/shoulders/barbarian/pauldronsofthewastes.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Rend%</span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "Raekor's Burden",
+    "type": "Shoulders",
+    "rarity": "set",
+    "image": "./assets/shoulders/barbarian/raekorsburden.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>FuriousCharge%</span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "Spines of Savages",
+    "type": "Shoulders",
+    "rarity": "set",
+    "image": "./assets/shoulders/barbarian/spinesofsavages.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "Spires of the Earth",
+    "type": "Shoulders",
+    "rarity": "set",
+    "image": "./assets/shoulders/barbarian/spiresoftheearth.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Earthquake%</span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "Fury of the Ancients",
+    "type": "Shoulders",
+    "rarity": "legendary",
+    "image": "./assets/shoulders/barbarian/furyoftheancients.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const CHESTARMORS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const GLOVES: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const PANTS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const BOOTS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const BRACERS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const BELTS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const MIGHTYBELTS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const RINGS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const AMULETS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const AXES: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const MACES: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const MIGHTYWEAPONS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const SWORDS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const TWOHANDEDMIGHTYWEAPONS: Item[] = [
+  {
+    "ancient": false,
+    "name": "",
+    "type": "",
+    "rarity": "",
+    "image": "./assets/.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      },
+      {
+        "present": false,
+        "name": "<span></span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
 ]
