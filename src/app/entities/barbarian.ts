@@ -1712,6 +1712,56 @@ export const MACES : Item[] = [
 export const MIGHTYWEAPONS : Item[] = [
   {
     "ancient": true,
+    "name": "Bul Kathos's Solemn Vow",
+    "type": "Mighty Weapon",
+    "rarity": "set",
+    "image": "./assets/mightyweapon/bulkathosssolemnvow.png",
+    "stats": [
+      {
+        "present": true,
+        "name": "<span>Damage</span>"
+      },
+      {
+        "present": true,
+        "name": "<span>Damage%</span>"
+      },
+      {
+        "present": true,
+        "name": "<span>Strength</span>"
+      },
+      {
+        "present": true,
+        "name": "<span>Cooldown Reduction</span>"
+      }
+    ]
+  },
+  {
+    "ancient": false,
+    "name": "Bul Kathos's Warrior Blood",
+    "type": "Mighty Weapon",
+    "rarity": "set",
+    "image": "./assets/mightyweapon/bulkathosswarriorblood.png",
+    "stats": [
+      {
+        "present": true,
+        "name": "<span>Damage</span>"
+      },
+      {
+        "present": true,
+        "name": "<span>Damage%</span>"
+      },
+      {
+        "present": true,
+        "name": "<span>Strength</span>"
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>"
+      }
+    ]
+  },
+  {
+    "ancient": true,
     "name": "Ambo's Pride",
     "type": "Mighty Weapon",
     "rarity": "legendary",
