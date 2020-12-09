@@ -1,173 +1,89 @@
 <div class="action-buttons-wrapper">
     <div class="action-button">
-        <button mat-raised-button (click)="accordion.openAll()">Expand All</button>
+        <button mat-raised-button (click)="openAll()">Expand All</button>
     </div>
     <div class="action-button">
-        <button mat-raised-button (click)="accordion.closeAll()">Collapse All</button>
+        <button mat-raised-button (click)="closeAll()">Collapse All</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="downloadJSON()">Export JSON</button>
     </div>
 </div>
 
-<mat-accordion class="example-headers-align" multi>
-    <div class="card">
-        <mat-expansion-panel class="legendary">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    HELM
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <mat-form-field>
-                <mat-label>First name</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Age</mat-label>
-                <input matInput type="number" min="1">
-            </mat-form-field>
-
-        </mat-expansion-panel>
-    </div>
-    <div class="card">
-        <mat-expansion-panel class="set">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    HELM
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <mat-form-field>
-                <mat-label>First name</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Age</mat-label>
-                <input matInput type="number" min="1">
-            </mat-form-field>
-
-        </mat-expansion-panel>
-    </div>
-    <div class="card">
-        <mat-expansion-panel class="set">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    HELM
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <mat-form-field>
-                <mat-label>First name</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Age</mat-label>
-                <input matInput type="number" min="1">
-            </mat-form-field>
-
-        </mat-expansion-panel>
-    </div>
-    <div class="card">
-        <mat-expansion-panel class="set">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    HELM
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <mat-form-field>
-                <mat-label>First name</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Age</mat-label>
-                <input matInput type="number" min="1">
-            </mat-form-field>
-
-        </mat-expansion-panel>
-    </div>
-    <div class="card">
-        <mat-expansion-panel class="set">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    HELM
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <mat-form-field>
-                <mat-label>First name</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Age</mat-label>
-                <input matInput type="number" min="1">
-            </mat-form-field>
-
-        </mat-expansion-panel>
-    </div>
-    <div class="card">
-        <mat-expansion-panel class="set">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    HELM
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <mat-form-field>
-                <mat-label>First name</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Age</mat-label>
-                <input matInput type="number" min="1">
-            </mat-form-field>
-
-        </mat-expansion-panel>
+<div class="category">
+    <div class="action-button">
+        <button mat-raised-button (click)="helmsAccordion.openAll()">Expand Helms</button>
     </div>
     <br>
-    <div class="card">
-        <mat-expansion-panel class="set">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    HELM
-                </mat-panel-title>
-                <mat-panel-description>
-                    Type your name and age
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <mat-form-field>
-                <mat-label>First name</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Age</mat-label>
-                <input matInput type="number" min="1">
-            </mat-form-field>
-
-        </mat-expansion-panel>
+    <div class="action-button">
+        <button mat-raised-button (click)="helmsAccordion.closeAll()">Collapse Helms</button>
     </div>
-</mat-accordion>
+</div>
+<div class="content">
+    <mat-accordion #helmsAccordion="matAccordion" multi>
+        <div *ngFor="let helm of helms" class="card">
+            <mat-expansion-panel [class]="helm.rarity" [ngClass]="{'ancient': helm.ancient}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{helm.type | uppercase}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{helm.name}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-checkbox [checked]="helm.ancient" [(ngModel)]="helm.ancient">Ancient</mat-checkbox>
+                <br>
+                <div class="half-card">
+                    <img [src]="helm.image">
+                </div>
+                <div class="half-card">
+                    <div *ngFor="let stat of helm.stats">
+                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"><span
+                                [innerHtml]="stat.name"></span></mat-checkbox>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </mat-accordion>
+</div>
+<br>
+
+<div class="category">
+    <div class="action-button">
+        <button mat-raised-button (click)="shouldersAccordion.openAll()">Expand Shoulders</button>
+    </div>
+    <br>
+    <div class="action-button">
+        <button mat-raised-button (click)="shouldersAccordion.closeAll()">Collapse Shoulders</button>
+    </div>
+</div>
+<div class="content">
+    <mat-accordion #shouldersAccordion="matAccordion" multi>
+        <div *ngFor="let shoulder of shoulders" class="card">
+            <mat-expansion-panel [class]="shoulder.rarity" [ngClass]="{'ancient': shoulder.ancient}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{shoulder.type | uppercase}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{shoulder.name}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-checkbox [checked]="shoulder.ancient" [(ngModel)]="shoulder.ancient">Ancient</mat-checkbox>
+                <br>
+                <div class="half-card">
+                    <img [src]="shoulder.image">
+                </div>
+                <div class="half-card">
+                    <div *ngFor="let stat of shoulder.stats">
+                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"><span
+                                [innerHtml]="stat.name"></span>
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </mat-accordion>
+</div>
