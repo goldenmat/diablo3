@@ -127,7 +127,7 @@ export const HELMS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Leoric's Crown",
     "type": "Helm",
     "rarity": "legendary",
@@ -142,7 +142,7 @@ export const HELMS : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>HammerOfTheAncients%</span>"
       },
       {
@@ -288,7 +288,7 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Fury of the Ancients",
     "type": "Shoulders",
     "rarity": "legendary",
@@ -299,7 +299,7 @@ export const SHOULDERS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -335,7 +335,7 @@ export const CHESTARMORS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -399,7 +399,7 @@ export const CHESTARMORS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Raekor's Heart",
     "type": "Chest Armor",
     "rarity": "set",
@@ -410,7 +410,7 @@ export const CHESTARMORS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -671,7 +671,7 @@ export const PANTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Immortal King's Stature",
     "type": "Pants",
     "rarity": "set",
@@ -1054,19 +1054,19 @@ export const BRACERS : Item[] = [
     "image": "./assets/bracers/barbarian/morticksbrace.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Fire%</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       }
     ]
@@ -1079,19 +1079,19 @@ export const BRACERS : Item[] = [
     "image": "./assets/bracers/barbarian/morticksbrace.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Physical%</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       }
     ]
@@ -1409,14 +1409,14 @@ export const RINGS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Band of Might",
     "type": "Ring",
     "rarity": "legendary",
     "image": "./assets/ring/barbarian/bandofmight.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
@@ -1466,11 +1466,11 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/rechelsringoflarceny.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       },
       {
@@ -1520,14 +1520,14 @@ export const AMULETS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "The Traveler's Pledge",
     "type": "Amulet",
     "rarity": "set",
     "image": "./assets/amulet/thetravelerspledge.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Fire%</span>"
       },
       {
@@ -1535,7 +1535,7 @@ export const AMULETS : Item[] = [
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Chance</span>"
       },
       {
@@ -1776,7 +1776,7 @@ export const MIGHTYWEAPONS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Elite%</span>"
       },
       {
@@ -1818,11 +1818,11 @@ export const MIGHTYWEAPONS : Item[] = [
     "image": "./assets/mightyweapon/oathkeeper.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
@@ -1830,7 +1830,7 @@ export const MIGHTYWEAPONS : Item[] = [
         "name": "<span>Attack Speed</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cooldown Reduction</span>"
       }
     ]
@@ -1897,7 +1897,7 @@ export const SWORDS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "The Slanderer",
     "type": "Sword",
     "rarity": "set",
@@ -1912,7 +1912,7 @@ export const SWORDS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>"
       },
       {
