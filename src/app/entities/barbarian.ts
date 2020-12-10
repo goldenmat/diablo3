@@ -88,7 +88,7 @@ export const HELMS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>"
       },
       {
@@ -213,7 +213,7 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Raekor's Burden",
     "type": "Shoulders",
     "rarity": "set",
@@ -282,7 +282,7 @@ export const SHOULDERS : Item[] = [
         "name": "<span>Cooldown Reduction</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Earthquake%</span>"
       }
     ]
@@ -295,7 +295,7 @@ export const SHOULDERS : Item[] = [
     "image": "./assets/shoulders/barbarian/furyoftheancients.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
@@ -307,7 +307,7 @@ export const SHOULDERS : Item[] = [
         "name": "<span>Area Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cooldown Reduction</span>"
       }
     ]
@@ -410,7 +410,7 @@ export const CHESTARMORS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -456,11 +456,11 @@ export const CHESTARMORS : Item[] = [
     "image": "./assets/chestarmor/cindercoat.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Fire%</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
@@ -468,7 +468,7 @@ export const CHESTARMORS : Item[] = [
         "name": "<span>All Resistance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>"
       }
     ]
@@ -521,7 +521,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
@@ -542,7 +542,7 @@ export const GLOVES : Item[] = [
     "image": "./assets/gloves/barbarian/immortalkingsirons.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
@@ -554,7 +554,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>"
       }
     ]
@@ -596,7 +596,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
@@ -610,14 +610,14 @@ export const GLOVES : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Magefist",
     "type": "Gloves",
     "rarity": "legendary",
     "image": "./assets/gloves/magefist.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       },
       {
@@ -629,7 +629,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Area Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cooldown Reduction</span>"
       }
     ]
@@ -851,7 +851,7 @@ export const BOOTS : Item[] = [
         "name": "<span>Vitality</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -876,7 +876,7 @@ export const BOOTS : Item[] = [
         "name": "<span>Vitality</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -1190,19 +1190,19 @@ export const BELTS : Item[] = [
     "image": "./assets/belt/thewitchinghour.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       }
     ]
@@ -1387,7 +1387,7 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/thecompassrose.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
@@ -1395,7 +1395,7 @@ export const RINGS : Item[] = [
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       },
       {
@@ -1403,7 +1403,7 @@ export const RINGS : Item[] = [
         "name": "<span>Cooldown Reduction</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>"
       }
     ]
@@ -1416,11 +1416,11 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/barbarian/bandofmight.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       },
       {
@@ -1428,13 +1428,13 @@ export const RINGS : Item[] = [
         "name": "<span>Area Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>"
       }
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Convention of Elements",
     "type": "Ring",
     "rarity": "legendary",
@@ -1478,7 +1478,7 @@ export const RINGS : Item[] = [
         "name": "<span>Cooldown Reduction</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>"
       }
     ]
@@ -1506,15 +1506,15 @@ export const AMULETS : Item[] = [
         "name": "<span>Cold%</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>"
       }
     ]
@@ -1531,15 +1531,15 @@ export const AMULETS : Item[] = [
         "name": "<span>Fire%</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>"
       }
     ]
@@ -1599,14 +1599,14 @@ export const AMULETS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "The Flavor of Time",
     "type": "Amulet",
     "rarity": "legendary",
     "image": "./assets/amulet/theflavoroftime.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Physical%</span>"
       },
       {
@@ -1646,19 +1646,19 @@ export const AXES : Item[] = [
     "image": "./assets/axe/theburningaxeofsankis.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Fire%</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cooldown Reduction</span>"
       }
     ]
@@ -1879,11 +1879,11 @@ export const SWORDS : Item[] = [
     "image": "./assets/sword/littlerogue.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>"
       },
       {
@@ -1891,7 +1891,7 @@ export const SWORDS : Item[] = [
         "name": "<span>Area Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cooldown Reduction</span>"
       }
     ]
