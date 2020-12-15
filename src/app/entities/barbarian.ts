@@ -2,7 +2,7 @@ import { Item } from './item'
 
 export const HELMS : Item[] = [
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Eyes of the Earth",
     "type": "Helm",
     "rarity": "set",
@@ -17,7 +17,7 @@ export const HELMS : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>SeismicSlam%</span>"
       },
       {
@@ -188,7 +188,7 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
-    "ancient": true,
+    "ancient": false,
     "name": "Pauldrons of the Wastes",
     "type": "Shoulders",
     "rarity": "set",
@@ -199,7 +199,7 @@ export const SHOULDERS : Item[] = [
         "name": "<span>All Resistance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>"
       },
       {
@@ -207,7 +207,7 @@ export const SHOULDERS : Item[] = [
         "name": "<span>Cooldown Reduction</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Rend%</span>"
       }
     ]
@@ -349,7 +349,7 @@ export const CHESTARMORS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Immortal King's Eternal Reign",
     "type": "Chest Armor",
     "rarity": "set",
@@ -364,7 +364,7 @@ export const CHESTARMORS : Item[] = [
         "name": "<span>Vitality</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Elite%</span>"
       },
       {
@@ -389,7 +389,7 @@ export const CHESTARMORS : Item[] = [
         "name": "<span>Vitality</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Elite%</span>"
       },
       {
@@ -449,7 +449,7 @@ export const CHESTARMORS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Cindercoat",
     "type": "Chest Armor",
     "rarity": "legendary",
@@ -485,7 +485,7 @@ export const CHESTARMORS : Item[] = [
 
 export const GLOVES : Item[] = [
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Claws of Savages",
     "type": "Gloves",
     "rarity": "set",
@@ -535,7 +535,7 @@ export const GLOVES : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Immortal King's Irons",
     "type": "Gloves",
     "rarity": "set",
@@ -554,13 +554,13 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Area Damage</span>"
       }
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Pull of the Earth",
     "type": "Gloves",
     "rarity": "set",
@@ -571,11 +571,11 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>"
       },
       {
@@ -585,7 +585,7 @@ export const GLOVES : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Raekor's Wraps",
     "type": "Gloves",
     "rarity": "set",
@@ -596,7 +596,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
@@ -746,7 +746,7 @@ export const PANTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Tasset of the Wastes",
     "type": "Pants",
     "rarity": "set",
@@ -771,7 +771,7 @@ export const PANTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Weight of the Earth",
     "type": "Pants",
     "rarity": "set",
@@ -836,7 +836,7 @@ export const PANTS : Item[] = [
 
 export const BOOTS : Item[] = [
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Foundation of the Earth",
     "type": "Boots",
     "rarity": "set",
@@ -851,7 +851,7 @@ export const BOOTS : Item[] = [
         "name": "<span>Vitality</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -886,7 +886,7 @@ export const BOOTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Immortal King's Stride",
     "type": "Boots",
     "rarity": "set",
@@ -911,7 +911,7 @@ export const BOOTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Raekor's Striders",
     "type": "Boots",
     "rarity": "set",
@@ -1062,7 +1062,7 @@ export const BRACERS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>"
       },
       {
@@ -1183,7 +1183,7 @@ export const BELTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "The Witching Hour",
     "type": "Belt",
     "rarity": "legendary",
@@ -1219,7 +1219,7 @@ export const BELTS : Item[] = [
 
 export const MIGHTYBELTS : Item[] = [
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Immortal King's Tribal Binding",
     "type": "Mighty Belt",
     "rarity": "set",
@@ -1552,7 +1552,7 @@ export const AMULETS : Item[] = [
     "image": "./assets/amulet/squirtsnecklace.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Physical%</span>"
       },
       {
@@ -1639,7 +1639,7 @@ export const AMULETS : Item[] = [
 
 export const AXES : Item[] = [
   {
-    "ancient": false,
+    "ancient": true,
     "name": "The Burning Axe of Sankis",
     "type": "Axe",
     "rarity": "legendary",
@@ -1654,7 +1654,7 @@ export const AXES : Item[] = [
         "name": "<span>Fire%</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Attack Speed</span>"
       },
       {
@@ -1811,7 +1811,7 @@ export const MIGHTYWEAPONS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Oathkeeper",
     "type": "Mighty Weapon",
     "rarity": "legendary",
@@ -1872,7 +1872,7 @@ export const MIGHTYWEAPONS : Item[] = [
 
 export const SWORDS : Item[] = [
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Little Rogue",
     "type": "Sword",
     "rarity": "set",
@@ -1887,7 +1887,7 @@ export const SWORDS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>"
       },
       {
