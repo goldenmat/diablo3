@@ -213,7 +213,7 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
-    "ancient": true,
+    "ancient": false,
     "name": "Raekor's Burden",
     "type": "Shoulders",
     "rarity": "set",
@@ -224,7 +224,7 @@ export const SHOULDERS : Item[] = [
         "name": "<span>All Resistance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>"
       },
       {
@@ -232,7 +232,7 @@ export const SHOULDERS : Item[] = [
         "name": "<span>Cooldown Reduction</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>FuriousCharge%</span>"
       }
     ]
@@ -324,7 +324,7 @@ export const SHOULDERS : Item[] = [
 
 export const CHESTARMORS : Item[] = [
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Cuirass of the Wastes",
     "type": "Chest Armor",
     "rarity": "set",
@@ -424,7 +424,7 @@ export const CHESTARMORS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Spirit of the Earth",
     "type": "Chest Armor",
     "rarity": "set",
@@ -500,7 +500,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
@@ -554,7 +554,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Damage</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>"
       }
     ]
@@ -596,7 +596,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
@@ -621,7 +621,7 @@ export const GLOVES : Item[] = [
         "name": "<span>Critical Hit Chance</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>"
       },
       {
@@ -696,7 +696,7 @@ export const PANTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Leggings of Savages",
     "type": "Pants",
     "rarity": "set",
@@ -707,7 +707,7 @@ export const PANTS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Vitality</span>"
       },
       {
@@ -796,7 +796,7 @@ export const PANTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Swamp Land Waders",
     "type": "Pants",
     "rarity": "legendary",
@@ -851,7 +851,7 @@ export const BOOTS : Item[] = [
         "name": "<span>Vitality</span>"
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>"
       },
       {
@@ -961,7 +961,7 @@ export const BOOTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "name": "Illusory Boots",
     "type": "Boots",
     "rarity": "legendary",
@@ -972,7 +972,7 @@ export const BOOTS : Item[] = [
         "name": "<span>Strength</span>"
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Vitality</span>"
       },
       {
