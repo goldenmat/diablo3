@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
-import { DomSanitizer } from '@angular/platform-browser';
+
+import { getSliderInfo, isSlidable, isWeapon, Item, Stat } from '../entities/item'
 
 import { AMULETS, AXES, BELTS, BOOTS, BRACERS, CHESTARMORS, GLOVES, HELMS, MACES, MIGHTYBELTS, MIGHTYWEAPONS, PANTS, RINGS, SHOULDERS, SWORDS, TWOHANDEDMIGHTYWEAPONS } from '../entities/barbarian'
 
@@ -9,7 +10,7 @@ import { AMULETS, AXES, BELTS, BOOTS, BRACERS, CHESTARMORS, GLOVES, HELMS, MACES
   templateUrl: './barbarian.component.html',
   styleUrls: ['./barbarian.component.css']
 })
-export class BarbarianComponent implements OnInit {
+export class BarbarianComponent {
 
   @ViewChild('helmsAccordion') helmsAccordion!: MatAccordion;
   @ViewChild('shouldersAccordion') shouldersAccordion!: MatAccordion;
@@ -27,11 +28,6 @@ export class BarbarianComponent implements OnInit {
   @ViewChild('mightyweaponsAccordion') mightyweaponsAccordion!: MatAccordion;
   @ViewChild('swordsAccordion') swordsAccordion!: MatAccordion;
   @ViewChild('twohandedmightyweaponsAccordion') twohandedmightyweaponsAccordion!: MatAccordion;
-
-  constructor(private sanitizer: DomSanitizer) { }
-
-  ngOnInit(): void {
-  }
 
   downloadJSON() {
     let data : string = "";
@@ -145,7 +141,7 @@ export class BarbarianComponent implements OnInit {
 
 `;
 
-    // Two Handed Mighty Weapons
+    // Two-Handed Mighty Weapons
     data += `export const TWOHANDEDMIGHTYWEAPONS : Item[] = `;
     data += JSON.stringify(this.twohandedmightyweapons, null, 2);
     data += `
@@ -199,6 +195,43 @@ export class BarbarianComponent implements OnInit {
     this.twohandedmightyweaponsAccordion.closeAll();
   }
 
+  getSliderInfoStep(name: string, string: string, ancient: boolean, itemName: string): number {
+    return getSliderInfo(name, string, ancient, itemName).step;
+  }
+
+  getSliderInfoMin(name: string, string: string, ancient: boolean, itemName: string): number {
+    return getSliderInfo(name, string, ancient, itemName).min;
+  }
+
+  getSliderInfoMax(name: string, string: string, ancient: boolean, itemName: string): number {
+    return getSliderInfo(name, string, ancient, itemName).max;
+  }
+
+  getSliderInfoDamageStep(string: string, ancient: boolean, itemName: string): number {
+    return getSliderInfo("Damage2", string, ancient, itemName).step;
+  }
+
+  getSliderInfoDamageMin(string: string, ancient: boolean, itemName: string): number {
+    return getSliderInfo("Damage2", string, ancient, itemName).min;
+  }
+
+  getSliderInfoDamageMax(string: string, ancient: boolean, itemName: string): number {
+    return getSliderInfo("Damage2", string, ancient, itemName).max;
+  }
+
+  isSlidable(name: string, type: string) {
+    return isSlidable(name, type);
+  }
+
+  isWeapon(name: string) {
+    return isWeapon(name);
+  }
+
+  toggleEnchantable(stat: Stat, item: Item) {
+    stat.enchantable = stat.enchantable? false : true;
+    item.locked = item.locked? false : true;
+  }
+
   helms = HELMS;
   shoulders = SHOULDERS;
   chestarmors = CHESTARMORS;
@@ -215,4 +248,5 @@ export class BarbarianComponent implements OnInit {
   mightyweapons = MIGHTYWEAPONS;
   swords = SWORDS;
   twohandedmightyweapons = TWOHANDEDMIGHTYWEAPONS;
+  
 }

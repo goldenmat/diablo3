@@ -18,6 +18,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     background-color: lightgray;
 }
 
+.active {
+    opacity: 0.5;
+}
+
 .example-headers-align .mat-expansion-panel-header-title,
 .example-headers-align .mat-expansion-panel-header-description {
 flex-basis: 0;
@@ -63,7 +67,7 @@ margin-left: 8px;
     display: inline-block;
     text-align: left;
     padding: 10px 20px;
-    width: 22.5%;
+    width: 30%;
 }
 
 .half-card {
@@ -83,4 +87,21 @@ margin-left: 8px;
     vertical-align: middle;
     display: inline-block;
     width: 85%
+}
+
+.statBold {
+    font-weight: bold;
+}
+
+.spacedName {
+    padding: 0.5em;
+}
+
+.mat-slider {
+    width: 200px;
+}
+
+.toolbar {
+    background-color: black;
+    color: white;
 }
