@@ -58,6 +58,53 @@
         </mat-accordion>
     </div>
     
+    <!--Wizard Hats-->
+    <div class="category">
+        <div class="action-button">
+            <button mat-raised-button (click)="wizardhatsAccordion.openAll()">Expand Wizard Hats</button>
+        </div>
+        <br>
+        <div class="action-button">
+            <button mat-raised-button (click)="wizardhatsAccordion.closeAll()">Collapse Wizard Hats</button>
+        </div>
+    </div>
+    <div class="content">
+        <mat-accordion #wizardhatsAccordion="matAccordion" multi>
+            <div *ngFor="let wizardhat of wizardhats" class="card">
+                <mat-expansion-panel *ngIf="wizardhat.name !== 'placeholder'" [class]="wizardhat.rarity" [ngClass]="{'ancient': wizardhat.ancient}">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{wizardhat.type | uppercase}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{wizardhat.name}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <mat-checkbox [checked]="wizardhat.ancient" [(ngModel)]="wizardhat.ancient">Ancient</mat-checkbox>
+                    <br>
+                    <div class="half-card">
+                        <img [src]="wizardhat.image">
+                    </div>
+                    <div class="half-card">
+                        <div *ngFor="let stat of wizardhat.stats">
+                            <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
+                                    class="spacedName" (click)="toggleEnchantable(stat, wizardhat)"
+                                    [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-slider *ngIf="isSlidable(stat.name, wizardhat.type)"
+                            thumbLabel
+                            [disabled]="!stat.present || (wizardhat.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
+                            [step]="getSliderInfoStep(stat.name, wizardhat.type, wizardhat.ancient, wizardhat.name)"
+                            [min]="getSliderInfoMin(stat.name, wizardhat.type, wizardhat.ancient, wizardhat.name)"
+                            [max]="getSliderInfoMax(stat.name, wizardhat.type, wizardhat.ancient, wizardhat.name)"></mat-slider>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+        </mat-accordion>
+    </div>
+    
     <!--Shoulders-->
     <div class="category">
         <div class="action-button">
@@ -473,6 +520,168 @@
                             [step]="getSliderInfoStep(stat.name, amulet.type, amulet.ancient, amulet.name)"
                             [min]="getSliderInfoMin(stat.name, amulet.type, amulet.ancient, amulet.name)"
                             [max]="getSliderInfoMax(stat.name, amulet.type, amulet.ancient, amulet.name)"></mat-slider>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+        </mat-accordion>
+    </div>
+
+    <!--Swords-->
+    <div class="category">
+        <div class="action-button">
+            <button mat-raised-button (click)="swordsAccordion.openAll()">Expand Swords</button>
+        </div>
+        <br>
+        <div class="action-button">
+            <button mat-raised-button (click)="swordsAccordion.closeAll()">Collapse Swords</button>
+        </div>
+    </div>
+    <div class="content">
+        <mat-accordion #swordsAccordion="matAccordion" multi>
+            <div *ngFor="let sword of swords" class="card">
+                <mat-expansion-panel *ngIf="sword.name !== 'placeholder'" [class]="sword.rarity"
+                    [ngClass]="{'ancient': sword.ancient}">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{sword.type | uppercase}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{sword.name}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-checkbox [checked]="sword.ancient" [(ngModel)]="sword.ancient">Ancient</mat-checkbox>
+                    <br>
+                    <div class="half-card">
+                        <img [src]="sword.image">
+                    </div>
+                    <div class="half-card">
+                        <div *ngFor="let stat of sword.stats">
+                            <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
+                                class="spacedName" (click)="toggleEnchantable(stat, sword)" [innerHtml]="stat.name"
+                                [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-slider *ngIf="isSlidable(stat.name, sword.type)" thumbLabel
+                                [disabled]="!stat.present || (sword.locked && !stat.enchantable)"
+                                [(ngModel)]="stat.value"
+                                [step]="getSliderInfoStep(stat.name, sword.type, sword.ancient, sword.name)"
+                                [min]="getSliderInfoMin(stat.name, sword.type, sword.ancient, sword.name)"
+                                [max]="getSliderInfoMax(stat.name, sword.type, sword.ancient, sword.name)"></mat-slider>
+                            <br>
+                            <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
+                                [disabled]="!stat.present || (sword.locked && !stat.enchantable)"
+                                [(ngModel)]="stat.value2"
+                                [step]="getSliderInfoDamageStep(sword.type, sword.ancient, sword.name)"
+                                [min]="getSliderInfoDamageMin(sword.type, sword.ancient, sword.name)"
+                                [max]="getSliderInfoDamageMax(sword.type, sword.ancient, sword.name)"></mat-slider>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+        </mat-accordion>
+    </div>
+
+    <!--Wands-->
+    <div class="category">
+        <div class="action-button">
+            <button mat-raised-button (click)="wandsAccordion.openAll()">Expand Wands</button>
+        </div>
+        <br>
+        <div class="action-button">
+            <button mat-raised-button (click)="wandsAccordion.closeAll()">Collapse Wands</button>
+        </div>
+    </div>
+    <div class="content">
+        <mat-accordion #wandsAccordion="matAccordion" multi>
+            <div *ngFor="let wand of wands" class="card">
+                <mat-expansion-panel *ngIf="wand.name !== 'placeholder'" [class]="wand.rarity"
+                    [ngClass]="{'ancient': wand.ancient}">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{wand.type | uppercase}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{wand.name}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-checkbox [checked]="wand.ancient" [(ngModel)]="wand.ancient">Ancient</mat-checkbox>
+                    <br>
+                    <div class="half-card">
+                        <img [src]="wand.image">
+                    </div>
+                    <div class="half-card">
+                        <div *ngFor="let stat of wand.stats">
+                            <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
+                                class="spacedName" (click)="toggleEnchantable(stat, wand)" [innerHtml]="stat.name"
+                                [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-slider *ngIf="isSlidable(stat.name, wand.type)" thumbLabel
+                                [disabled]="!stat.present || (wand.locked && !stat.enchantable)"
+                                [(ngModel)]="stat.value"
+                                [step]="getSliderInfoStep(stat.name, wand.type, wand.ancient, wand.name)"
+                                [min]="getSliderInfoMin(stat.name, wand.type, wand.ancient, wand.name)"
+                                [max]="getSliderInfoMax(stat.name, wand.type, wand.ancient, wand.name)"></mat-slider>
+                            <br>
+                            <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
+                                [disabled]="!stat.present || (wand.locked && !stat.enchantable)"
+                                [(ngModel)]="stat.value2"
+                                [step]="getSliderInfoDamageStep(wand.type, wand.ancient, wand.name)"
+                                [min]="getSliderInfoDamageMin(wand.type, wand.ancient, wand.name)"
+                                [max]="getSliderInfoDamageMax(wand.type, wand.ancient, wand.name)"></mat-slider>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+        </mat-accordion>
+    </div>
+
+    <!--Sources-->
+    <div class="category">
+        <div class="action-button">
+            <button mat-raised-button (click)="sourcesAccordion.openAll()">Expand Sources</button>
+        </div>
+        <br>
+        <div class="action-button">
+            <button mat-raised-button (click)="sourcesAccordion.closeAll()">Collapse Sources</button>
+        </div>
+    </div>
+    <div class="content">
+        <mat-accordion #sourcesAccordion="matAccordion" multi>
+            <div *ngFor="let source of sources" class="card">
+                <mat-expansion-panel *ngIf="source.name !== 'placeholder'" [class]="source.rarity"
+                    [ngClass]="{'ancient': source.ancient}">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{source.type | uppercase}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{source.name}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-checkbox [checked]="source.ancient" [(ngModel)]="source.ancient">Ancient</mat-checkbox>
+                    <br>
+                    <div class="half-card">
+                        <img [src]="source.image">
+                    </div>
+                    <div class="half-card">
+                        <div *ngFor="let stat of source.stats">
+                            <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
+                                class="spacedName" (click)="toggleEnchantable(stat, source)" [innerHtml]="stat.name"
+                                [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-slider *ngIf="isSlidable(stat.name, source.type)" thumbLabel
+                                [disabled]="!stat.present || (source.locked && !stat.enchantable)"
+                                [(ngModel)]="stat.value"
+                                [step]="getSliderInfoStep(stat.name, source.type, source.ancient, source.name)"
+                                [min]="getSliderInfoMin(stat.name, source.type, source.ancient, source.name)"
+                                [max]="getSliderInfoMax(stat.name, source.type, source.ancient, source.name)"></mat-slider>
+                            <br>
+                            <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
+                                [disabled]="!stat.present || (source.locked && !stat.enchantable)"
+                                [(ngModel)]="stat.value2"
+                                [step]="getSliderInfoDamageStep(source.type, source.ancient, source.name)"
+                                [min]="getSliderInfoDamageMin(source.type, source.ancient, source.name)"
+                                [max]="getSliderInfoDamageMax(source.type, source.ancient, source.name)"></mat-slider>
                         </div>
                     </div>
                 </mat-expansion-panel>

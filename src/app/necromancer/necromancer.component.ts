@@ -3,7 +3,7 @@ import { MatAccordion } from '@angular/material/expansion';
 
 import { getSliderInfo, isSlidable, isWeapon, Item, Stat } from '../entities/item'
 
-import { HELMS, SHOULDERS, CHESTARMORS, GLOVES, PANTS, BOOTS, BRACERS, BELTS, RINGS, AMULETS } from '../entities/necromancer'
+import { AMULETS, BELTS, BOOTS, BRACERS, CHESTARMORS, GLOVES, HELMS, PANTS, PHYLACTERYS, RINGS, SCYTHES, SHIELDS, SHOULDERS } from '../entities/necromancer'
 
 @Component({
   selector: 'app-necromancer',
@@ -22,6 +22,9 @@ export class NecromancerComponent {
   @ViewChild('beltsAccordion') beltsAccordion!: MatAccordion;
   @ViewChild('ringsAccordion') ringsAccordion!: MatAccordion;
   @ViewChild('amuletsAccordion') amuletsAccordion!: MatAccordion;
+  @ViewChild('scythesAccordion') scythesAccordion!: MatAccordion;
+  @ViewChild('phylacterysAccordion') phylacterysAccordion!: MatAccordion;
+  @ViewChild('shieldsAccordion') shieldsAccordion!: MatAccordion;
 
   downloadJSON() {
     let data : string = "";
@@ -100,6 +103,27 @@ export class NecromancerComponent {
 
 `;
 
+    // Scythes
+    data += `export const SCYTHES : Item[] = `;
+    data += JSON.stringify(this.scythes, null, 2);
+    data += `
+
+`;
+
+    // Phylacterys
+    data += `export const PHYLACTERYS : Item[] = `;
+    data += JSON.stringify(this.phylacterys, null, 2);
+    data += `
+
+`;
+
+    // Shields
+    data += `export const SHIELDS : Item[] = `;
+    data += JSON.stringify(this.shields, null, 2);
+    data += `
+
+`;
+
     this.downloadFile(data, 'json');
   }
 
@@ -111,10 +135,34 @@ export class NecromancerComponent {
 
   openAll() {
     this.helmsAccordion.openAll();
+    this.shouldersAccordion.openAll();
+    this.chestarmorsAccordion.openAll();
+    this.glovesAccordion.openAll();
+    this.pantsAccordion.openAll();
+    this.bootsAccordion.openAll();
+    this.bracersAccordion.openAll();
+    this.beltsAccordion.openAll();
+    this.ringsAccordion.openAll();
+    this.amuletsAccordion.openAll();
+    this.scythesAccordion.openAll();
+    this.phylacterysAccordion.openAll();
+    this.shieldsAccordion.openAll();
   }
 
   closeAll() {
     this.helmsAccordion.closeAll();
+    this.shouldersAccordion.closeAll();
+    this.chestarmorsAccordion.closeAll();
+    this.glovesAccordion.closeAll();
+    this.pantsAccordion.closeAll();
+    this.bootsAccordion.closeAll();
+    this.bracersAccordion.closeAll();
+    this.beltsAccordion.closeAll();
+    this.ringsAccordion.closeAll();
+    this.amuletsAccordion.closeAll();
+    this.scythesAccordion.closeAll();
+    this.phylacterysAccordion.closeAll();
+    this.shieldsAccordion.closeAll();
   }
 
   getSliderInfoStep(name: string, string: string, ancient: boolean, itemName: string): number {
@@ -164,5 +212,8 @@ export class NecromancerComponent {
   belts = BELTS;
   rings = RINGS;
   amulets = AMULETS;
+  scythes = SCYTHES;
+  phylacterys = PHYLACTERYS;
+  shields = SHIELDS;
 
 }

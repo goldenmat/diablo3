@@ -3,7 +3,7 @@ import { MatAccordion } from '@angular/material/expansion';
 
 import { getSliderInfo, isSlidable, isWeapon, Item, Stat } from '../entities/item'
 
-import { HELMS, SHOULDERS, CHESTARMORS, GLOVES, PANTS, BOOTS, BRACERS, BELTS, RINGS, AMULETS } from '../entities/demonhunter'
+import { AMULETS, BELTS, BOOTS, BOWS, BRACERS, CHESTARMORS, CLOAKS, DAGGERS, GLOVES, HANDCROSSBOWS, HELMS, PANTS, QUIVERS, RINGS, SHOULDERS } from '../entities/demonhunter'
 
 @Component({
   selector: 'app-demon-hunter',
@@ -15,6 +15,7 @@ export class DemonHunterComponent {
   @ViewChild('helmsAccordion') helmsAccordion!: MatAccordion;
   @ViewChild('shouldersAccordion') shouldersAccordion!: MatAccordion;
   @ViewChild('chestarmorsAccordion') chestarmorsAccordion!: MatAccordion;
+  @ViewChild('cloaksAccordion') cloaksAccordion!: MatAccordion;
   @ViewChild('glovesAccordion') glovesAccordion!: MatAccordion;
   @ViewChild('pantsAccordion') pantsAccordion!: MatAccordion;
   @ViewChild('bootsAccordion') bootsAccordion!: MatAccordion;
@@ -22,6 +23,10 @@ export class DemonHunterComponent {
   @ViewChild('beltsAccordion') beltsAccordion!: MatAccordion;
   @ViewChild('ringsAccordion') ringsAccordion!: MatAccordion;
   @ViewChild('amuletsAccordion') amuletsAccordion!: MatAccordion;
+  @ViewChild('bowsAccordion') bowsAccordion!: MatAccordion;
+  @ViewChild('daggersAccordion') daggersAccordion!: MatAccordion;
+  @ViewChild('handcrossbowsAccordion') handcrossbowsAccordion!: MatAccordion;
+  @ViewChild('quiversAccordion') quiversAccordion!: MatAccordion;
 
   downloadJSON() {
     let data : string = "";
@@ -47,6 +52,13 @@ export class DemonHunterComponent {
     // Chest Armors
     data += `export const CHESTARMORS : Item[] = `;
     data += JSON.stringify(this.chestarmors, null, 2);
+    data += `
+
+`;
+
+    // Cloaks
+    data += `export const CLOAKS : Item[] = `;
+    data += JSON.stringify(this.cloaks, null, 2);
     data += `
 
 `;
@@ -100,6 +112,34 @@ export class DemonHunterComponent {
 
 `;
 
+    // Bows
+    data += `export const BOWS : Item[] = `;
+    data += JSON.stringify(this.bows, null, 2);
+    data += `
+
+`;
+
+    // Daggers
+    data += `export const DAGGERS : Item[] = `;
+    data += JSON.stringify(this.daggers, null, 2);
+    data += `
+
+`;
+
+    // Hand Crossbows
+    data += `export const HANDCROSSBOWS : Item[] = `;
+    data += JSON.stringify(this.handcrossbows, null, 2);
+    data += `
+
+`;
+
+    // Quivers
+    data += `export const QUIVERS : Item[] = `;
+    data += JSON.stringify(this.quivers, null, 2);
+    data += `
+
+`;
+
     this.downloadFile(data, 'json');
   }
 
@@ -111,10 +151,38 @@ export class DemonHunterComponent {
 
   openAll() {
     this.helmsAccordion.openAll();
+    this.shouldersAccordion.openAll();
+    this.chestarmorsAccordion.openAll();
+    this.cloaksAccordion.openAll();
+    this.glovesAccordion.openAll();
+    this.pantsAccordion.openAll();
+    this.bootsAccordion.openAll();
+    this.bracersAccordion.openAll();
+    this.beltsAccordion.openAll();
+    this.ringsAccordion.openAll();
+    this.amuletsAccordion.openAll();
+    this.bowsAccordion.openAll();
+    this.daggersAccordion.openAll();
+    this.handcrossbowsAccordion.openAll();
+    this.quiversAccordion.openAll();
   }
 
   closeAll() {
     this.helmsAccordion.closeAll();
+    this.shouldersAccordion.closeAll();
+    this.chestarmorsAccordion.closeAll();
+    this.cloaksAccordion.closeAll();
+    this.glovesAccordion.closeAll();
+    this.pantsAccordion.closeAll();
+    this.bootsAccordion.closeAll();
+    this.bracersAccordion.closeAll();
+    this.beltsAccordion.closeAll();
+    this.ringsAccordion.closeAll();
+    this.amuletsAccordion.closeAll();
+    this.bowsAccordion.closeAll();
+    this.daggersAccordion.closeAll();
+    this.handcrossbowsAccordion.closeAll();
+    this.quiversAccordion.closeAll();
   }
 
   getSliderInfoStep(name: string, string: string, ancient: boolean, itemName: string): number {
@@ -157,6 +225,7 @@ export class DemonHunterComponent {
   helms = HELMS;
   shoulders = SHOULDERS;
   chestarmors = CHESTARMORS;
+  cloaks = CLOAKS;
   gloves = GLOVES;
   pants = PANTS;
   boots = BOOTS;
@@ -164,5 +233,9 @@ export class DemonHunterComponent {
   belts = BELTS;
   rings = RINGS;
   amulets = AMULETS;
+  bows = BOWS;
+  daggers = DAGGERS;
+  handcrossbows = HANDCROSSBOWS;
+  quivers = QUIVERS;
 
 }

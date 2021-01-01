@@ -3,7 +3,7 @@ import { MatAccordion } from '@angular/material/expansion';
 
 import { getSliderInfo, isSlidable, isWeapon, Item, Stat } from '../entities/item'
 
-import { HELMS, SHOULDERS, CHESTARMORS, GLOVES, PANTS, BOOTS, BRACERS, BELTS, RINGS, AMULETS } from '../entities/wizard'
+import { AMULETS, BELTS, BOOTS, BRACERS, CHESTARMORS, GLOVES, HELMS, PANTS, RINGS, SHOULDERS, SOURCES, SWORDS, WANDS, WIZARDHATS } from '../entities/wizard'
 
 @Component({
   selector: 'app-wizard',
@@ -13,6 +13,7 @@ import { HELMS, SHOULDERS, CHESTARMORS, GLOVES, PANTS, BOOTS, BRACERS, BELTS, RI
 export class WizardComponent {
 
   @ViewChild('helmsAccordion') helmsAccordion!: MatAccordion;
+  @ViewChild('wizardhatsAccordion') wizardhatsAccordion!: MatAccordion;
   @ViewChild('shouldersAccordion') shouldersAccordion!: MatAccordion;
   @ViewChild('chestarmorsAccordion') chestarmorsAccordion!: MatAccordion;
   @ViewChild('glovesAccordion') glovesAccordion!: MatAccordion;
@@ -22,6 +23,9 @@ export class WizardComponent {
   @ViewChild('beltsAccordion') beltsAccordion!: MatAccordion;
   @ViewChild('ringsAccordion') ringsAccordion!: MatAccordion;
   @ViewChild('amuletsAccordion') amuletsAccordion!: MatAccordion;
+  @ViewChild('swordsAccordion') swordsAccordion!: MatAccordion;
+  @ViewChild('wandsAccordion') wandsAccordion!: MatAccordion;
+  @ViewChild('sourcesAccordion') sourcesAccordion!: MatAccordion;
 
   downloadJSON() {
     let data : string = "";
@@ -33,6 +37,13 @@ export class WizardComponent {
     // Helms
     data += `export const HELMS : Item[] = `;
     data += JSON.stringify(this.helms, null, 2);
+    data += `
+
+`;
+
+    // Wizard Hats
+    data += `export const WIZARDHATS : Item[] = `;
+    data += JSON.stringify(this.wizardhats, null, 2);
     data += `
 
 `;
@@ -100,6 +111,27 @@ export class WizardComponent {
 
 `;
 
+    // Swords
+    data += `export const SWORDS : Item[] = `;
+    data += JSON.stringify(this.swords, null, 2);
+    data += `
+
+`;
+
+    // Wands
+    data += `export const WANDS : Item[] = `;
+    data += JSON.stringify(this.wands, null, 2);
+    data += `
+
+`;
+
+    // Sources
+    data += `export const SOURCES : Item[] = `;
+    data += JSON.stringify(this.sources, null, 2);
+    data += `
+
+`;
+
     this.downloadFile(data, 'json');
   }
 
@@ -111,10 +143,36 @@ export class WizardComponent {
 
   openAll() {
     this.helmsAccordion.openAll();
+    this.wizardhatsAccordion.openAll();
+    this.shouldersAccordion.openAll();
+    this.chestarmorsAccordion.openAll();
+    this.glovesAccordion.openAll();
+    this.pantsAccordion.openAll();
+    this.bootsAccordion.openAll();
+    this.bracersAccordion.openAll();
+    this.beltsAccordion.openAll();
+    this.ringsAccordion.openAll();
+    this.amuletsAccordion.openAll();
+    this.swordsAccordion.openAll();
+    this.wandsAccordion.openAll();
+    this.sourcesAccordion.openAll();
   }
 
   closeAll() {
     this.helmsAccordion.closeAll();
+    this.wizardhatsAccordion.closeAll();
+    this.shouldersAccordion.closeAll();
+    this.chestarmorsAccordion.closeAll();
+    this.glovesAccordion.closeAll();
+    this.pantsAccordion.closeAll();
+    this.bootsAccordion.closeAll();
+    this.bracersAccordion.closeAll();
+    this.beltsAccordion.closeAll();
+    this.ringsAccordion.closeAll();
+    this.amuletsAccordion.closeAll();
+    this.swordsAccordion.closeAll();
+    this.wandsAccordion.closeAll();
+    this.sourcesAccordion.closeAll();
   }
 
   getSliderInfoStep(name: string, string: string, ancient: boolean, itemName: string): number {
@@ -155,6 +213,7 @@ export class WizardComponent {
   }
 
   helms = HELMS;
+  wizardhats = WIZARDHATS;
   shoulders = SHOULDERS;
   chestarmors = CHESTARMORS;
   gloves = GLOVES;
@@ -164,5 +223,8 @@ export class WizardComponent {
   belts = BELTS;
   rings = RINGS;
   amulets = AMULETS;
+  swords = SWORDS;
+  wands = WANDS;
+  sources = SOURCES;
 
 }

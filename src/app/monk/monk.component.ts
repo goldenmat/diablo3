@@ -3,7 +3,7 @@ import { MatAccordion } from '@angular/material/expansion';
 
 import { getSliderInfo, isSlidable, isWeapon, Item, Stat } from '../entities/item'
 
-import { HELMS, SHOULDERS, CHESTARMORS, GLOVES, PANTS, BOOTS, BRACERS, BELTS, RINGS, AMULETS } from '../entities/monk'
+import { AMULETS, BELTS, BOOTS, BRACERS, CHESTARMORS, DAIBOS, FISTWEAPONS, GLOVES, HELMS, MACES, PANTS, RINGS, SHOULDERS, SPIRITSTONES, SWORDS } from '../entities/monk'
 
 @Component({
   selector: 'app-monk',
@@ -13,6 +13,7 @@ import { HELMS, SHOULDERS, CHESTARMORS, GLOVES, PANTS, BOOTS, BRACERS, BELTS, RI
 export class MonkComponent {
 
   @ViewChild('helmsAccordion') helmsAccordion!: MatAccordion;
+  @ViewChild('spiritstonesAccordion') spiritstonesAccordion!: MatAccordion;
   @ViewChild('shouldersAccordion') shouldersAccordion!: MatAccordion;
   @ViewChild('chestarmorsAccordion') chestarmorsAccordion!: MatAccordion;
   @ViewChild('glovesAccordion') glovesAccordion!: MatAccordion;
@@ -22,6 +23,10 @@ export class MonkComponent {
   @ViewChild('beltsAccordion') beltsAccordion!: MatAccordion;
   @ViewChild('ringsAccordion') ringsAccordion!: MatAccordion;
   @ViewChild('amuletsAccordion') amuletsAccordion!: MatAccordion;
+  @ViewChild('daibosAccordion') daibosAccordion!: MatAccordion;
+  @ViewChild('fistweaponsAccordion') fistweaponsAccordion!: MatAccordion;
+  @ViewChild('macesAccordion') macesAccordion!: MatAccordion;
+  @ViewChild('swordsAccordion') swordsAccordion!: MatAccordion;
 
   downloadJSON() {
     let data : string = "";
@@ -33,6 +38,13 @@ export class MonkComponent {
     // Helms
     data += `export const HELMS : Item[] = `;
     data += JSON.stringify(this.helms, null, 2);
+    data += `
+
+`;
+
+    // Spirit Stones
+    data += `export const SPIRITSTONES : Item[] = `;
+    data += JSON.stringify(this.spiritstones, null, 2);
     data += `
 
 `;
@@ -100,6 +112,34 @@ export class MonkComponent {
 
 `;
 
+    // Daibos
+    data += `export const DAIBOS : Item[] = `;
+    data += JSON.stringify(this.daibos, null, 2);
+    data += `
+
+`;
+
+    // Fist Weapons
+    data += `export const FISTWEAPONS : Item[] = `;
+    data += JSON.stringify(this.fistweapons, null, 2);
+    data += `
+
+`;
+
+    // Maces
+    data += `export const MACES : Item[] = `;
+    data += JSON.stringify(this.maces, null, 2);
+    data += `
+
+`;
+
+    // Swords
+    data += `export const SWORDS : Item[] = `;
+    data += JSON.stringify(this.swords, null, 2);
+    data += `
+
+`;
+
     this.downloadFile(data, 'json');
   }
 
@@ -111,10 +151,38 @@ export class MonkComponent {
 
   openAll() {
     this.helmsAccordion.openAll();
+    this.spiritstonesAccordion.openAll();
+    this.shouldersAccordion.openAll();
+    this.chestarmorsAccordion.openAll();
+    this.glovesAccordion.openAll();
+    this.pantsAccordion.openAll();
+    this.bootsAccordion.openAll();
+    this.bracersAccordion.openAll();
+    this.beltsAccordion.openAll();
+    this.ringsAccordion.openAll();
+    this.amuletsAccordion.openAll();
+    this.daibosAccordion.openAll();
+    this.fistweaponsAccordion.openAll();
+    this.macesAccordion.openAll();
+    this.swordsAccordion.openAll();
   }
 
   closeAll() {
     this.helmsAccordion.closeAll();
+    this.spiritstonesAccordion.closeAll();
+    this.shouldersAccordion.closeAll();
+    this.chestarmorsAccordion.closeAll();
+    this.glovesAccordion.closeAll();
+    this.pantsAccordion.closeAll();
+    this.bootsAccordion.closeAll();
+    this.bracersAccordion.closeAll();
+    this.beltsAccordion.closeAll();
+    this.ringsAccordion.closeAll();
+    this.amuletsAccordion.closeAll();
+    this.daibosAccordion.closeAll();
+    this.fistweaponsAccordion.closeAll();
+    this.macesAccordion.closeAll();
+    this.swordsAccordion.closeAll();
   }
 
   getSliderInfoStep(name: string, string: string, ancient: boolean, itemName: string): number {
@@ -155,6 +223,7 @@ export class MonkComponent {
   }
 
   helms = HELMS;
+  spiritstones = SPIRITSTONES;
   shoulders = SHOULDERS;
   chestarmors = CHESTARMORS;
   gloves = GLOVES;
@@ -164,5 +233,9 @@ export class MonkComponent {
   belts = BELTS;
   rings = RINGS;
   amulets = AMULETS;
+  daibos = DAIBOS;
+  fistweapons = FISTWEAPONS;
+  maces = MACES;
+  swords = SWORDS;
 
 }

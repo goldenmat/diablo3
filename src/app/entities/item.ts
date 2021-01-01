@@ -98,8 +98,16 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             sliderInfo.step = 1;
             break;
         case "<span>Attack Speed</span>":
-            sliderInfo.min = 5;
-            sliderInfo.max = 7;
+            switch(type) {
+                case "Quiver":
+                    sliderInfo.min = 15;
+                    sliderInfo.max = 20;
+                    break;
+                default:
+                    sliderInfo.min = 5;
+                    sliderInfo.max = 7;
+                    break;
+            }
             sliderInfo.step = 1;
             break;
         case "<span>Critical Hit Chance</span>":
@@ -131,6 +139,12 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                 case "Ring":
                     sliderInfo.min = 26;
                     sliderInfo.max = 50;
+                    break;
+            }
+            switch(itemName) {
+                case "Rabid Strike":
+                    sliderInfo.min = 31;
+                    sliderInfo.max = 35;
                     break;
             }
             sliderInfo.step = 1;
@@ -220,8 +234,16 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                     sliderInfo.max = 8;
                     break;
                 default:
-                    sliderInfo.min = 6;
-                    sliderInfo.max = 10;
+                    switch(itemName) {
+                        case "Yang's Recurve":
+                            sliderInfo.min = 40;
+                            sliderInfo.max = 50;
+                            break;
+                        default:
+                            sliderInfo.min = 6;
+                            sliderInfo.max = 10;
+                            break;
+                    }
                     break;
             }
             sliderInfo.step = 1;
@@ -230,11 +252,23 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
         case "<span>Cold%</span>": 
         case "<span>Fire%</span>": 
         case "<span>Holy%</span>": 
-        case "<span>Lightning%</span>": 
         case "<span>Physical%</span>": 
         case "<span>Poison%</span>":
             sliderInfo.min = 15;
             sliderInfo.max = 20;
+            sliderInfo.step = 1;
+            break;
+        case "<span>Lightning%</span>": 
+            switch(itemName) {
+                case "Won Khim Lau":
+                    sliderInfo.min = 15;
+                    sliderInfo.max = 25;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
             sliderInfo.step = 1;
             break;
         case "<span>Damage%</span>":
@@ -247,8 +281,33 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             sliderInfo.max = 16;
             sliderInfo.step = 1;
             break;
+        case "<span>Cold Damage Reduction</span>":
+            sliderInfo.min = 7;
+            sliderInfo.max = 10;
+            sliderInfo.step = 1;
+            break;
+        case "<span>Hatred Regeneration</span>":
+            sliderInfo.min = 1.35;
+            sliderInfo.max = 1.50;
+            sliderInfo.step = 0.01;
+            break;
+        case "<span>Arcane Power on Critical Hit</span>":
+            sliderInfo.min = 3;
+            sliderInfo.max = 4;
+            sliderInfo.step = 1;
+            break;
         case "<span>Damage</span>":
             switch(type) {
+                case "Ring":
+                    sliderInfo.min = ancient? 88 : 60;
+                    sliderInfo.max = ancient? 105 : 80;
+                    break;
+                case "Phylactery":
+                case "Mojo":
+                case "Wand":
+                    sliderInfo.min = ancient? 407 : 340;
+                    sliderInfo.max = ancient? 485 : 370;
+                    break;
                 case "Dagger":
                     sliderInfo.min = ancient? 1155 : 858;
                     sliderInfo.max = ancient? 1365 : 1049;
@@ -268,13 +327,18 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             }
             sliderInfo.step = 1;
             break;
-        case "<span>Cold Damage Reduction</span>":
-            sliderInfo.min = 7;
-            sliderInfo.max = 10;
-            sliderInfo.step = 1;
-            break;
         case "Damage2":
             switch(type) {
+                case "Ring":
+                    sliderInfo.min = ancient? 168 : 120;
+                    sliderInfo.max = ancient? 210 : 160;
+                    break;
+                case "Phylactery":
+                case "Mojo":
+                case "Wand":
+                    sliderInfo.min = ancient? 495 : 380;
+                    sliderInfo.max = ancient? 600 : 450;
+                    break;
                 case "Dagger":
                     sliderInfo.min = ancient? 1410 : 1028;
                     sliderInfo.max = ancient? 1700 : 1304;
@@ -307,6 +371,97 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             }
             sliderInfo.step = 1;
             break;
+        case "<span>RainOfVengeance%</span>":
+            switch(type) {
+                case "Hand Crossbow":
+                    sliderInfo.min = 20;
+                    sliderInfo.max = 25;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
+            sliderInfo.step = 1;
+            break;
+        case "<span>Sentry%</span>":
+            switch(itemName) {
+                case "Bombardier's Rucksack":
+                    sliderInfo.min = 75;
+                    sliderInfo.max = 100;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
+            sliderInfo.step = 1;
+            break;
+        case "<span>WaveOfLight%</span>":
+            switch(itemName) {
+                case "Tzo Krin's Gaze":
+                    sliderInfo.min = 125;
+                    sliderInfo.max = 150;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
+            sliderInfo.step = 1;
+            break;
+        case "<span>ZombieCharger%</span>":
+            switch(itemName) {
+                case "Scrimshaw":
+                    sliderInfo.min = 60;
+                    sliderInfo.max = 80;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
+            sliderInfo.step = 1;
+            break;
+        case "<span>SpiritBarrage%</span>":
+            switch(itemName) {
+                case "Voo's Juicer":
+                    sliderInfo.min = 45;
+                    sliderInfo.max = 60;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
+            sliderInfo.step = 1;
+            break;
+        case "<span>FetishArmy%</span>":
+            switch(itemName) {
+                case "Zunimassa's String of Skulls":
+                    sliderInfo.min = 20;
+                    sliderInfo.max = 25;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
+            sliderInfo.step = 1;
+            break;
+        case "<span>Meteor%</span>":
+            switch(itemName) {
+                case "Tal Rasha's Unwavering Glare":
+                    sliderInfo.min = 20;
+                    sliderInfo.max = 25;
+                    break;
+                default:
+                    sliderInfo.min = 10;
+                    sliderInfo.max = 15;
+                    break;
+            }
+            sliderInfo.step = 1;
+            break;
         case "<span><i>Thorns</i></span>":
             switch(type) {
                 case "Shoulders":
@@ -323,6 +478,11 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                     break;
             }
             sliderInfo.step = 0.5;
+            break;
+        case "<span><i>Maximum Discipline</i></span>":
+            sliderInfo.min = 9;
+            sliderInfo.max = 12;
+            sliderInfo.step = 1;
             break;
         default:
             sliderInfo.min = 10;
