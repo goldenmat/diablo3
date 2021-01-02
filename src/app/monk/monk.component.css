@@ -1,3 +1,9 @@
 .background {
     background-color: rgb(255, 165, 0, 0.5);
 }
+
+hr {
+    background-color: black;
+    height: 1px;
+    border: 0;
+}

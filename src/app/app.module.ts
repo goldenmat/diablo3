@@ -26,6 +26,8 @@ import { WizardComponent } from './wizard/wizard.component';
 
 import { NoSanitizePipe } from './pipes/no-sanitize-pipe';
 import { FormsModule } from '@angular/forms';
+import { CommonComponent } from './common/common.component';
+import { ColorPipe } from './pipes/color.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,11 @@ import { FormsModule } from '@angular/forms';
     WitchDoctorComponent,
     WizardComponent,
 
-    NoSanitizePipe
+    NoSanitizePipe,
+
+    CommonComponent,
+
+    ColorPipe,
   ],
   imports: [
     AppRoutingModule,

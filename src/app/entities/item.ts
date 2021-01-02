@@ -22,6 +22,72 @@ export class SliderInfo {
     step!: number;
 }
 
+export class CommonItem {
+    class!: string;
+    item!: Item;
+}
+
+export const commonItems : string[] = [
+    "Andariel's Visage",
+    "Leoric's Crown",
+    "Pride's Fall",
+
+    "Homing Pads",
+    "Mantle of Channeling",
+    "Pauldrons of the Skeleton King",
+
+    "Aquila Cuirass",
+    "Cindercoat",
+
+    "Frostburn",
+    "Gloves of Worship",
+    "Magefist",
+    "Stone Gauntlets",
+    "Tasker and Theo",
+
+    "Depth Diggers",
+    "Hexing Pants of Mr. Yan",
+    "Swamp Land Waders",
+
+    "Ice Climbers",
+    "Illusory Boots",
+
+    "Nemesis Bracers",
+    "Strongarm Bracers",
+    "Warzechian Armguards",
+
+    "Goldwrap",
+    "The Witching Hour",
+
+    "Focus",
+    "Litany of the Undaunted",
+    "Restraint",
+    "The Compass Rose",
+    "The Wailing Host",
+    "Avarice Band",
+    "Convention of Elements",
+    "Justice Lantern",
+    "Obsidian Ring of the Zodiac",
+    "Pandemonium Loop",
+    "Rechel's Ring of Larceny",
+    "Ring of Royal Grandeur",
+    "Stone of Jordan",
+    "Unity",
+
+    "The Traveler's Pledge",
+    "Squirt's Necklace",
+    "The Ess of Johan",
+    "The Flavor of Time",
+
+    "The Burning Axe of Sankis",
+
+    "Echoing Fury",
+
+    "Little Rogue",
+    "The Slanderer",
+    "In-Geom"
+];
+
 export function getSliderInfo(name: string, type: string, ancient: boolean, itemName: string): SliderInfo {
     let sliderInfo = new SliderInfo();
 
@@ -116,6 +182,10 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                 case "Amulet": 
                 case "Shield": 
                 case "Quiver":
+                case "Shield":
+                case "Mojo":
+                case "Phylactery":
+                case "Source":
                     sliderInfo.min = 8;
                     sliderInfo.max = 10;
                     break;
