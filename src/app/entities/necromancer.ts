@@ -10,9 +10,9 @@ export const HELMS : Item[] = [
     "image": "./assets/helm/necromancer/inariussunderstanding.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 633,
         "enchantable": false
       },
       {
@@ -28,7 +28,7 @@ export const HELMS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -187,9 +187,9 @@ export const HELMS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 0,
+        "value": 6,
         "enchantable": false
       },
       {
@@ -288,15 +288,15 @@ export const SHOULDERS : Item[] = [
     "image": "./assets/shoulders/necromancer/inariussmartyrdom.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 486,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 493,
         "enchantable": false
       },
       {
@@ -390,15 +390,15 @@ export const SHOULDERS : Item[] = [
     "image": "./assets/shoulders/necromancer/tragoulsheart.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 454,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 423,
         "enchantable": false
       },
       {
@@ -562,7 +562,7 @@ export const CHESTARMORS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "locked": false,
     "name": "Rathma's Ribcage Plate",
     "type": "Chest Armor",
@@ -570,9 +570,9 @@ export const CHESTARMORS : Item[] = [
     "image": "./assets/chestarmor/necromancer/rathmasribcageplate.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 601,
         "enchantable": false
       },
       {
@@ -588,7 +588,7 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -687,7 +687,7 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -753,15 +753,15 @@ export const GLOVES : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
+        "value": 34,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 9.5,
         "enchantable": false
       },
       {
@@ -793,9 +793,9 @@ export const GLOVES : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 9.5,
         "enchantable": false
       },
       {
@@ -1063,15 +1063,15 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/necromancer/inariussreticence.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 495,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 431,
         "enchantable": false
       },
       {
@@ -1081,7 +1081,7 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -1096,9 +1096,9 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/necromancer/pestilenceincantations.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 469,
         "enchantable": false
       },
       {
@@ -1108,13 +1108,13 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Armor</span>",
-        "value": 0,
+        "value": 569,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -1129,25 +1129,25 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/necromancer/rathmasskeletallegplates.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 472,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 452,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Armor</span>",
-        "value": 0,
+        "value": 578,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -1162,9 +1162,9 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/necromancer/tragoulshide.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 421,
         "enchantable": false
       },
       {
@@ -1174,13 +1174,13 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Armor</span>",
-        "value": 0,
+        "value": 574,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -1312,15 +1312,15 @@ export const BOOTS : Item[] = [
     "image": "./assets/boots/necromancer/extravagantshoes.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 475,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 454,
         "enchantable": false
       },
       {
@@ -1346,15 +1346,15 @@ export const BOOTS : Item[] = [
     "image": "./assets/boots/necromancer/inariussperseverance.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 498,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 432,
         "enchantable": false
       },
       {
@@ -1414,15 +1414,15 @@ export const BOOTS : Item[] = [
     "image": "./assets/boots/necromancer/rathmasossifiedsabatons.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 479,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 469,
         "enchantable": false
       },
       {
@@ -1432,9 +1432,9 @@ export const BOOTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>SkeletalMage%</span>",
-        "value": 0,
+        "value": 15,
         "enchantable": false
       }
     ]
@@ -1925,7 +1925,7 @@ export const BELTS : Item[] = [
 export const RINGS : Item[] = [
   {
     "ancient": true,
-    "locked": true,
+    "locked": false,
     "name": "Avarice Band",
     "type": "Ring",
     "rarity": "legendary",
@@ -1952,7 +1952,7 @@ export const RINGS : Item[] = [
       {
         "present": true,
         "name": "<span>Socket</span>",
-        "enchantable": true
+        "enchantable": false
       }
     ]
   },
@@ -2097,9 +2097,9 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/necromancer/krysbinssentence.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 0,
+        "value": 6,
         "enchantable": false
       },
       {
@@ -2115,7 +2115,7 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -2364,11 +2364,11 @@ export const SCYTHES : Item[] = [
     "image": "./assets/scythe/jessethskullscythe.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 1023,
         "enchantable": false,
-        "value2": 0
+        "value2": 1292
       },
       {
         "present": false,

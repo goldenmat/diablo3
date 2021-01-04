@@ -504,13 +504,13 @@ export const CHESTARMORS : Item[] = [
       {
         "present": true,
         "name": "<span>Strength</span>",
-        "value": 590,
+        "value": 626,
         "enchantable": false
       },
       {
         "present": true,
         "name": "<span>Vitality</span>",
-        "value": 593,
+        "value": 614,
         "enchantable": false
       },
       {
@@ -1249,13 +1249,13 @@ export const BOOTS : Item[] = [
       {
         "present": true,
         "name": "<span>Strength</span>",
-        "value": 598,
+        "value": 631,
         "enchantable": false
       },
       {
         "present": true,
         "name": "<span>Vitality</span>",
-        "value": 560,
+        "value": 645,
         "enchantable": false
       },
       {
@@ -1761,25 +1761,25 @@ export const MIGHTYBELTS : Item[] = [
       {
         "present": true,
         "name": "<span>Strength</span>",
-        "value": 641,
+        "value": 650,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Vitality</span>",
-        "value": 589,
+        "value": 550,
         "enchantable": false
       },
       {
         "present": true,
         "name": "<span>All Resistance</span>",
-        "value": 123,
+        "value": 130,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Frenzy%</span>",
-        "value": 0,
+        "value": 15,
         "enchantable": false
       }
     ]
@@ -2029,17 +2029,17 @@ export const AMULETS : Item[] = [
       {
         "present": true,
         "name": "<span>Critical Hit Damage</span>",
-        "value": 52,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 89,
         "enchantable": false
       },
       {
         "present": true,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 9,
+        "enchantable": false
+      },
+      {
+        "present": false,
         "name": "<span>Socket</span>",
         "enchantable": false
       }

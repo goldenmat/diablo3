@@ -817,7 +817,7 @@ export const GLOVES : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "locked": false,
     "name": "Stone Gauntlets",
     "type": "Gloves",
@@ -831,15 +831,15 @@ export const GLOVES : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
+        "value": 33,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Area Damage</span>",
-        "value": 0,
+        "value": 13,
         "enchantable": false
       },
       {
@@ -1340,7 +1340,7 @@ export const BOOTS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "locked": false,
     "name": "Ice Climbers",
     "type": "Boots",
@@ -1348,9 +1348,9 @@ export const BOOTS : Item[] = [
     "image": "./assets/boots/iceclimbers.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>",
-        "value": 0,
+        "value": 567,
         "enchantable": false
       },
       {
@@ -1360,9 +1360,9 @@ export const BOOTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>",
-        "value": 0,
+        "value": 116,
         "enchantable": false
       },
       {
@@ -1372,9 +1372,9 @@ export const BOOTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cold Damage Reduction</span>",
-        "value": 0,
+        "value": 8,
         "enchantable": false
       }
     ]
@@ -1730,21 +1730,21 @@ export const BELTS : Item[] = [
     "image": "./assets/belt/goldwrap.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>",
-        "value": 0,
+        "value": 492,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 450,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>",
-        "value": 0,
+        "value": 95,
         "enchantable": false
       },
       {
@@ -1946,9 +1946,9 @@ export const RINGS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "locked": false,
-    "name": "Justice lantern",
+    "name": "Justice Lantern",
     "type": "Ring",
     "rarity": "legendary",
     "image": "./assets/ring/justicelantern.png",
@@ -1966,9 +1966,9 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Block%</span>",
-        "value": 0,
+        "value": 14,
         "enchantable": false
       },
       {
@@ -1978,7 +1978,7 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -2156,7 +2156,7 @@ export const RINGS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "locked": false,
     "name": "Unity",
     "type": "Ring",
@@ -2164,15 +2164,15 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/unity.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>",
-        "value": 0,
+        "value": 552,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Elite%</span>",
-        "value": 0,
+        "value": 14,
         "enchantable": false
       },
       {

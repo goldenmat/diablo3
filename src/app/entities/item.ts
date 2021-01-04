@@ -99,6 +99,7 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             switch(type) {
                 case "Shoulders": 
                 case "Chest Armor": 
+                case "Cloak":
                 case "Pants": 
                 case "Boots": 
                 case "Bracers": 
@@ -125,7 +126,9 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             break;
         case "<span>Armor</span>":
             switch(type) {
-                case "Amulet" || "Shield":
+                case "Amulet":
+                case "Shield":
+                case "Pants":
                     sliderInfo.min = ancient? 654 : 559;
                     break;
                 default:
@@ -133,7 +136,11 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                     break;
             }
             switch(type) {
-                case "Helm" || "Chest Armor" || "Pants" || "Amulet" || "Shield":
+                case "Helm":
+                case "Chest Armor":
+                case "Pants":
+                case "Amulet":
+                case "Shield":
                     sliderInfo.max = ancient? 775 : 595;
                     break;
                 default:
@@ -153,6 +160,10 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                 case "Gloves": 
                 case "Ring": 
                 case "Amulet":
+                case "Quiver":
+                case "Phylactery":
+                case "Mojo":
+                case "Source":
                     sliderInfo.min = 10;
                     sliderInfo.max = 20;
                     break;
@@ -183,6 +194,7 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                 case "Shield": 
                 case "Quiver":
                 case "Shield":
+                case "Crusader Shield":
                 case "Mojo":
                 case "Phylactery":
                 case "Source":
@@ -335,8 +347,8 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                     sliderInfo.max = 25;
                     break;
                 default:
-                    sliderInfo.min = 10;
-                    sliderInfo.max = 15;
+                    sliderInfo.min = 15;
+                    sliderInfo.max = 20;
                     break;
             }
             sliderInfo.step = 1;
@@ -374,11 +386,12 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                     break;
                 case "Phylactery":
                 case "Mojo":
-                case "Wand":
+                case "Source":
                     sliderInfo.min = ancient? 407 : 340;
                     sliderInfo.max = ancient? 485 : 370;
                     break;
                 case "Dagger":
+                case "Hand Crossbow":
                     sliderInfo.min = ancient? 1155 : 858;
                     sliderInfo.max = ancient? 1365 : 1049;
                     break;
@@ -387,6 +400,7 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                 case "Polearm": 
                 case "Two-Handed Sword": 
                 case "Two-Handed Mighty Weapon":
+                case "Daibo":
                     sliderInfo.min = ancient? 1582 : 1177;
                     sliderInfo.max = ancient? 1870 : 1439;
                     break;
@@ -405,11 +419,12 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                     break;
                 case "Phylactery":
                 case "Mojo":
-                case "Wand":
+                case "Source":
                     sliderInfo.min = ancient? 495 : 380;
                     sliderInfo.max = ancient? 600 : 450;
                     break;
                 case "Dagger":
+                case "Hand Crossbow":
                     sliderInfo.min = ancient? 1410 : 1028;
                     sliderInfo.max = ancient? 1700 : 1304;
                     break;
@@ -418,6 +433,7 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                 case "Polearm": 
                 case "Two-Handed Sword": 
                 case "Two-Handed Mighty Weapon":
+                case "Daibo":
                     sliderInfo.min = ancient? 1932 : 1410;
                     sliderInfo.max = ancient? 2325 : 1788;
                     break;

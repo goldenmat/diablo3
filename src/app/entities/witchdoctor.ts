@@ -10,15 +10,15 @@ export const HELMS : Item[] = [
     "image": "./assets/helm/witchdoctor/arachyrsvisage.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 657,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 5.5,
         "enchantable": false
       },
       {
@@ -28,14 +28,14 @@ export const HELMS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "locked": false,
     "name": "Helltooth Mask",
     "type": "Helm",
@@ -43,9 +43,9 @@ export const HELMS : Item[] = [
     "image": "./assets/helm/witchdoctor/helltoothmask.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 934,
         "enchantable": false
       },
       {
@@ -61,7 +61,7 @@ export const HELMS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -76,15 +76,15 @@ export const HELMS : Item[] = [
     "image": "./assets/helm/witchdoctor/jadeharvesterswisdom.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 694,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 685,
         "enchantable": false
       },
       {
@@ -94,7 +94,7 @@ export const HELMS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -300,9 +300,9 @@ export const SHOULDERS : Item[] = [
     "image": "./assets/shoulders/witchdoctor/helltoothmantle.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 488,
         "enchantable": false
       },
       {
@@ -312,9 +312,9 @@ export const SHOULDERS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cooldown Reduction</span>",
-        "value": 0,
+        "value": 7,
         "enchantable": false
       },
       {
@@ -334,9 +334,9 @@ export const SHOULDERS : Item[] = [
     "image": "./assets/shoulders/witchdoctor/jadeharvestersjoy.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 475,
         "enchantable": false
       },
       {
@@ -368,9 +368,9 @@ export const SHOULDERS : Item[] = [
     "image": "./assets/shoulders/witchdoctor/mundunugusdescendant.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 492,
         "enchantable": false
       },
       {
@@ -394,7 +394,7 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
-    "ancient": false,
+    "ancient": true,
     "locked": false,
     "name": "Homing Pads",
     "type": "Shoulders",
@@ -408,9 +408,9 @@ export const SHOULDERS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Life%</span>",
-        "value": 0,
+        "value": 10,
         "enchantable": false
       },
       {
@@ -448,15 +448,15 @@ export const CHESTARMORS : Item[] = [
     "image": "./assets/chestarmor/witchdoctor/arachyrscarapace.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 444,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 445,
         "enchantable": false
       },
       {
@@ -466,7 +466,7 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -481,15 +481,15 @@ export const CHESTARMORS : Item[] = [
     "image": "./assets/chestarmor/witchdoctor/helltoothtunic.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 467,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 480,
         "enchantable": false
       },
       {
@@ -499,7 +499,7 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -514,9 +514,9 @@ export const CHESTARMORS : Item[] = [
     "image": "./assets/chestarmor/witchdoctor/jadeharvesterspeace.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 475,
         "enchantable": false
       },
       {
@@ -532,7 +532,7 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -632,13 +632,13 @@ export const GLOVES : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Chance</span>",
+        "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Damage</span>",
+        "name": "<span>Critical Hit Chance</span>",
         "value": 0,
         "enchantable": false
       },
@@ -659,9 +659,9 @@ export const GLOVES : Item[] = [
     "image": "./assets/gloves/witchdoctor/helltoothgauntlets.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 750,
         "enchantable": false
       },
       {
@@ -672,14 +672,14 @@ export const GLOVES : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Chance</span>",
+        "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
       },
       {
-        "present": false,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
+        "present": true,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 8.5,
         "enchantable": false
       }
     ]
@@ -694,20 +694,20 @@ export const GLOVES : Item[] = [
     "stats": [
       {
         "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
         "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
+        "value": 26,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 9.5,
+        "enchantable": false
+      },
+      {
+        "present": true,
         "name": "<span>Area Damage</span>",
-        "value": 0,
+        "value": 15,
         "enchantable": false
       },
       {
@@ -734,14 +734,14 @@ export const GLOVES : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Chance</span>",
+        "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
       },
       {
-        "present": false,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
+        "present": true,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 9.5,
         "enchantable": false
       },
       {
@@ -768,13 +768,13 @@ export const GLOVES : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Chance</span>",
+        "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Damage</span>",
+        "name": "<span>Critical Hit Chance</span>",
         "value": 0,
         "enchantable": false
       },
@@ -873,15 +873,15 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/witchdoctor/helltoothlegguards.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 434,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 500,
         "enchantable": false
       },
       {
@@ -891,7 +891,7 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -939,25 +939,25 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/witchdoctor/mundunugusdecoration.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 491,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 424,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Armor</span>",
-        "value": 0,
+        "value": 564,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -972,15 +972,15 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/witchdoctor/zunimassascloth.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 460,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 475,
         "enchantable": false
       },
       {
@@ -990,7 +990,7 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -1051,15 +1051,15 @@ export const BOOTS : Item[] = [
     "image": "./assets/boots/witchdoctor/arachyrsstride.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 464,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 463,
         "enchantable": false
       },
       {
@@ -1187,15 +1187,15 @@ export const BOOTS : Item[] = [
     "image": "./assets/boots/witchdoctor/zunimassastrail.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 436,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 455,
         "enchantable": false
       },
       {
@@ -1560,22 +1560,22 @@ export const RINGS : Item[] = [
   },
   {
     "ancient": false,
-    "locked": false,
+    "locked": true,
     "name": "Avarice Band",
     "type": "Ring",
     "rarity": "legendary",
     "image": "./assets/ring/avariceband.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
-        "enchantable": false
+        "value": 34,
+        "enchantable": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 4.5,
         "enchantable": false
       },
       {
@@ -1585,7 +1585,7 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -1600,9 +1600,9 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/conventionofelements.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 0,
+        "value": 5,
         "enchantable": false
       },
       {
@@ -1612,13 +1612,13 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 5.5,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false
       }
@@ -2072,22 +2072,22 @@ export const MOJOS : Item[] = [
     "image": "./assets/mojo/manajumasgoryfetch.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 363,
         "enchantable": false,
-        "value2": 0
+        "value2": 410
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 731,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 8.5,
         "enchantable": false
       },
       {
@@ -2113,28 +2113,28 @@ export const MOJOS : Item[] = [
     "image": "./assets/mojo/zunimassasstringofskulls.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 342,
         "enchantable": false,
-        "value2": 0
+        "value2": 397
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Intelligence</span>",
-        "value": 0,
+        "value": 631,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 669,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 8,
         "enchantable": false
       },
       {
@@ -2144,9 +2144,9 @@ export const MOJOS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>FetishArmy%</span>",
-        "value": 0,
+        "value": 20,
         "enchantable": false
       }
     ]
