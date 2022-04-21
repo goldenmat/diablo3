@@ -484,6 +484,7 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
                     sliderInfo.max = 30000;
                     break;
                 case "Two-Handed Mighty Weapon":
+                case "Two-Handed Mace":
                     sliderInfo.min = ancient? 30408 : 23211;
                     sliderInfo.max = ancient? 35940 : 27644;
                     break;
@@ -1279,7 +1280,6 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
         case "<span>Gain increased movement speed for 4 seconds after Fearing an enemy</span>":
         case "<span>Your Spirit Generators reduce your damage taken by for 3 seconds</span>":
         case "<span>Locust Swarm gains the effect of the Pestilence rune and deals increased damage</span>":
-        case "<span>Increase the damage of Weapon Throw and Ancient Spear by</span>":
             sliderInfo.min = 45;
             sliderInfo.max = 60;
             sliderInfo.step = 1;
@@ -1300,6 +1300,9 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
         case "<span>Mystic Ally summons two Mystic Allies that fight by your side. They deal increased damage and are able to attack with their active forms longer</span>":
         case "<span>Pets deal increased damage</span>":
         case "<span>You may have 2 additional Sentries. Cluster Arrow deals increased damage</span>":
+        case "<span>Increase the damage of Ancient Spear by . If your Ancient Spear - Boulder Toss hits 5 or fewer enemies, the damage is increased by 100%</span>":
+        case "<span>Weapon Throw and Ancient Spear deal increased damage. Weapon Throw generates up to 50 additional Fury based on the distance of the enemy hit. The generated Fury can go above the maximum cap by 200 Fury. Ancient Spear refunds up to 50 Fury based on the distance of the enemy hit, and resets your Fury cap to its base maximum.</span>":
+        case "<span>Increase the damage of Weapon Throw and Ancient Spear by . The attack speed of Weapon Throw is increased by 200%</span>":
             sliderInfo.min = 150;
             sliderInfo.max = 200;
             sliderInfo.step = 1;
@@ -1371,7 +1374,6 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             break;
         case "<span>Fire skills deal increased damage</span>":
         case "<span>Cold skills deal increased damage and have a 50% chance to Freeze enemies</span>":
-        case "<span>Weapon Throw generates up to additional Fury based on how far away the enemy hit is. Maximum benefit when the enemy hit is 20 or more yards away</span>":
             sliderInfo.min = 15;
             sliderInfo.max = 20;
             sliderInfo.step = 1;
@@ -1410,7 +1412,6 @@ export function getSliderInfo(name: string, type: string, ancient: boolean, item
             sliderInfo.step = 1;
             break;
         case "<span>The first time an elite pack damages you, gain an absorb shield for of your maximum Life for 10 seconds</span>":
-        case "<span>Increase the damage of Ancient Spear - Boulder Toss by 100%. When your Boulder Toss hits 5 or fewer enemies, the damage is increased by</span>":
             sliderInfo.min = 120;
             sliderInfo.max = 150;
             sliderInfo.step = 1;

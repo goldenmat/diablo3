@@ -183,9 +183,9 @@ export const HELMS : Item[] = [
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 750,
         "enchantable": false
       },
       {
@@ -195,7 +195,7 @@ export const HELMS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false,
         "guaranteed": true
@@ -636,9 +636,9 @@ export const SHOULDERS : Item[] = [
     "follower": "Templar",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>",
-        "value": 0,
+        "value": 486,
         "enchantable": false,
         "guaranteed": true
       },
@@ -663,7 +663,7 @@ export const SHOULDERS : Item[] = [
       {
         "present": true,
         "name": "<span>Your Town Portal is no longer interrupted by taking damage. While casting Town Portal you gain a protective bubble that reduces damage taken by</span>",
-        "value": 0,
+        "value": 58,
         "enchantable": false,
         "passive": true
       }
@@ -1215,9 +1215,9 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>",
-        "value": 0,
+        "value": 98,
         "enchantable": false,
         "guaranteed": true
       },
@@ -1617,9 +1617,9 @@ export const GLOVES : Item[] = [
     "follower": "Templar",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>",
-        "value": 0,
+        "value": 648,
         "enchantable": false,
         "guaranteed": true
       },
@@ -1630,16 +1630,16 @@ export const GLOVES : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
+        "value": 29,
         "enchantable": false,
         "guaranteed": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Life per Hit</span>",
-        "value": 0,
+        "value": 8660,
         "enchantable": false,
         "guaranteed": true
       },
@@ -2055,26 +2055,26 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/monk/sunwukosleggings.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Dexterity</span>",
-        "value": 0,
+        "value": 451,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 440,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>",
-        "value": 0,
+        "value": 98,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false,
         "guaranteed": true
@@ -2140,9 +2140,9 @@ export const PANTS : Item[] = [
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>",
-        "value": 0,
+        "value": 95,
         "enchantable": false,
         "guaranteed": true
       },
@@ -2155,7 +2155,7 @@ export const PANTS : Item[] = [
       {
         "present": true,
         "name": "<span>Primary skills that generate resource deal additional damage</span>",
-        "value": 0,
+        "value": 98,
         "enchantable": false,
         "passive": true
       },
@@ -2439,22 +2439,22 @@ export const BOOTS : Item[] = [
     "follower": "Templar",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>",
-        "value": 0,
+        "value": 432,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 460,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>All Resistance</span>",
-        "value": 0,
+        "value": 99,
         "enchantable": false,
         "guaranteed": true
       },
@@ -2465,9 +2465,9 @@ export const BOOTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cold Damage Reduction</span>",
-        "value": 0,
+        "value": 7,
         "enchantable": false,
         "guaranteed": true
       }
@@ -3010,14 +3010,14 @@ export const BRACERS : Item[] = [
         "present": false,
         "name": "<span>Cold%</span>",
         "value": 0,
-        "enchantable": false,
-        "guaranteed": true
+        "enchantable": false
       },
       {
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -3026,9 +3026,9 @@ export const BRACERS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 5.5,
         "enchantable": false,
         "guaranteed": true
       }
@@ -3239,9 +3239,9 @@ export const BELTS : Item[] = [
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 461,
         "enchantable": false,
         "guaranteed": true
       },
@@ -3252,15 +3252,15 @@ export const BELTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Life%</span>",
-        "value": 0,
+        "value": 10,
         "enchantable": false
       },
       {
         "present": true,
         "name": "<span>Chance on hit to create a chaos field that Blinds and Slows enemies inside for seconds</span>",
-        "value": 0,
+        "value": 4,
         "enchantable": false,
         "passive": true
       }
@@ -3338,11 +3338,11 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/focus.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 67,
         "enchantable": false,
-        "value2": 0
+        "value2": 142
       },
       {
         "present": false,
@@ -3364,7 +3364,7 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false,
         "guaranteed": true
@@ -3393,9 +3393,9 @@ export const RINGS : Item[] = [
         "value2": 0
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Dexterity</span>",
-        "value": 0,
+        "value": 456,
         "enchantable": false,
         "guaranteed": false
       },
@@ -3412,7 +3412,7 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
         "enchantable": false,
         "guaranteed": true
@@ -3629,30 +3629,30 @@ export const RINGS : Item[] = [
     "ancient": false,
     "primal": false,
     "augmented": false,
-    "locked": false,
+    "locked": true,
     "name": "Obsidian Ring of the Zodiac",
     "type": "Ring",
     "rarity": "legendary",
     "image": "./assets/ring/obsidianringofthezodiac.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 0,
+        "value": 6,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 6,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cooldown Reduction</span>",
-        "value": 0,
+        "value": 7,
         "enchantable": false,
         "guaranteed": true
       },
@@ -3664,9 +3664,9 @@ export const RINGS : Item[] = [
         "guaranteed": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": true
       }
     ]
   },
@@ -3786,22 +3786,22 @@ export const RINGS : Item[] = [
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Vitality</span>",
-        "value": 0,
+        "value": 450,
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 0,
+        "value": 5,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Life per Hit</span>",
-        "value": 0,
+        "value": 8634,
         "enchantable": false,
         "guaranteed": false
       },
@@ -3820,7 +3820,7 @@ export const RINGS : Item[] = [
     "ancient": false,
     "primal": false,
     "augmented": false,
-    "locked": false,
+    "locked": true,
     "name": "Unity",
     "type": "Ring",
     "rarity": "legendary",
@@ -3840,23 +3840,23 @@ export const RINGS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
+        "value": 5,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Elite%</span>",
-        "value": 0,
+        "value": 13,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": true
       }
     ]
   },
@@ -5018,7 +5018,7 @@ export const MACES : Item[] = [
     "builds": [
       1
     ],
-    "ancient": false,
+    "ancient": true,
     "primal": false,
     "augmented": false,
     "locked": false,
@@ -5028,17 +5028,17 @@ export const MACES : Item[] = [
     "image": "./assets/mace/echoingfury.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 1340,
         "enchantable": false,
-        "value2": 0,
+        "value2": 1658,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage%</span>",
-        "value": 0,
+        "value": 8,
         "enchantable": false,
         "guaranteed": true
       },
@@ -5050,9 +5050,9 @@ export const MACES : Item[] = [
         "guaranteed": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 0,
+        "value": 6,
         "enchantable": false,
         "guaranteed": true
       },
@@ -5093,24 +5093,24 @@ export const SWORDS : Item[] = [
     "image": "./assets/sword/azurewrath.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 1116,
         "enchantable": false,
-        "value2": 0,
+        "value2": 1342,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Cold%</span>",
-        "value": 0,
+        "value": 18,
         "enchantable": false,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage%</span>",
-        "value": 0,
+        "value": 7,
         "enchantable": false
       },
       {
@@ -5122,7 +5122,7 @@ export const SWORDS : Item[] = [
       {
         "present": true,
         "name": "<span>Undead and Demon enemies within 25 years take weapon damage as Holy every second and are sometimes knocked into the air</span>",
-        "value": 0,
+        "value": 580,
         "enchantable": false,
         "passive": true
       }
@@ -5142,17 +5142,17 @@ export const SWORDS : Item[] = [
     "image": "./assets/sword/ingeom.png",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 1138,
         "enchantable": false,
-        "value2": 0,
+        "value2": 1377,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage%</span>",
-        "value": 0,
+        "value": 9,
         "enchantable": false,
         "guaranteed": true
       },
@@ -5164,9 +5164,9 @@ export const SWORDS : Item[] = [
         "guaranteed": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 0,
+        "value": 7,
         "enchantable": false
       },
       {
@@ -5178,7 +5178,7 @@ export const SWORDS : Item[] = [
       {
         "present": true,
         "name": "<span>Your skill cooldowns are reduced by seconds for 15 seconds after killing an elite pack</span>",
-        "value": 0,
+        "value": 10,
         "enchantable": false,
         "passive": true
       }
@@ -5199,17 +5199,17 @@ export const SWORDS : Item[] = [
     "follower": "Templar",
     "stats": [
       {
-        "present": false,
+        "present": true,
         "name": "<span>Damage</span>",
-        "value": 0,
+        "value": 1134,
         "enchantable": false,
-        "value2": 0,
+        "value2": 1352,
         "guaranteed": true
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Strength</span>",
-        "value": 0,
+        "value": 722,
         "enchantable": false,
         "guaranteed": true
       },
@@ -5228,7 +5228,7 @@ export const SWORDS : Item[] = [
       {
         "present": true,
         "name": "<span>Chance on hit to blast your enemy with Lightning, dealing weapon damage as Lightning and then jumping to additional nearby enemies. Each enemy hit has their attack speed and movement speed reduced by 30% for 3 seconds. Jumps up to 5 targets</span>",
-        "value": 0,
+        "value": 299,
         "enchantable": false,
         "passive": true
       }

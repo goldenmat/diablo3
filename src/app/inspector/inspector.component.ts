@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnalyzeResult, CommonItem, countMissing, Item, Stat } from '../entities/item';
+import { AnalyzeResult, CommonItem, countMissing, isSlidable, Item, Stat } from '../entities/item';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { HELMS as BARBARIANHELMS, SHOULDERS as BARBARIANSHOULDERS, CHESTARMORS as BARBARIANCHESTARMORS, GLOVES as BARBARIANGLOVES, PANTS as BARBARIANPANTS, BOOTS as BARBARIANBOOTS, BRACERS as BARBARIANBRACERS, BELTS as BARBARIANBELTS, MIGHTYBELTS as BARBARIANMIGHTYBELTS, RINGS as BARBARIANRINGS, AMULETS as BARBARIANAMULETS, BOWS as BARBARIANBOWS, DAGGERS as BARBARIANDAGGERS, MACES as BARBARIANMACES, MIGHTYWEAPONS as BARBARIANMIGHTYWEAPONS, SPEARS as BARBARIANSPEARS, SWORDS as BARBARIANSWORDS, TWOHANDEDMIGHTYWEAPONS as BARBARIANTWOHANDEDMIGHTYWEAPONS, SHIELDS as BARBARIANSHIELDS, RELICS as BARBARIANRELICS } from '../entities/barbarian';
@@ -57,9 +57,6 @@ export class InspectorComponent implements OnInit {
     this.stats = this.getStats(this.items);
 
     this.myForm = new FormGroup({
-      name: new FormControl(''),
-      email: new FormControl(''),
-      message: new FormControl(''),
       ancient: new FormControl(false),
       statValue1: new FormControl(0),
       statValue2: new FormControl(0),
@@ -76,7 +73,10 @@ export class InspectorComponent implements OnInit {
 
   analyzeItem(item: Item, items: CommonItem[]) : AnalyzeResult {
     let result = new AnalyzeResult();
-    result.item = undefined;
+    result.item = new CommonItem();
+    result.item.item = new Item();
+    result.item.item.ancient = false;
+    result.item.item.locked = false;
     result.difference = 0;
 
     items.forEach(i => { // Per ogni oggetto
@@ -87,7 +87,7 @@ export class InspectorComponent implements OnInit {
             if(!s.present) { // Non c'è nell'oggetto originale
               difference = ++difference;
             }
-            else { // C'è nell'oggetto originale
+            else if(isSlidable(s.name, i.item.type)) { // C'è nell'oggetto originale ed è confrontabile per valore
               if((item.stats.filter(x => x.name == s.name)[0].value ?? 0) < (s.value ?? 0)) // Oggetto presente meglio di oggetto nuovo
               {
                 difference = --difference;
@@ -108,7 +108,7 @@ export class InspectorComponent implements OnInit {
               difference = ++difference;
             }
           }
-          else if(this.isSkill(s) && item.stats.some(x => x.name == "Skill")) { // Passiva
+          else if(this.isSkill(s) && item.stats.some(x => x.name == "Skill")) { // Skill
             if((item.stats.filter(x => x.name == "Skill")[0].value ?? 0) < (s.value ?? 0)) // Oggetto presente meglio di oggetto nuovo
             {
               difference = --difference;
@@ -122,19 +122,22 @@ export class InspectorComponent implements OnInit {
             difference = --difference;
           }
         });
-        
-        console.log(difference);
 
-        if(difference > result.difference) {
-          result.item = i;
-          result.difference = difference;
-        }
-        if(difference == result.difference && !i.item.ancient && item.ancient) {
+        
+        if(difference > result.difference
+          || difference == result.difference && !result.item!.item.ancient && item.ancient
+          || difference == result.difference && !result.item!.item.ancient && result.item!.item.locked
+          || difference == result.difference - 1 && result.item!.item.ancient && item.ancient && result.item!.item.locked
+          ) {
           result.item = i;
           result.difference = difference;
         }
       }
     });
+
+    if(result.item.item.name === undefined) {
+      result.item = undefined;
+    }
 
     return result;
   }
@@ -1015,8 +1018,6 @@ export class InspectorComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
-    console.log(form.value);
-
     var submittedItem = new Item();
     submittedItem.name = this.namePicked.name;
     submittedItem.stats = [];
@@ -1025,35 +1026,33 @@ export class InspectorComponent implements OnInit {
     var stat1 = new Stat();
     stat1.name = form.value.statPicked1;
     stat1.value = form.value.statValue1;
-    if(stat1.value !== 0) {
+    if(stat1.value !== 0 || !isSlidable(stat1.name, submittedItem.type)) {
       submittedItem.stats.push(stat1);
     }
     var stat2 = new Stat();
     stat2.name = form.value.statPicked2;
     stat2.value = form.value.statValue2;
-    if(stat2.value !== 0) {
+    if(stat2.value !== 0 || !isSlidable(stat2.name, submittedItem.type)) {
       submittedItem.stats.push(stat2);
     }
     var stat3 = new Stat();
     stat3.name = form.value.statPicked3;
     stat3.value = form.value.statValue3;
-    if(stat3.value !== 0) {
+    if(stat3.value !== 0 || !isSlidable(stat3.name, submittedItem.type)) {
       submittedItem.stats.push(stat3);
     }
     var stat4 = new Stat();
     stat4.name = form.value.statPicked4;
     stat4.value = form.value.statValue4;
-    if(stat4.value !== 0) {
+    if(stat4.value !== 0 || !isSlidable(stat4.name, submittedItem.type)) {
       submittedItem.stats.push(stat4);
     }
     var stat5 = new Stat();
     stat5.name = form.value.statPicked5;
     stat5.value = form.value.statValue5;
-    if(stat5.value !== 0) {
+    if(stat5.value !== 0 || !isSlidable(stat5.name, submittedItem.type)) {
       submittedItem.stats.push(stat5);
     }
-
-    console.log(submittedItem);
 
     var analyzeResult = this.analyzeItem(submittedItem, this.items);
 
@@ -1063,14 +1062,12 @@ export class InspectorComponent implements OnInit {
   showItemResult(analyzeResult: AnalyzeResult) {
     this.showResult = true;
 
-    console.log(analyzeResult.item);
-
     if(analyzeResult.item === undefined) {
       this.resultString = "No worse item has been found";
     }
     else {
       this.resultString = "Consider changing <span class='"+ analyzeResult.item.item.rarity +"'>" + analyzeResult.item.item.name + "</span> " + 
-      " of class <span class='"+ analyzeResult.item.class.toLowerCase() +"BG'>" + analyzeResult.item.class + "</span>";
+      " of class <span class='"+ analyzeResult.item.class.toLowerCase().replace(" ", "") +"BG'>" + analyzeResult.item.class + "</span>";
       if(analyzeResult.item.item.follower !== undefined) {
         this.resultString += ", follower <span class='"+ analyzeResult.item.item.follower.toLowerCase() +"BG'>" + analyzeResult.item.item.follower + "</span>,";
       }
