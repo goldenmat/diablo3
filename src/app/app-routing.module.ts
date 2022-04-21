@@ -4,6 +4,7 @@ import { BarbarianComponent } from './barbarian/barbarian.component';
 import { CommonComponent } from './common/common.component';
 import { CrusaderComponent } from './crusader/crusader.component';
 import { DemonHunterComponent } from './demon-hunter/demon-hunter.component';
+import { InspectorComponent } from './inspector/inspector.component';
 import { MonkComponent } from './monk/monk.component';
 import { NecromancerComponent } from './necromancer/necromancer.component';
 import { WitchDoctorComponent } from './witch-doctor/witch-doctor.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'common', component: CommonComponent},
   { path: 'crusader', component: CrusaderComponent},
   { path: 'demon-hunter', component: DemonHunterComponent},
+  { path: 'inspector', component: InspectorComponent},
   { path: 'monk', component: MonkComponent},
   { path: 'necromancer', component: NecromancerComponent},
   { path: 'witch-doctor', component: WitchDoctorComponent},

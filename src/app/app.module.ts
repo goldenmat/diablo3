@@ -12,6 +12,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,8 +27,11 @@ import { WizardComponent } from './wizard/wizard.component';
 
 import { NoSanitizePipe } from './pipes/no-sanitize-pipe';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonComponent } from './common/common.component';
 import { ColorPipe } from './pipes/color.pipe';
+import { HighlightPipe } from './pipes/highlight.pipe';
+import { InspectorComponent } from './inspector/inspector.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,9 @@ import { ColorPipe } from './pipes/color.pipe';
     CommonComponent,
 
     ColorPipe,
+    HighlightPipe,
+
+    InspectorComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -52,6 +59,7 @@ import { ColorPipe } from './pipes/color.pipe';
     BrowserModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
 
     MatButtonModule,
     MatCheckboxModule,
@@ -59,6 +67,7 @@ import { ColorPipe } from './pipes/color.pipe';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatMenuModule,
     MatSelectModule,
     MatSliderModule,
     MatToolbarModule

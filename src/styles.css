@@ -40,27 +40,127 @@ align-items: center;
 margin-left: 8px;
 }
 
+.ancient {
+    opacity: 1 !important;
+    border: 2px solid !important;
+}
+
+.primal {
+    opacity: 1 !important; 
+    border: 5px solid;
+}
+
 .legendary {
-    background-color: orange;
+    background-color: orange !important;
+    border-color: chocolate !important;
     opacity: 0.8;
+}
+
+.legendaryName {
+    color: brown;
 }
 
 .set {
-    background-color: limegreen;
+    background-color: limegreen !important;
+    border-color: forestgreen !important;
     opacity: 0.8;
 }
 
-.ancient {
-    opacity: 1;
-    border: 2px solid;
+.setName {
+    color: darkgreen;
 }
 
-.legendary.ancient {
-    border-color: chocolate;
+.ethereal {
+    background-color: aquamarine !important;
+    border-color: cyan !important;
+    opacity: 0.8;
 }
 
-.set.ancient {
-    border-color: forestgreen;
+.etherealName {
+    color: darkturquoise;
+}
+
+.farm {
+    background-color: transparent !important;
+    border-color: lightgray !important;
+    opacity: 0.8;
+}
+
+.templarButton {
+    background-color: brown !important;
+    border-color: maroon !important;
+    color: white;
+    opacity: 0.8;
+}
+
+.scoundrelButton {
+    background-color: darkslategray !important;
+    border-color: black !important;
+    color: white;
+    opacity: 0.8;
+}
+
+.enchantressButton {
+    background-color: white !important;
+    border-color: whitesmoke !important;
+    opacity: 0.8;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.gem {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+}
+
+.gemPlus {
+  position: absolute;
+  top: 7px;
+  left: 45px;
+  height: 15px; 
+  width: 15px;
+}
+
+.gemMinus {
+  position: absolute;
+  top: 45px;
+  left: 45px;
+  height: 15px; 
+  width: 15px;
+}
+
+.gemLevel {
+  position: absolute;
+  color: white;
+  top: 45px;
+  left: 7px;
+}
+
+.mainImage {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.gemImage {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 57px;
+  height: 57px;
+}
+
+.tick {
+  position: absolute;
+  top: 70px;
+  left: 70px;
 }
 
 .card {
@@ -71,9 +171,24 @@ margin-left: 8px;
 }
 
 .half-card {
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     width: 50%;
+}
+
+.half-builds {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 75%;
+}
+
+.half-gems {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25%;
 }
 
 .category {
@@ -93,6 +208,15 @@ margin-left: 8px;
     font-weight: bold;
 }
 
+.statGuaranteed {
+    text-decoration: underline;
+}
+
+.statEliminated {
+    text-decoration: line-through;
+    color: red;
+}
+
 .spacedName {
     padding: 0.5em;
 }
@@ -104,4 +228,98 @@ margin-left: 8px;
 .toolbar {
     background-color: black;
     color: white;
+}
+
+.templar {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto 0 auto 5px;
+    padding: 0px 3px;
+    color: white;
+    height: fit-content;
+    background-color: brown;
+}
+
+.templarBG {
+    background-color: brown !important;
+    color: white;
+    opacity: 0.8;
+}
+
+.scoundrel {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto 0 auto 5px;
+    padding: 0px 3px;
+    color: white;
+    height: fit-content;
+    background-color: darkslategray;
+}
+
+.scoundrelBG {
+    background-color: darkslategray !important;
+    color: white;
+    opacity: 0.8;
+}
+
+.enchantress {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto 0 auto 5px;
+    padding: 0px 3px;
+    height: fit-content;
+    background-color: white;
+}
+
+.enchantressBG {
+    background-color: white !important;
+    opacity: 0.8;
+}
+
+.forged {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto 0 auto 5px;
+    padding: 0px 3px;
+    color: white;
+    height: fit-content;
+    background-color: darkolivegreen;
+}
+
+.barbarianBG {
+    background-color: red !important;
+    opacity: 0.8;
+}
+
+.crusaderBG {
+    background-color: yellow !important;
+    opacity: 0.8;
+}
+
+.demonhunterBG {
+    background-color: purple !important;
+    color: white;
+    opacity: 0.8;
+}
+
+.monkBG {
+    background-color: orange !important;
+    opacity: 0.8;
+}
+
+.necromancerBG {
+    background-color: turquoise !important;
+    opacity: 0.8;
+}
+
+.witchdoctorBG {
+    background-color: green !important;
+    color: white;
+    opacity: 0.8;
+}
+
+.wizardBG {
+    background-color: blue !important;
+    color: white;
+    opacity: 0.8;
 }

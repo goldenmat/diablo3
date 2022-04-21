@@ -1,9 +1,49 @@
-<div class="action-buttons-wrapper">
+<div class="action-buttons-wrapper" style="padding-bottom: 0px;">
+    <div class="action-button">
+        <button mat-raised-button [disabled]="!showFollower" (click)="highlight('Templar')" [ngClass]="{'ancient': highlighted === 'Templar'}" class="templarButton">Templar</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button [disabled]="!showFollower" (click)="highlight('Scoundrel')" [ngClass]="{'ancient': highlighted === 'Scoundrel'}" class="scoundrelButton">Scoundrel</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button [disabled]="!showFollower" (click)="highlight('Enchantress')" [ngClass]="{'ancient': highlighted === 'Enchantress'}" class="enchantressButton">Enchantress</button>
+    </div>
+</div>
+<div class="action-buttons-wrapper" style="padding-bottom: 0px; padding-top: 0px;">
+    <div class="action-button">
+        <button mat-raised-button (click)="highlight('Barbarian')" [ngClass]="{'ancient': highlighted === 'Barbarian'}" id="barbarian">Barbarian</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="highlight('Crusader')" [ngClass]="{'ancient': highlighted === 'Crusader'}" id="crusader">Crusader</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="highlight('Demon Hunter')" [ngClass]="{'ancient': highlighted === 'Demon Hunter'}" id="demonhunter">Demon Hunter</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="highlight('Monk')" [ngClass]="{'ancient': highlighted === 'Monk'}" id="monk">Monk</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="highlight('Necromancer')" [ngClass]="{'ancient': highlighted === 'Necromancer'}" id="necromancer">Necromancer</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="highlight('Witch Doctor')" [ngClass]="{'ancient': highlighted === 'Witch Doctor'}" id="witchdoctor">Witch Doctor</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="highlight('Wizard')" [ngClass]="{'ancient': highlighted === 'Wizard'}" id="wizard">Wizard</button>
+    </div>
+</div>
+<div class="action-buttons-wrapper" style="padding-top: 0px;">
     <div class="action-button">
         <button mat-raised-button (click)="openAll()">Expand All</button>
     </div>
     <div class="action-button">
         <button mat-raised-button (click)="closeAll()">Collapse All</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="toggleFollower()">{{followerButtonName}}</button>
+    </div>
+    <div class="action-button">
+        <button mat-raised-button (click)="toggleForged()">{{forgedButtonName}}</button>
     </div>
 </div>
 
@@ -20,32 +60,39 @@
 <div class="content">
     <mat-accordion #helmsAccordion="matAccordion" multi>
         <div *ngFor="let helm of helms" class="card">
-            <mat-expansion-panel *ngIf="helm.item.name !== 'placeholder'" [class]="helm.item.rarity"
-                [ngClass]="{'ancient': helm.item.ancient}">
+            <mat-expansion-panel *ngIf="helm.item.name !== 'placeholder' && (!isFollower(helm.item) || showFollower) && (!isForged(helm.item) || showForged) && (highlighted === '' || helm.item.follower === highlighted || helm.class === highlighted)" [class]="helm.item.rarity"
+                [ngClass]="{'ancient': helm.item.ancient, 'primal': helm.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{helm.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{helm.item.name}} {{helm.class | color}}">
+                    <mat-panel-description innerHTML="{{helm.item.name}} [{{getDifficulty(helm.item)}}] {{helm.class | color}} {{helm.item.follower != undefined ? (helm.item.follower | color) : ''}} {{helm.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="helm.item.ancient" [(ngModel)]="helm.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="helm.item.primal" [(ngModel)]="helm.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="helm.item.image">
+                    <img class="mainImage" [src]="helm.item.image" (click)="toggleAugmented(helm.item)">
+                    <img class="tick" *ngIf="helm.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of helm.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, helm.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': helm.item.rarity === 'legendary', 'setName': helm.item.rarity === 'set', 'etherealName': helm.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, helm.item.type)" thumbLabel
                             [disabled]="!stat.present || (helm.item.locked && !stat.enchantable)"
                             [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, helm.item.type, helm.item.ancient, helm.item.name)"
                             [min]="getSliderInfoMin(stat.name, helm.item.type, helm.item.ancient, helm.item.name)"
-                            [max]="getSliderInfoMax(stat.name, helm.item.type, helm.item.ancient, helm.item.name)"></mat-slider>
+                            [max]="getSliderInfoMax(stat.name, helm.item.type, helm.item.ancient, helm.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -68,26 +115,33 @@
 <div class="content">
     <mat-accordion #shouldersAccordion="matAccordion" multi>
         <div *ngFor="let shoulder of shoulders" class="card">
-            <mat-expansion-panel *ngIf="shoulder.item.name !== 'placeholder'" [class]="shoulder.item.rarity"
-                [ngClass]="{'ancient': shoulder.item.ancient}">
+            <mat-expansion-panel *ngIf="shoulder.item.name !== 'placeholder' && (!isFollower(shoulder.item) || showFollower) && (!isForged(shoulder.item) || showForged) && (highlighted === '' || shoulder.item.follower === highlighted || shoulder.class === highlighted)" [class]="shoulder.item.rarity"
+                [ngClass]="{'ancient': shoulder.item.ancient, 'primal': shoulder.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{shoulder.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{shoulder.item.name}} {{shoulder.class | color}}">
+                    <mat-panel-description innerHTML="{{shoulder.item.name}} [{{getDifficulty(shoulder.item)}}] {{shoulder.class | color}} {{shoulder.item.follower != undefined ? (shoulder.item.follower | color) : ''}} {{shoulder.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
-                <mat-checkbox [checked]="shoulder.item.ancient" [(ngModel)]="shoulder.item.ancient">Ancient</mat-checkbox>
+                <mat-checkbox [checked]="shoulder.item.ancient" [(ngModel)]="shoulder.item.ancient">Ancient
+                </mat-checkbox>
+                <br>
+                <mat-checkbox [checked]="shoulder.item.primal" [(ngModel)]="shoulder.item.primal">Primal</mat-checkbox>
                 <br>
                 <div class="half-card">
-                    <img [src]="shoulder.item.image">
+                    <img class="mainImage" [src]="shoulder.item.image" (click)="toggleAugmented(shoulder.item)">
+                    <img class="tick" *ngIf="shoulder.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of shoulder.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, shoulder.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': shoulder.item.rarity === 'legendary', 'setName': shoulder.item.rarity === 'set', 'etherealName': shoulder.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, shoulder.item.type)" thumbLabel
                             [disabled]="!stat.present || (shoulder.item.locked && !stat.enchantable)"
                             [(ngModel)]="stat.value"
@@ -116,26 +170,34 @@
 <div class="content">
     <mat-accordion #chestarmorsAccordion="matAccordion" multi>
         <div *ngFor="let chestarmor of chestarmors" class="card">
-            <mat-expansion-panel *ngIf="chestarmor.item.name !== 'placeholder'" [class]="chestarmor.item.rarity"
-                [ngClass]="{'ancient': chestarmor.item.ancient}">
+            <mat-expansion-panel *ngIf="chestarmor.item.name !== 'placeholder' && (!isFollower(chestarmor.item) || showFollower) && (!isForged(chestarmor.item) || showForged) && (highlighted === '' || chestarmor.item.follower === highlighted || chestarmor.class === highlighted)" [class]="chestarmor.item.rarity"
+                [ngClass]="{'ancient': chestarmor.item.ancient, 'primal': chestarmor.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{chestarmor.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{chestarmor.item.name}} {{chestarmor.class | color}}">
+                    <mat-panel-description innerHTML="{{chestarmor.item.name}} [{{getDifficulty(chestarmor.item)}}] {{chestarmor.class | color}} {{chestarmor.item.follower != undefined ? (chestarmor.item.follower | color) : ''}} {{chestarmor.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
-                <mat-checkbox [checked]="chestarmor.item.ancient" [(ngModel)]="chestarmor.item.ancient">Ancient</mat-checkbox>
+                <mat-checkbox [checked]="chestarmor.item.ancient" [(ngModel)]="chestarmor.item.ancient">Ancient
+                </mat-checkbox>
+                <br>
+                <mat-checkbox [checked]="chestarmor.item.primal" [(ngModel)]="chestarmor.item.primal">Primal
+                </mat-checkbox>
                 <br>
                 <div class="half-card">
-                    <img [src]="chestarmor.item.image">
+                    <img class="mainImage" [src]="chestarmor.item.image" (click)="toggleAugmented(chestarmor.item)">
+                    <img class="tick" *ngIf="chestarmor.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of chestarmor.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, chestarmor.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': chestarmor.item.rarity === 'legendary', 'setName': chestarmor.item.rarity === 'set', 'etherealName': chestarmor.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, chestarmor.item.type)" thumbLabel
                             [disabled]="!stat.present || (chestarmor.item.locked && !stat.enchantable)"
                             [(ngModel)]="stat.value"
@@ -165,31 +227,39 @@
 <div class="content">
     <mat-accordion #glovesAccordion="matAccordion" multi>
         <div *ngFor="let glove of gloves" class="card">
-            <mat-expansion-panel *ngIf="glove.item.name !== 'placeholder'" [class]="glove.item.rarity"
-                [ngClass]="{'ancient': glove.item.ancient}">
+            <mat-expansion-panel *ngIf="glove.item.name !== 'placeholder' && (!isFollower(glove.item) || showFollower) && (!isForged(glove.item) || showForged) && (highlighted === '' || glove.item.follower === highlighted || glove.class === highlighted)" [class]="glove.item.rarity"
+                [ngClass]="{'ancient': glove.item.ancient, 'primal': glove.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{glove.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{glove.item.name}} {{glove.class | color}}">
+                    <mat-panel-description innerHTML="{{glove.item.name}} [{{getDifficulty(glove.item)}}] {{glove.class | color}} {{glove.item.follower != undefined ? (glove.item.follower | color) : ''}} {{glove.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="glove.item.ancient" [(ngModel)]="glove.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="glove.item.primal" [(ngModel)]="glove.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="glove.item.image">
+                    <img class="mainImage" [src]="glove.item.image" (click)="toggleAugmented(glove.item)">
+                    <img class="tick" *ngIf="glove.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of glove.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, glove.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': glove.item.rarity === 'legendary', 'setName': glove.item.rarity === 'set', 'etherealName': glove.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, glove.item.type)" thumbLabel
-                            [disabled]="!stat.present || (glove.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (glove.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, glove.item.type, glove.item.ancient, glove.item.name)"
                             [min]="getSliderInfoMin(stat.name, glove.item.type, glove.item.ancient, glove.item.name)"
-                            [max]="getSliderInfoMax(stat.name, glove.item.type, glove.item.ancient, glove.item.name)"></mat-slider>
+                            [max]="getSliderInfoMax(stat.name, glove.item.type, glove.item.ancient, glove.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -212,31 +282,39 @@
 <div class="content">
     <mat-accordion #pantsAccordion="matAccordion" multi>
         <div *ngFor="let pant of pants" class="card">
-            <mat-expansion-panel *ngIf="pant.item.name !== 'placeholder'" [class]="pant.item.rarity"
-                [ngClass]="{'ancient': pant.item.ancient}">
+            <mat-expansion-panel *ngIf="pant.item.name !== 'placeholder' && (!isFollower(pant.item) || showFollower) && (!isForged(pant.item) || showForged) && (highlighted === '' || pant.item.follower === highlighted || pant.class === highlighted)" [class]="pant.item.rarity"
+                [ngClass]="{'ancient': pant.item.ancient, 'primal': pant.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{pant.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{pant.item.name}} {{pant.class | color}}">
+                    <mat-panel-description innerHTML="{{pant.item.name}} [{{getDifficulty(pant.item)}}] {{pant.class | color}} {{pant.item.follower != undefined ? (pant.item.follower | color) : ''}} {{pant.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="pant.item.ancient" [(ngModel)]="pant.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="pant.item.primal" [(ngModel)]="pant.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="pant.item.image">
+                    <img class="mainImage" [src]="pant.item.image" (click)="toggleAugmented(pant.item)">
+                    <img class="tick" *ngIf="pant.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of pant.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, pant.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': pant.item.rarity === 'legendary', 'setName': pant.item.rarity === 'set', 'etherealName': pant.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, pant.item.type)" thumbLabel
-                            [disabled]="!stat.present || (pant.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (pant.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, pant.item.type, pant.item.ancient, pant.item.name)"
                             [min]="getSliderInfoMin(stat.name, pant.item.type, pant.item.ancient, pant.item.name)"
-                            [max]="getSliderInfoMax(stat.name, pant.item.type, pant.item.ancient, pant.item.name)"></mat-slider>
+                            [max]="getSliderInfoMax(stat.name, pant.item.type, pant.item.ancient, pant.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -259,31 +337,39 @@
 <div class="content">
     <mat-accordion #bootsAccordion="matAccordion" multi>
         <div *ngFor="let boot of boots" class="card">
-            <mat-expansion-panel *ngIf="boot.item.name !== 'placeholder'" [class]="boot.item.rarity"
-                [ngClass]="{'ancient': boot.item.ancient}">
+            <mat-expansion-panel *ngIf="boot.item.name !== 'placeholder' && (!isFollower(boot.item) || showFollower) && (!isForged(boot.item) || showForged) && (highlighted === '' || boot.item.follower === highlighted || boot.class === highlighted)" [class]="boot.item.rarity"
+                [ngClass]="{'ancient': boot.item.ancient, 'primal': boot.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{boot.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{boot.item.name}} {{boot.class | color}}">
+                    <mat-panel-description innerHTML="{{boot.item.name}} [{{getDifficulty(boot.item)}}] {{boot.class | color}} {{boot.item.follower != undefined ? (boot.item.follower | color) : ''}} {{boot.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="boot.item.ancient" [(ngModel)]="boot.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="boot.item.primal" [(ngModel)]="boot.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="boot.item.image">
+                    <img class="mainImage" [src]="boot.item.image" (click)="toggleAugmented(boot.item)">
+                    <img class="tick" *ngIf="boot.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of boot.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, boot.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': boot.item.rarity === 'legendary', 'setName': boot.item.rarity === 'set', 'etherealName': boot.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, boot.item.type)" thumbLabel
-                            [disabled]="!stat.present || (boot.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (boot.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, boot.item.type, boot.item.ancient, boot.item.name)"
                             [min]="getSliderInfoMin(stat.name, boot.item.type, boot.item.ancient, boot.item.name)"
-                            [max]="getSliderInfoMax(stat.name, boot.item.type, boot.item.ancient, boot.item.name)"></mat-slider>
+                            [max]="getSliderInfoMax(stat.name, boot.item.type, boot.item.ancient, boot.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -306,28 +392,35 @@
 <div class="content">
     <mat-accordion #bracersAccordion="matAccordion" multi>
         <div *ngFor="let bracer of bracers" class="card">
-            <mat-expansion-panel *ngIf="bracer.item.name !== 'placeholder'" [class]="bracer.item.rarity"
-                [ngClass]="{'ancient': bracer.item.ancient}">
+            <mat-expansion-panel *ngIf="bracer.item.name !== 'placeholder' && (!isFollower(bracer.item) || showFollower) && (!isForged(bracer.item) || showForged) && (highlighted === '' || bracer.item.follower === highlighted || bracer.class === highlighted)" [class]="bracer.item.rarity"
+                [ngClass]="{'ancient': bracer.item.ancient, 'primal': bracer.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{bracer.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{bracer.item.name}} {{bracer.class | color}}">
+                    <mat-panel-description innerHTML="{{bracer.item.name}} [{{getDifficulty(bracer.item)}}] {{bracer.class | color}} {{bracer.item.follower != undefined ? (bracer.item.follower | color) : ''}} {{bracer.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="bracer.item.ancient" [(ngModel)]="bracer.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="bracer.item.primal" [(ngModel)]="bracer.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="bracer.item.image">
+                    <img class="mainImage" [src]="bracer.item.image" (click)="toggleAugmented(bracer.item)">
+                    <img class="tick" *ngIf="bracer.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of bracer.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, bracer.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': bracer.item.rarity === 'legendary', 'setName': bracer.item.rarity === 'set', 'etherealName': bracer.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, bracer.item.type)" thumbLabel
-                            [disabled]="!stat.present || (bracer.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (bracer.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, bracer.item.type, bracer.item.ancient, bracer.item.name)"
                             [min]="getSliderInfoMin(stat.name, bracer.item.type, bracer.item.ancient, bracer.item.name)"
                             [max]="getSliderInfoMax(stat.name, bracer.item.type, bracer.item.ancient, bracer.item.name)">
@@ -354,31 +447,39 @@
 <div class="content">
     <mat-accordion #beltsAccordion="matAccordion" multi>
         <div *ngFor="let belt of belts" class="card">
-            <mat-expansion-panel *ngIf="belt.item.name !== 'placeholder'" [class]="belt.item.rarity"
-                [ngClass]="{'ancient': belt.item.ancient}">
+            <mat-expansion-panel *ngIf="belt.item.name !== 'placeholder' && (!isFollower(belt.item) || showFollower) && (!isForged(belt.item) || showForged) && (highlighted === '' || belt.item.follower === highlighted || belt.class === highlighted)" [class]="belt.item.rarity"
+                [ngClass]="{'ancient': belt.item.ancient, 'primal': belt.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{belt.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{belt.item.name}} {{belt.class | color}}">
+                    <mat-panel-description innerHTML="{{belt.item.name}} [{{getDifficulty(belt.item)}}] {{belt.class | color}} {{belt.item.follower != undefined ? (belt.item.follower | color) : ''}} {{belt.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="belt.item.ancient" [(ngModel)]="belt.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="belt.item.primal" [(ngModel)]="belt.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="belt.item.image">
+                    <img class="mainImage" [src]="belt.item.image" (click)="toggleAugmented(belt.item)">
+                    <img class="tick" *ngIf="belt.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of belt.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, belt.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': belt.item.rarity === 'legendary', 'setName': belt.item.rarity === 'set', 'etherealName': belt.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, belt.item.type)" thumbLabel
-                            [disabled]="!stat.present || (belt.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (belt.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, belt.item.type, belt.item.ancient, belt.item.name)"
                             [min]="getSliderInfoMin(stat.name, belt.item.type, belt.item.ancient, belt.item.name)"
-                            [max]="getSliderInfoMax(stat.name, belt.item.type, belt.item.ancient, belt.item.name)"></mat-slider>
+                            [max]="getSliderInfoMax(stat.name, belt.item.type, belt.item.ancient, belt.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -401,37 +502,46 @@
 <div class="content">
     <mat-accordion #ringsAccordion="matAccordion" multi>
         <div *ngFor="let ring of rings" class="card">
-            <mat-expansion-panel *ngIf="ring.item.name !== 'placeholder'" [class]="ring.item.rarity"
-                [ngClass]="{'ancient': ring.item.ancient}">
+            <mat-expansion-panel *ngIf="ring.item.name !== 'placeholder' && (!isFollower(ring.item) || showFollower) && (!isForged(ring.item) || showForged) && (highlighted === '' || ring.item.follower === highlighted || ring.class === highlighted)" [class]="ring.item.rarity"
+                [ngClass]="{'ancient': ring.item.ancient, 'primal': ring.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{ring.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{ring.item.name}} {{ring.class | color}}">
+                    <mat-panel-description innerHTML="{{ring.item.name}} [{{getDifficulty(ring.item)}}] {{ring.class | color}} {{ring.item.follower != undefined ? (ring.item.follower | color) : ''}} {{ring.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="ring.item.ancient" [(ngModel)]="ring.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="ring.item.primal" [(ngModel)]="ring.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="ring.item.image">
+                    <img class="mainImage" [src]="ring.item.image" (click)="toggleAugmented(ring.item)">
+                    <img class="tick" *ngIf="ring.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of ring.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, ring.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': ring.item.rarity === 'legendary', 'setName': ring.item.rarity === 'set', 'etherealName': ring.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, ring.item.type)" thumbLabel
-                            [disabled]="!stat.present || (ring.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (ring.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, ring.item.type, ring.item.ancient, ring.item.name)"
                             [min]="getSliderInfoMin(stat.name, ring.item.type, ring.item.ancient, ring.item.name)"
-                            [max]="getSliderInfoMax(stat.name, ring.item.type, ring.item.ancient, ring.item.name)"></mat-slider><br>
+                            [max]="getSliderInfoMax(stat.name, ring.item.type, ring.item.ancient, ring.item.name)">
+                        </mat-slider><br>
                         <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
                             [disabled]="!stat.present || (ring.item.locked && !stat.enchantable)"
                             [(ngModel)]="stat.value2"
                             [step]="getSliderInfoDamageStep(ring.item.type, ring.item.ancient, ring.item.name)"
                             [min]="getSliderInfoDamageMin(ring.item.type, ring.item.ancient, ring.item.name)"
-                            [max]="getSliderInfoDamageMax(ring.item.type, ring.item.ancient, ring.item.name)"></mat-slider>
+                            [max]="getSliderInfoDamageMax(ring.item.type, ring.item.ancient, ring.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -454,28 +564,35 @@
 <div class="content">
     <mat-accordion #amuletsAccordion="matAccordion" multi>
         <div *ngFor="let amulet of amulets" class="card">
-            <mat-expansion-panel *ngIf="amulet.item.name !== 'placeholder'" [class]="amulet.item.rarity"
-                [ngClass]="{'ancient': amulet.item.ancient}">
+            <mat-expansion-panel *ngIf="amulet.item.name !== 'placeholder' && (!isFollower(amulet.item) || showFollower) && (!isForged(amulet.item) || showForged) && (highlighted === '' || amulet.item.follower === highlighted || amulet.class === highlighted)" [class]="amulet.item.rarity"
+                [ngClass]="{'ancient': amulet.item.ancient, 'primal': amulet.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{amulet.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{amulet.item.name}} {{amulet.class | color}}">
+                    <mat-panel-description innerHTML="{{amulet.item.name}} [{{getDifficulty(amulet.item)}}] {{amulet.class | color}} {{amulet.item.follower != undefined ? (amulet.item.follower | color) : ''}} {{amulet.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="amulet.item.ancient" [(ngModel)]="amulet.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="amulet.item.primal" [(ngModel)]="amulet.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="amulet.item.image">
+                    <img class="mainImage" [src]="amulet.item.image" (click)="toggleAugmented(amulet.item)">
+                    <img class="tick" *ngIf="amulet.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of amulet.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, amulet.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': amulet.item.rarity === 'legendary', 'setName': amulet.item.rarity === 'set', 'etherealName': amulet.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, amulet.item.type)" thumbLabel
-                            [disabled]="!stat.present || (amulet.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (amulet.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, amulet.item.type, amulet.item.ancient, amulet.item.name)"
                             [min]="getSliderInfoMin(stat.name, amulet.item.type, amulet.item.ancient, amulet.item.name)"
                             [max]="getSliderInfoMax(stat.name, amulet.item.type, amulet.item.ancient, amulet.item.name)">
@@ -489,49 +606,119 @@
 
 <hr>
 
-<!--Axes-->
+<!--Bows-->
 <div class="category">
     <div class="action-button">
-        <button mat-raised-button (click)="axesAccordion.openAll()">Expand Axes</button>
+        <button mat-raised-button (click)="bowsAccordion.openAll()">Expand Bows</button>
     </div>
     <br>
     <div class="action-button">
-        <button mat-raised-button (click)="axesAccordion.closeAll()">Collapse Axes</button>
+        <button mat-raised-button (click)="bowsAccordion.closeAll()">Collapse Bows</button>
     </div>
 </div>
 <div class="content">
-    <mat-accordion #axesAccordion="matAccordion" multi>
-        <div *ngFor="let axe of axes" class="card">
-            <mat-expansion-panel *ngIf="axe.item.name !== 'placeholder'" [class]="axe.item.rarity"
-                [ngClass]="{'ancient': axe.item.ancient}">
+    <mat-accordion #bowsAccordion="matAccordion" multi>
+        <div *ngFor="let bow of bows" class="card">
+            <mat-expansion-panel *ngIf="bow.item.name !== 'placeholder' && (!isFollower(bow.item) || showFollower) && (!isForged(bow.item) || showForged) && (highlighted === '' || bow.item.follower === highlighted || bow.class === highlighted)" [class]="bow.item.rarity"
+                [ngClass]="{'ancient': bow.item.ancient, 'primal': bow.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
-                        {{axe.item.type | uppercase}}
+                        {{bow.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{axe.item.name}} {{axe.class | color}}">
+                    <mat-panel-description innerHTML="{{bow.item.name}} [{{getDifficulty(bow.item)}}] {{bow.class | color}} {{bow.item.follower != undefined ? (bow.item.follower | color) : ''}} {{bow.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
-                <mat-checkbox [checked]="axe.item.ancient" [(ngModel)]="axe.item.ancient">Ancient</mat-checkbox>
+                <mat-checkbox [checked]="bow.item.ancient" [(ngModel)]="bow.item.ancient">Ancient</mat-checkbox>
+                <br>
+                <mat-checkbox [checked]="bow.item.primal" [(ngModel)]="bow.item.primal">Primal</mat-checkbox>
                 <br>
                 <div class="half-card">
-                    <img [src]="axe.item.image">
+                    <img class="mainImage" [src]="bow.item.image" (click)="toggleAugmented(bow.item)">
+                    <img class="tick" *ngIf="bow.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
-                    <div *ngFor="let stat of axe.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
-                        <mat-slider *ngIf="isSlidable(stat.name, axe.item.type)" thumbLabel
-                            [disabled]="!stat.present || (axe.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
-                            [step]="getSliderInfoStep(stat.name, axe.item.type, axe.item.ancient, axe.item.name)"
-                            [min]="getSliderInfoMin(stat.name, axe.item.type, axe.item.ancient, axe.item.name)"
-                            [max]="getSliderInfoMax(stat.name, axe.item.type, axe.item.ancient, axe.item.name)"></mat-slider><br>
+                    <div *ngFor="let stat of bow.item.stats">
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, bow.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': bow.item.rarity === 'legendary', 'setName': bow.item.rarity === 'set', 'etherealName': bow.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
+                        <mat-slider *ngIf="isSlidable(stat.name, bow.item.type)" thumbLabel
+                            [disabled]="!stat.present || (bow.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
+                            [step]="getSliderInfoStep(stat.name, bow.item.type, bow.item.ancient, bow.item.name)"
+                            [min]="getSliderInfoMin(stat.name, bow.item.type, bow.item.ancient, bow.item.name)"
+                            [max]="getSliderInfoMax(stat.name, bow.item.type, bow.item.ancient, bow.item.name)">
+                        </mat-slider><br>
                         <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
-                            [disabled]="!stat.present || (axe.item.locked && !stat.enchantable)" [(ngModel)]="stat.value2"
-                            [step]="getSliderInfoDamageStep(axe.item.type, axe.item.ancient, axe.item.name)"
-                            [min]="getSliderInfoDamageMin(axe.item.type, axe.item.ancient, axe.item.name)"
-                            [max]="getSliderInfoDamageMax(axe.item.type, axe.item.ancient, axe.item.name)"></mat-slider>
+                            [disabled]="!stat.present || (bow.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value2"
+                            [step]="getSliderInfoDamageStep(bow.item.type, bow.item.ancient, bow.item.name)"
+                            [min]="getSliderInfoDamageMin(bow.item.type, bow.item.ancient, bow.item.name)"
+                            [max]="getSliderInfoDamageMax(bow.item.type, bow.item.ancient, bow.item.name)"></mat-slider>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </mat-accordion>
+</div>
+
+<hr>
+
+<!--Daggers-->
+<div class="category">
+    <div class="action-button">
+        <button mat-raised-button (click)="daggersAccordion.openAll()">Expand Daggers</button>
+    </div>
+    <br>
+    <div class="action-button">
+        <button mat-raised-button (click)="daggersAccordion.closeAll()">Collapse Daggers</button>
+    </div>
+</div>
+<div class="content">
+    <mat-accordion #daggersAccordion="matAccordion" multi>
+        <div *ngFor="let dagger of daggers" class="card">
+            <mat-expansion-panel *ngIf="dagger.item.name !== 'placeholder' && (!isFollower(dagger.item) || showFollower) && (!isForged(dagger.item) || showForged) && (highlighted === '' || dagger.item.follower === highlighted || dagger.class === highlighted)" [class]="dagger.item.rarity"
+                [ngClass]="{'ancient': dagger.item.ancient, 'primal': dagger.item.primal}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{dagger.item.type | uppercase}}
+                    </mat-panel-title>
+                    <mat-panel-description innerHTML="{{dagger.item.name}} [{{getDifficulty(dagger.item)}}] {{dagger.class | color}} {{dagger.item.follower != undefined ? (dagger.item.follower | color) : ''}} {{dagger.item.forged != undefined ? ('Forged' | color) : ''}}">
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-checkbox [checked]="dagger.item.ancient" [(ngModel)]="dagger.item.ancient">Ancient</mat-checkbox>
+                <br>
+                <mat-checkbox [checked]="dagger.item.primal" [(ngModel)]="dagger.item.primal">Primal</mat-checkbox>
+                <br>
+                <div class="half-card">
+                    <img class="mainImage" [src]="dagger.item.image" (click)="toggleAugmented(dagger.item)">
+                    <img class="tick" *ngIf="dagger.item.augmented" src="./assets/tick.png">
+                </div>
+                <div class="half-card">
+                    <div *ngFor="let stat of dagger.item.stats">
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, dagger.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': dagger.item.rarity === 'legendary', 'setName': dagger.item.rarity === 'set', 'etherealName': dagger.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
+                        <mat-slider *ngIf="isSlidable(stat.name, dagger.item.type)" thumbLabel
+                            [disabled]="!stat.present || (dagger.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
+                            [step]="getSliderInfoStep(stat.name, dagger.item.type, dagger.item.ancient, dagger.item.name)"
+                            [min]="getSliderInfoMin(stat.name, dagger.item.type, dagger.item.ancient, dagger.item.name)"
+                            [max]="getSliderInfoMax(stat.name, dagger.item.type, dagger.item.ancient, dagger.item.name)">
+                        </mat-slider><br>
+                        <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
+                            [disabled]="!stat.present || (dagger.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value2"
+                            [step]="getSliderInfoDamageStep(dagger.item.type, dagger.item.ancient, dagger.item.name)"
+                            [min]="getSliderInfoDamageMin(dagger.item.type, dagger.item.ancient, dagger.item.name)"
+                            [max]="getSliderInfoDamageMax(dagger.item.type, dagger.item.ancient, dagger.item.name)"></mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -554,37 +741,47 @@
 <div class="content">
     <mat-accordion #macesAccordion="matAccordion" multi>
         <div *ngFor="let mace of maces" class="card">
-            <mat-expansion-panel *ngIf="mace.item.name !== 'placeholder'" [class]="mace.item.rarity"
-                [ngClass]="{'ancient': mace.item.ancient}">
+            <mat-expansion-panel *ngIf="mace.item.name !== 'placeholder' && (!isFollower(mace.item) || showFollower) && (!isForged(mace.item) || showForged) && (highlighted === '' || mace.item.follower === highlighted || mace.class === highlighted)" [class]="mace.item.rarity"
+                [ngClass]="{'ancient': mace.item.ancient, 'primal': mace.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{mace.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{mace.item.name}} {{mace.class | color}}">
+                    <mat-panel-description innerHTML="{{mace.item.name}} [{{getDifficulty(mace.item)}}] {{mace.class | color}} {{mace.item.follower != undefined ? (mace.item.follower | color) : ''}} {{mace.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="mace.item.ancient" [(ngModel)]="mace.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="mace.item.primal" [(ngModel)]="mace.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="mace.item.image">
+                    <img class="mainImage" [src]="mace.item.image" (click)="toggleAugmented(mace.item)">
+                    <img class="tick" *ngIf="mace.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of mace.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, mace.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': mace.item.rarity === 'legendary', 'setName': mace.item.rarity === 'set', 'etherealName': mace.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, mace.item.type)" thumbLabel
-                            [disabled]="!stat.present || (mace.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (mace.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, mace.item.type, mace.item.ancient, mace.item.name)"
                             [min]="getSliderInfoMin(stat.name, mace.item.type, mace.item.ancient, mace.item.name)"
-                            [max]="getSliderInfoMax(stat.name, mace.item.type, mace.item.ancient, mace.item.name)"></mat-slider>
+                            [max]="getSliderInfoMax(stat.name, mace.item.type, mace.item.ancient, mace.item.name)">
+                        </mat-slider>
                         <br>
                         <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
-                            [disabled]="!stat.present || (mace.item.locked && !stat.enchantable)" [(ngModel)]="stat.value2"
+                            [disabled]="!stat.present || (mace.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value2"
                             [step]="getSliderInfoDamageStep(mace.item.type, mace.item.ancient, mace.item.name)"
                             [min]="getSliderInfoDamageMin(mace.item.type, mace.item.ancient, mace.item.name)"
-                            [max]="getSliderInfoDamageMax(mace.item.type, mace.item.ancient, mace.item.name)"></mat-slider>
+                            [max]="getSliderInfoDamageMax(mace.item.type, mace.item.ancient, mace.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>
@@ -607,37 +804,222 @@
 <div class="content">
     <mat-accordion #swordsAccordion="matAccordion" multi>
         <div *ngFor="let sword of swords" class="card">
-            <mat-expansion-panel *ngIf="sword.item.name !== 'placeholder'" [class]="sword.item.rarity"
-                [ngClass]="{'ancient': sword.item.ancient}">
+            <mat-expansion-panel *ngIf="sword.item.name !== 'placeholder' && (!isFollower(sword.item) || showFollower) && (!isForged(sword.item) || showForged) && (highlighted === '' || sword.item.follower === highlighted || sword.class === highlighted)" [class]="sword.item.rarity"
+                [ngClass]="{'ancient': sword.item.ancient, 'primal': sword.item.primal}">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         {{sword.item.type | uppercase}}
                     </mat-panel-title>
-                    <mat-panel-description innerHTML="{{sword.item.name}} {{sword.class | color}}">
+                    <mat-panel-description innerHTML="{{sword.item.name}} [{{getDifficulty(sword.item)}}] {{sword.class | color}} {{sword.item.follower != undefined ? (sword.item.follower | color) : ''}} {{sword.item.forged != undefined ? ('Forged' | color) : ''}}">
                     </mat-panel-description>
                 </mat-expansion-panel-header>
 
                 <mat-checkbox [checked]="sword.item.ancient" [(ngModel)]="sword.item.ancient">Ancient</mat-checkbox>
                 <br>
+                <mat-checkbox [checked]="sword.item.primal" [(ngModel)]="sword.item.primal">Primal</mat-checkbox>
+                <br>
                 <div class="half-card">
-                    <img [src]="sword.item.image">
+                    <img class="mainImage" [src]="sword.item.image" (click)="toggleAugmented(sword.item)">
+                    <img class="tick" *ngIf="sword.item.augmented" src="./assets/tick.png">
                 </div>
                 <div class="half-card">
                     <div *ngFor="let stat of sword.item.stats">
-                        <mat-checkbox [checked]="stat.present" [(ngModel)]="stat.present"></mat-checkbox><span
-                            class="spacedName" [innerHtml]="stat.name"
-                            [ngClass]="{'statBold': stat.enchantable}"></span><br>
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, sword.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': sword.item.rarity === 'legendary', 'setName': sword.item.rarity === 'set', 'etherealName': sword.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
                         <mat-slider *ngIf="isSlidable(stat.name, sword.item.type)" thumbLabel
-                            [disabled]="!stat.present || (sword.item.locked && !stat.enchantable)" [(ngModel)]="stat.value"
+                            [disabled]="!stat.present || (sword.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
                             [step]="getSliderInfoStep(stat.name, sword.item.type, sword.item.ancient, sword.item.name)"
                             [min]="getSliderInfoMin(stat.name, sword.item.type, sword.item.ancient, sword.item.name)"
-                            [max]="getSliderInfoMax(stat.name, sword.item.type, sword.item.ancient, sword.item.name)"></mat-slider>
+                            [max]="getSliderInfoMax(stat.name, sword.item.type, sword.item.ancient, sword.item.name)">
+                        </mat-slider>
                         <br>
                         <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
-                            [disabled]="!stat.present || (sword.item.locked && !stat.enchantable)" [(ngModel)]="stat.value2"
+                            [disabled]="!stat.present || (sword.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value2"
                             [step]="getSliderInfoDamageStep(sword.item.type, sword.item.ancient, sword.item.name)"
                             [min]="getSliderInfoDamageMin(sword.item.type, sword.item.ancient, sword.item.name)"
-                            [max]="getSliderInfoDamageMax(sword.item.type, sword.item.ancient, sword.item.name)"></mat-slider>
+                            [max]="getSliderInfoDamageMax(sword.item.type, sword.item.ancient, sword.item.name)">
+                        </mat-slider>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </mat-accordion>
+</div>
+
+<hr>
+
+<!-- Two Handed Maces -->
+<div class="category">
+    <div class="action-button">
+        <button mat-raised-button (click)="twohandedmacesAccordion.openAll()">Expand Two Handed Maces</button>
+    </div>
+    <br>
+    <div class="action-button">
+        <button mat-raised-button (click)="twohandedmacesAccordion.closeAll()">Collapse Two Handed Maces</button>
+    </div>
+</div>
+<div class="content">
+    <mat-accordion #twohandedmacesAccordion="matAccordion" multi>
+        <div *ngFor="let twohandedmace of twohandedmaces" class="card">
+            <mat-expansion-panel *ngIf="twohandedmace.item.name !== 'placeholder' && (!isFollower(twohandedmace.item) || showFollower) && (!isForged(twohandedmace.item) || showForged) && (highlighted === '' || twohandedmace.item.follower === highlighted || twohandedmace.class === highlighted)" [class]="twohandedmace.item.rarity"
+                [ngClass]="{'ancient': twohandedmace.item.ancient, 'primal': twohandedmace.item.primal}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{twohandedmace.item.type | uppercase}}
+                    </mat-panel-title>
+                    <mat-panel-description innerHTML="{{twohandedmace.item.name}} [{{getDifficulty(twohandedmace.item)}}] {{twohandedmace.class | color}} {{twohandedmace.item.follower != undefined ? (twohandedmace.item.follower | color) : ''}} {{twohandedmace.item.forged != undefined ? ('Forged' | color) : ''}}">
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-checkbox [checked]="twohandedmace.item.ancient" [(ngModel)]="twohandedmace.item.ancient">Ancient
+                </mat-checkbox>
+                <br>
+                <mat-checkbox [checked]="twohandedmace.item.primal" [(ngModel)]="twohandedmace.item.primal">Primal
+                </mat-checkbox>
+                <br>
+                <div class="half-card">
+                    <img class="mainImage" [src]="twohandedmace.item.image" (click)="toggleAugmented(twohandedmace.item)">
+                    <img class="tick" *ngIf="twohandedmace.item.augmented" src="./assets/tick.png">
+                </div>
+                <div class="half-card">
+                    <div *ngFor="let stat of twohandedmace.item.stats">
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, twohandedmace.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': twohandedmace.item.rarity === 'legendary', 'setName': twohandedmace.item.rarity === 'set', 'etherealName': twohandedmace.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
+                        <mat-slider *ngIf="isSlidable(stat.name, twohandedmace.item.type)" thumbLabel
+                            [disabled]="!stat.present || (twohandedmace.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
+                            [step]="getSliderInfoStep(stat.name, twohandedmace.item.type, twohandedmace.item.ancient, twohandedmace.item.name)"
+                            [min]="getSliderInfoMin(stat.name, twohandedmace.item.type, twohandedmace.item.ancient, twohandedmace.item.name)"
+                            [max]="getSliderInfoMax(stat.name, twohandedmace.item.type, twohandedmace.item.ancient, twohandedmace.item.name)">
+                        </mat-slider>
+                        <br>
+                        <mat-slider *ngIf="isWeapon(stat.name)" thumbLabel
+                            [disabled]="!stat.present || (twohandedmace.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value2"
+                            [step]="getSliderInfoDamageStep(twohandedmace.item.type, twohandedmace.item.ancient, twohandedmace.item.name)"
+                            [min]="getSliderInfoDamageMin(twohandedmace.item.type, twohandedmace.item.ancient, twohandedmace.item.name)"
+                            [max]="getSliderInfoDamageMax(twohandedmace.item.type, twohandedmace.item.ancient, twohandedmace.item.name)">
+                        </mat-slider>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </mat-accordion>
+</div>
+
+<hr>
+
+<!--Shields-->
+<div class="category">
+    <div class="action-button">
+        <button mat-raised-button (click)="shieldsAccordion.openAll()">Expand Shields</button>
+    </div>
+    <br>
+    <div class="action-button">
+        <button mat-raised-button (click)="shieldsAccordion.closeAll()">Collapse Shields</button>
+    </div>
+</div>
+<div class="content">
+    <mat-accordion #shieldsAccordion="matAccordion" multi>
+        <div *ngFor="let shield of shields" class="card">
+            <mat-expansion-panel *ngIf="shield.item.name !== 'placeholder' && (!isFollower(shield.item) || showFollower) && (!isForged(shield.item) || showForged) && (highlighted === '' || shield.item.follower === highlighted || shield.class === highlighted)" [class]="shield.item.rarity"
+                [ngClass]="{'ancient': shield.item.ancient, 'primal': shield.item.primal}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{shield.item.type | uppercase}}
+                    </mat-panel-title>
+                    <mat-panel-description innerHTML="{{shield.item.name}} [{{getDifficulty(shield.item)}}] {{shield.class | color}} {{shield.item.follower != undefined ? (shield.item.follower | color) : ''}} {{shield.item.forged != undefined ? ('Forged' | color) : ''}}">
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-checkbox [checked]="shield.item.ancient" [(ngModel)]="shield.item.ancient">Ancient</mat-checkbox>
+                <br>
+                <mat-checkbox [checked]="shield.item.primal" [(ngModel)]="shield.item.primal">Primal</mat-checkbox>
+                <br>
+                <div class="half-card">
+                    <img class="mainImage" [src]="shield.item.image" (click)="toggleAugmented(shield.item)">
+                    <img class="tick" *ngIf="shield.item.augmented" src="./assets/tick.png">
+                </div>
+                <div class="half-card">
+                    <div *ngFor="let stat of shield.item.stats">
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, shield.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': shield.item.rarity === 'legendary', 'setName': shield.item.rarity === 'set', 'etherealName': shield.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
+                        <mat-slider *ngIf="isSlidable(stat.name, shield.item.type)" thumbLabel
+                            [disabled]="!stat.present || (shield.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
+                            [step]="getSliderInfoStep(stat.name, shield.item.type, shield.item.ancient, shield.item.name)"
+                            [min]="getSliderInfoMin(stat.name, shield.item.type, shield.item.ancient, shield.item.name)"
+                            [max]="getSliderInfoMax(stat.name, shield.item.type, shield.item.ancient, shield.item.name)">
+                        </mat-slider>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </mat-accordion>
+</div>
+
+<hr>
+
+<!--Relics-->
+<div class="category">
+    <div class="action-button">
+        <button mat-raised-button (click)="relicsAccordion.openAll()">Expand Relics</button>
+    </div>
+    <br>
+    <div class="action-button">
+        <button mat-raised-button (click)="relicsAccordion.closeAll()">Collapse Relics</button>
+    </div>
+</div>
+<div class="content">
+    <mat-accordion #relicsAccordion="matAccordion" multi>
+        <div *ngFor="let relic of relics" class="card">
+            <mat-expansion-panel *ngIf="relic.item.name !== 'placeholder' && (!isFollower(relic.item) || showFollower) && (!isForged(relic.item) || showForged) && (highlighted === '' || relic.item.follower === highlighted || relic.class === highlighted)" [class]="relic.item.rarity"
+                [ngClass]="{'ancient': relic.item.ancient, 'primal': relic.item.primal}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{relic.item.type | uppercase}}
+                    </mat-panel-title>
+                    <mat-panel-description innerHTML="{{relic.item.name}} [{{getDifficulty(relic.item)}}] {{relic.class | color}} {{relic.item.follower != undefined ? (relic.item.follower | color) : ''}} {{relic.item.forged != undefined ? ('Forged' | color) : ''}}">
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-checkbox [checked]="relic.item.ancient" [(ngModel)]="relic.item.ancient">Ancient</mat-checkbox>
+                <br>
+                <mat-checkbox [checked]="relic.item.primal" [(ngModel)]="relic.item.primal">Primal</mat-checkbox>
+                <br>
+                <div class="half-card">
+                    <img class="mainImage" [src]="relic.item.image" (click)="toggleAugmented(relic.item)">
+                    <img class="tick" *ngIf="relic.item.augmented" src="./assets/tick.png">
+                </div>
+                <div class="half-card">
+                    <div *ngFor="let stat of relic.item.stats">
+                            <mat-checkbox *ngIf="!isPassive(stat)" [checked]="stat.present" [(ngModel)]="stat.present">
+                            </mat-checkbox><span *ngIf="!isPassive(stat)" class="spacedName"
+                                (click)="toggleEnchantable(stat, relic.item)" [innerHtml]="stat.name" [ngClass]="{'statBold': stat.enchantable, 'statGuaranteed': stat.guaranteed, 'statEliminated': stat.guaranteed !== undefined && !stat.guaranteed}"></span>
+                            <span *ngIf="isPassive(stat)"
+                                [class]="{'legendaryName': relic.item.rarity === 'legendary', 'setName': relic.item.rarity === 'set', 'etherealName': relic.item.rarity === 'ethereal'}"
+                                [innerHtml]="stat.name"></span><br>
+                        <mat-slider *ngIf="isSlidable(stat.name, relic.item.type)" thumbLabel
+                            [disabled]="!stat.present || (relic.item.locked && !stat.enchantable)"
+                            [(ngModel)]="stat.value"
+                            [step]="getSliderInfoStep(stat.name, relic.item.type, relic.item.ancient, relic.item.name)"
+                            [min]="getSliderInfoMin(stat.name, relic.item.type, relic.item.ancient, relic.item.name)"
+                            [max]="getSliderInfoMax(stat.name, relic.item.type, relic.item.ancient, relic.item.name)">
+                        </mat-slider>
                     </div>
                 </div>
             </mat-expansion-panel>

@@ -1,8 +1,13 @@
-import { Item } from './item'
+import { Gem, Item } from './item'
 
 export const HELMS : Item[] = [
   {
+    "builds": [
+      6
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Decree of Justice",
     "type": "Helm",
@@ -13,7 +18,8 @@ export const HELMS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -30,12 +36,18 @@ export const HELMS : Item[] = [
       {
         "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Mask of the Searing Sky",
     "type": "Helm",
@@ -43,32 +55,39 @@ export const HELMS : Item[] = [
     "image": "./assets/helm/monk/maskofthesearingsky.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 687,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Vitality</span>",
-        "value": 659,
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 5.5,
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      5
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Sunwuko's Crown",
     "type": "Helm",
@@ -76,10 +95,11 @@ export const HELMS : Item[] = [
     "image": "./assets/helm/monk/sunwukoscrown.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 743,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -94,14 +114,20 @@ export const HELMS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      8
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Uliana's Spirit",
     "type": "Helm",
@@ -112,7 +138,8 @@ export const HELMS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -129,12 +156,153 @@ export const HELMS : Item[] = [
       {
         "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      12
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Broken Crown",
+    "type": "Helm",
+    "rarity": "legendary",
+    "image": "./assets/helm/brokencrown.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Leoric's Crown",
+    "type": "Helm",
+    "rarity": "legendary",
+    "image": "./assets/helm/leoricscrown.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Increase the effect of any gem socketed into your helm by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Leoric's Crown",
+    "type": "Helm",
+    "rarity": "legendary",
+    "image": "./assets/helm/leoricscrown.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Increase the effect of any gem socketed into your helm by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -146,7 +314,15 @@ export const HELMS : Item[] = [
 
 export const SPIRITSTONES : Item[] = [
   {
+    "builds": [
+      1,
+      2,
+      3,
+      4
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Inna's Radiance",
     "type": "Spirit Stone",
@@ -154,10 +330,11 @@ export const SPIRITSTONES : Item[] = [
     "image": "./assets/spiritstone/innasradiance.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 673,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -172,14 +349,20 @@ export const SPIRITSTONES : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      9
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Tzo Krin's Gaze",
     "type": "Spirit Stone",
@@ -190,7 +373,8 @@ export const SPIRITSTONES : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -208,7 +392,8 @@ export const SPIRITSTONES : Item[] = [
         "present": false,
         "name": "<span>WaveOfLight%</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -218,7 +403,10 @@ export const SPIRITSTONES : Item[] = [
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -230,7 +418,53 @@ export const SPIRITSTONES : Item[] = [
 
 export const SHOULDERS : Item[] = [
   {
+    "builds": [
+      2
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Aughild's Power",
+    "type": "Shoulders",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/shoulders/aughildspower.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>MysticAlly%</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      3,
+      7
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Mantle of the Upside-Down Sinners",
     "type": "Shoulders",
@@ -241,7 +475,8 @@ export const SHOULDERS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -253,7 +488,8 @@ export const SHOULDERS : Item[] = [
         "present": false,
         "name": "<span>All Resistance</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -264,7 +500,12 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
+    "builds": [
+      6
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Mirrors of Justice",
     "type": "Shoulders",
@@ -275,13 +516,15 @@ export const SHOULDERS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
         "name": "<span>All Resistance</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -298,7 +541,12 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
+    "builds": [
+      5
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Sunwuko's Balance",
     "type": "Shoulders",
@@ -309,75 +557,8 @@ export const SHOULDERS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Vitality</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Area Damage</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Cooldown Reduction</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Uliana's Strength",
-    "type": "Shoulders",
-    "rarity": "set",
-    "image": "./assets/shoulders/monk/ulianasstrength.png",
-    "stats": [
-      {
-        "present": true,
-        "name": "<span>Dexterity</span>",
-        "value": 495,
-        "enchantable": false
-      },
-      {
-        "present": true,
-        "name": "<span>All Resistance</span>",
-        "value": 91,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Area Damage</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": true,
-        "name": "<span>Cooldown Reduction</span>",
-        "value": 7,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Lefebvre's Soliloquy",
-    "type": "Shoulders",
-    "rarity": "legendary",
-    "image": "./assets/shoulders/monk/lefebvressoliloquy.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -400,7 +581,244 @@ export const SHOULDERS : Item[] = [
     ]
   },
   {
+    "builds": [
+      8
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Uliana's Strength",
+    "type": "Shoulders",
+    "rarity": "set",
+    "image": "./assets/shoulders/monk/ulianasstrength.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Homing Pads",
+    "type": "Shoulders",
+    "rarity": "legendary",
+    "image": "./assets/shoulders/homingpads.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Your Town Portal is no longer interrupted by taking damage. While casting Town Portal you gain a protective bubble that reduces damage taken by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Homing Pads",
+    "type": "Shoulders",
+    "rarity": "legendary",
+    "image": "./assets/shoulders/homingpads.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Your Town Portal is no longer interrupted by taking damage. While casting Town Portal you gain a protective bubble that reduces damage taken by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Homing Pads",
+    "type": "Shoulders",
+    "rarity": "legendary",
+    "image": "./assets/shoulders/homingpads.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Your Town Portal is no longer interrupted by taking damage. While casting Town Portal you gain a protective bubble that reduces damage taken by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      1,
+      4,
+      9
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Lefebvre's Soliloquy",
+    "type": "Shoulders",
+    "rarity": "legendary",
+    "image": "./assets/shoulders/monk/lefebvressoliloquy.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>MysticAlly%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Cyclone Strike reduces your damage taken by for 5 seconds</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -412,23 +830,29 @@ export const SHOULDERS : Item[] = [
 
 export const CHESTARMORS : Item[] = [
   {
+    "builds": [
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Heart of the Crashing Wave",
-    "type": "Shoulders",
+    "type": "Chest Armor",
     "rarity": "set",
     "image": "./assets/chestarmor/monk/heartofthecrashingwave.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 490,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Vitality</span>",
-        "value": 436,
+        "value": 0,
         "enchantable": false
       },
       {
@@ -438,25 +862,35 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      1,
+      2,
+      3,
+      4
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Inna's Vast Expanse",
-    "type": "Shoulders",
+    "type": "Chest Armor",
     "rarity": "set",
     "image": "./assets/chestarmor/monk/innasvastexpanse.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 460,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -465,23 +899,29 @@ export const CHESTARMORS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
-        "name": "<span>All Resistance</span>",
-        "value": 100,
+        "present": false,
+        "name": "<span>MysticAlly%</span>",
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      6
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Lamellars of Justice",
-    "type": "Shoulders",
+    "type": "Chest Armor",
     "rarity": "set",
     "image": "./assets/chestarmor/monk/lamellarsofjustice.png",
     "stats": [
@@ -489,7 +929,8 @@ export const CHESTARMORS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -499,22 +940,28 @@ export const CHESTARMORS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>All Resistance</span>",
+        "name": "<span>Elite%</span>",
         "value": 0,
         "enchantable": false
       },
       {
         "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      5
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Sunwuko's Soul",
-    "type": "Shoulders",
+    "type": "Chest Armor",
     "rarity": "set",
     "image": "./assets/chestarmor/monk/sunwukossoul.png",
     "stats": [
@@ -522,7 +969,244 @@ export const CHESTARMORS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
         "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Elite%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Tal Rasha's Relentless Pursuit",
+    "type": "Chest Armor",
+    "rarity": "set",
+    "image": "./assets/chestarmor/wizard/talrashasrelentlesspursuit.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Tal Rasha's Relentless Pursuit",
+    "type": "Chest Armor",
+    "rarity": "set",
+    "image": "./assets/chestarmor/wizard/talrashasrelentlesspursuit.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      8
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Uliana's Heart",
+    "type": "Chest Armor",
+    "rarity": "set",
+    "image": "./assets/chestarmor/monk/ulianasheart.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Elite%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      9
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cindercoat",
+    "type": "Chest Armor",
+    "rarity": "legendary",
+    "image": "./assets/chestarmor/cindercoat.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Fire%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Reduces the resource cost of Fire skills by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Goldskin",
+    "type": "Chest Armor",
+    "rarity": "legendary",
+    "image": "./assets/chestarmor/goldskin.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -534,7 +1218,8 @@ export const CHESTARMORS : Item[] = [
         "present": false,
         "name": "<span>All Resistance</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -544,73 +1229,10 @@ export const CHESTARMORS : Item[] = [
     ]
   },
   {
+    "builds": [],
     "ancient": false,
-    "locked": false,
-    "name": "Uliana's Heart",
-    "type": "Shoulders",
-    "rarity": "set",
-    "image": "./assets/chestarmor/monk/ulianasheart.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>All Resistance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Elite%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Cindercoat",
-    "type": "Shoulders",
-    "rarity": "legendary",
-    "image": "./assets/chestarmor/cindercoat.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Fire%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Elite%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -622,7 +1244,12 @@ export const CHESTARMORS : Item[] = [
 
 export const GLOVES : Item[] = [
   {
+    "builds": [
+      6
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Bazubands of Justice",
     "type": "Gloves",
@@ -630,33 +1257,87 @@ export const GLOVES : Item[] = [
     "image": "./assets/gloves/monk/bazubandsofjustice.png",
     "stats": [
       {
-        "present": true,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 44,
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 9.5,
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
         "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
         "name": "<span>Area Damage</span>",
         "value": 0,
         "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cain's Scrivener",
+    "type": "Gloves",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/gloves/cainsscrivener.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Cooldown Reduction</span>",
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
         "value": 0,
         "enchantable": false
       }
     ]
   },
   {
+    "builds": [
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Fists of Thunder",
     "type": "Gloves",
@@ -665,21 +1346,29 @@ export const GLOVES : Item[] = [
     "stats": [
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Attack Speed</span>",
         "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
-        "value": 47,
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 10,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -690,7 +1379,14 @@ export const GLOVES : Item[] = [
     ]
   },
   {
+    "builds": [
+      1,
+      3,
+      4
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Inna's Hold",
     "type": "Gloves",
@@ -699,32 +1395,78 @@ export const GLOVES : Item[] = [
     "stats": [
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 8,
-        "enchantable": false
-      },
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Sage's Purchase",
+    "type": "Gloves",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/gloves/sagespurchase.png",
+    "follower": "Enchantress",
+    "stats": [
       {
-        "present": true,
-        "name": "<span>Area Damage</span>",
-        "value": 11,
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
         "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Cooldown Reduction</span>",
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
         "value": 0,
         "enchantable": false
       }
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Sunwuko's Paws",
     "type": "Gloves",
@@ -733,15 +1475,23 @@ export const GLOVES : Item[] = [
     "stats": [
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 10,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -758,7 +1508,12 @@ export const GLOVES : Item[] = [
     ]
   },
   {
+    "builds": [
+      8
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Uliana's Fury",
     "type": "Gloves",
@@ -767,6 +1522,13 @@ export const GLOVES : Item[] = [
     "stats": [
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
@@ -775,7 +1537,8 @@ export const GLOVES : Item[] = [
         "present": false,
         "name": "<span>Critical Hit Chance</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -792,7 +1555,110 @@ export const GLOVES : Item[] = [
     ]
   },
   {
+    "builds": [
+      2
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Frostburn",
+    "type": "Gloves",
+    "rarity": "legendary",
+    "image": "./assets/gloves/frostburn.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": true,
+        "name": "<span>Cold skills deal increased damage and have a 50% chance to Freeze enemies</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Gloves of Worship",
+    "type": "Gloves",
+    "rarity": "legendary",
+    "image": "./assets/gloves/glovesofworship.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      5,
+      9
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Stone Gauntlets",
     "type": "Gloves",
@@ -801,6 +1667,13 @@ export const GLOVES : Item[] = [
     "stats": [
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
@@ -826,7 +1699,10 @@ export const GLOVES : Item[] = [
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -838,10 +1714,143 @@ export const GLOVES : Item[] = [
 
 export const PANTS : Item[] = [
   {
+    "builds": [
+      9
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Blackthorne's Jousting Mail",
+    "type": "Pants",
+    "rarity": "set",
+    "image": "./assets/pants/blackthornesjoustingmail.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Fire%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cain's Habit",
+    "type": "Pants",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/pants/cainshabit.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cain's Habit",
+    "type": "Pants",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/pants/cainshabit.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      8
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Captain Crimson's Thrust",
     "type": "Pants",
+    "forged": true,
     "rarity": "set",
     "image": "./assets/pants/captaincrimsonsthrust.png",
     "stats": [
@@ -871,7 +1880,54 @@ export const PANTS : Item[] = [
     ]
   },
   {
+    "builds": [
+      10
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Captain Crimson's Thrust",
+    "type": "Pants",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/pants/captaincrimsonsthrust.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      1,
+      2,
+      4
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Inna's Temperance",
     "type": "Pants",
@@ -882,7 +1938,8 @@ export const PANTS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -899,12 +1956,18 @@ export const PANTS : Item[] = [
       {
         "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      6
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Mountains of Justice",
     "type": "Pants",
@@ -912,10 +1975,11 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/monk/mountainsofjustice.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 461,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -924,20 +1988,26 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>All Resistance</span>",
-        "value": 92,
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      3
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Scales of the Dancing Serpent",
     "type": "Pants",
@@ -945,10 +2015,11 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/monk/scalesofthedancingserpent.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 465,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -963,14 +2034,20 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      5
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Sunwuko's Leggings",
     "type": "Pants",
@@ -978,10 +2055,11 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/monk/sunwukosleggings.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 491,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -990,20 +2068,24 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>All Resistance</span>",
-        "value": 93,
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Uliana's Burden",
     "type": "Pants",
@@ -1011,10 +2093,11 @@ export const PANTS : Item[] = [
     "image": "./assets/pants/monk/ulianasburden.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 455,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -1023,20 +2106,26 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>All Resistance</span>",
-        "value": 100,
+        "value": 0,
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Depth Diggers",
     "type": "Pants",
@@ -1047,13 +2136,15 @@ export const PANTS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
-        "name": "<span>Vitality</span>",
+        "name": "<span>All Resistance</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -1062,43 +2153,11 @@ export const PANTS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Swamp Land Waders",
-    "type": "Pants",
-    "rarity": "legendary",
-    "image": "./assets/pants/witchdoctor/swamplandwaders.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Fire%</span>",
+        "present": true,
+        "name": "<span>Primary skills that generate resource deal additional damage</span>",
         "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Vitality</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>All Resistance</span>",
-        "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "passive": true
       },
       {
         "present": false,
@@ -1108,7 +2167,10 @@ export const PANTS : Item[] = [
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -1120,10 +2182,58 @@ export const PANTS : Item[] = [
 
 export const BOOTS : Item[] = [
   {
+    "builds": [
+      12
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cain's Travelers",
+    "type": "Boots",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/boots/cainstravelers.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      5,
+      6
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Captain Crimson's Waders",
-    "type": "Pants",
+    "type": "Boots",
+    "forged": true,
     "rarity": "set",
     "image": "./assets/boots/captaincrimsonswaders.png",
     "stats": [
@@ -1154,23 +2264,623 @@ export const BOOTS : Item[] = [
     ]
   },
   {
+    "builds": [
+      3,
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Eight-Demon Boots",
-    "type": "Pants",
+    "type": "Boots",
     "rarity": "set",
     "image": "./assets/boots/monk/eightdemonboots.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 462,
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Inna's Sandals",
+    "type": "Boots",
+    "rarity": "set",
+    "image": "./assets/boots/monk/innassandals.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      8
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Uliana's Destiny",
+    "type": "Boots",
+    "rarity": "set",
+    "image": "./assets/boots/monk/ulianasdestiny.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>ExplosivePalm%</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Weaves of Justice",
+    "type": "Boots",
+    "rarity": "set",
+    "image": "./assets/boots/monk/weavesofjustice.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>TempestRush%</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Ice Climbers",
+    "type": "Boots",
+    "rarity": "legendary",
+    "image": "./assets/boots/iceclimbers.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cold Damage Reduction</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Ice Climbers",
+    "type": "Boots",
+    "rarity": "legendary",
+    "image": "./assets/boots/iceclimbers.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cold Damage Reduction</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      1,
+      2,
+      4,
+      9
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "The Crudest Boots",
+    "type": "Boots",
+    "rarity": "legendary",
+    "image": "./assets/boots/monk/thecrudestboots.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>WaveOfLight%</span>",
+        "value": 0,
         "enchantable": false
       },
       {
         "present": true,
+        "name": "<span>Mystic Ally summons two Mystic Allies that fight by your side. They deal increased damage and are able to attack with their active forms longer</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const BRACERS : Item[] = [
+  {
+    "builds": [
+      2
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Aughild's Search",
+    "type": "Bracers",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/bracers/aughildssearch.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Cold%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
         "name": "<span>Vitality</span>",
-        "value": 456,
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      3,
+      4
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Bindings of the Lesser Gods",
+    "type": "Bracers",
+    "rarity": "legendary",
+    "image": "./assets/bracers/monk/bindingsofthelessergods.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Physical%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Enemies hit by your Cyclone Strike take increased damage from your Mystic Ally for 5 seconds. Split Fire Allies gain 5 times this bonus</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      5,
+      6
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cesar's Memento",
+    "type": "Bracers",
+    "rarity": "legendary",
+    "image": "./assets/bracers/monk/cesarsmemento.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Cold%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Enemies take increased damage from your Tempest Rush for 5 seconds after you hit them with a Blind, Freeze or Stun</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      8
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Gungdo Gear",
+    "type": "Bracers",
+    "rarity": "legendary",
+    "image": "./assets/bracers/monk/gungdogear.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Cold%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Exploding Palm's on-death explosion applies Exploding Palm. Exploding Palm's damage is increased by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Nemesis Bracers",
+    "type": "Bracers",
+    "rarity": "legendary",
+    "image": "./assets/bracers/nemesisbracers.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Nemesis Bracers",
+    "type": "Bracers",
+    "rarity": "legendary",
+    "image": "./assets/bracers/nemesisbracers.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Nemesis Bracers",
+    "type": "Bracers",
+    "rarity": "legendary",
+    "image": "./assets/bracers/nemesisbracers.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
         "enchantable": false
       },
       {
@@ -1188,257 +2898,12 @@ export const BOOTS : Item[] = [
     ]
   },
   {
-    "ancient": true,
-    "locked": false,
-    "name": "Inna's Sandals",
-    "type": "Pants",
-    "rarity": "set",
-    "image": "./assets/boots/monk/innassandals.png",
-    "stats": [
-      {
-        "present": true,
-        "name": "<span>Dexterity</span>",
-        "value": 591,
-        "enchantable": false
-      },
-      {
-        "present": true,
-        "name": "<span>Vitality</span>",
-        "value": 649,
-        "enchantable": false
-      },
-      {
-        "present": true,
-        "name": "<span>All Resistance</span>",
-        "value": 115,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>WaveOfLight%</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
+    "builds": [
+      9
+    ],
     "ancient": false,
-    "locked": false,
-    "name": "Uliana's Destiny",
-    "type": "Pants",
-    "rarity": "set",
-    "image": "./assets/boots/monk/ulianasdestiny.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Vitality</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>All Resistance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>ExplosivePalm%</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Weaves of Justice",
-    "type": "Pants",
-    "rarity": "set",
-    "image": "./assets/boots/monk/weavesofjustice.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Vitality</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>All Resistance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>TempestRush%</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "The Crudest Boots",
-    "type": "Pants",
-    "rarity": "legendary",
-    "image": "./assets/boots/monk/thecrudestboots.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Vitality</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>All Resistance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>WaveOfLight%</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "placeholder",
-    "type": "",
-    "rarity": "",
-    "image": "",
-    "stats": []
-  }
-]
-
-export const BRACERS : Item[] = [
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Cesar's Memento",
-    "type": "Bracers",
-    "rarity": "legendary",
-    "image": "./assets/bracers/monk/cesarsmemento.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Cold%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Life per Hit</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Gungdo Gear",
-    "type": "Bracers",
-    "rarity": "legendary",
-    "image": "./assets/bracers/monk/gungdogear.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Cold%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Dexterity</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>All Resistance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Nemesis Bracers",
-    "type": "Bracers",
-    "rarity": "legendary",
-    "image": "./assets/bracers/nemesisbracers.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Lightning%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Vitality</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>All Resistance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": true,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Pinto's Pride",
     "type": "Bracers",
@@ -1452,27 +2917,41 @@ export const BRACERS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 618,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 5,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
         "name": "<span>Life per Hit</span>",
         "value": 0,
         "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Wave of Light also Slows enemies by 80% for 3 seconds and deals increased damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
       }
     ]
   },
   {
+    "builds": [
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Spirit Guards",
     "type": "Bracers",
@@ -1489,6 +2968,55 @@ export const BRACERS : Item[] = [
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": true,
+        "name": "<span>Your Spirit Generators reduce your damage taken by for 3 seconds</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      1
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Warzechian Armguards",
+    "type": "Bracers",
+    "rarity": "legendary",
+    "image": "./assets/bracers/warzechianarmguards.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Cold%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
         "enchantable": false
       },
       {
@@ -1501,12 +3029,16 @@ export const BRACERS : Item[] = [
         "present": false,
         "name": "<span>Critical Hit Chance</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -1518,10 +3050,18 @@ export const BRACERS : Item[] = [
 
 export const BELTS : Item[] = [
   {
+    "builds": [
+      5,
+      6,
+      8
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Captain Crimson's Silk Girdle",
     "type": "Belt",
+    "forged": true,
     "rarity": "set",
     "image": "./assets/belt/captaincrimsonssilkgirdle.png",
     "stats": [
@@ -1552,16 +3092,23 @@ export const BELTS : Item[] = [
     ]
   },
   {
+    "builds": [
+      10
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
-    "name": "Inna's Favor",
+    "name": "Captain Crimson's Silk Girdle",
     "type": "Belt",
+    "forged": true,
     "rarity": "set",
-    "image": "./assets/belt/monk/innasfavor.png",
+    "image": "./assets/belt/captaincrimsonssilkgirdle.png",
+    "follower": "Templar",
     "stats": [
       {
         "present": false,
-        "name": "<span>Dexterity</span>",
+        "name": "<span>Strength</span>",
         "value": 0,
         "enchantable": false
       },
@@ -1586,7 +3133,147 @@ export const BELTS : Item[] = [
     ]
   },
   {
+    "builds": [
+      1,
+      2,
+      3,
+      4
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Inna's Favor",
+    "type": "Belt",
+    "rarity": "set",
+    "image": "./assets/belt/monk/innasfavor.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Sage's Ribbon",
+    "type": "Belt",
+    "forged": true,
+    "rarity": "set",
+    "image": "./assets/belt/sagesribbon.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Armor</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cord of the Sherma",
+    "type": "Belt",
+    "rarity": "legendary",
+    "image": "./assets/belt/cordofthesherma.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Chance on hit to create a chaos field that Blinds and Slows enemies inside for seconds</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      7,
+      9
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "The Witching Hour",
     "type": "Belt",
@@ -1601,26 +3288,31 @@ export const BELTS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>CripplingWave%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
         "name": "<span>Attack Speed</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
         "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>CripplingWave%</span>",
         "value": 0,
         "enchantable": false
       }
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -1632,7 +3324,13 @@ export const BELTS : Item[] = [
 
 export const RINGS : Item[] = [
   {
+    "builds": [
+      1,
+      2
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Focus",
     "type": "Ring",
@@ -1641,6 +3339,20 @@ export const RINGS : Item[] = [
     "stats": [
       {
         "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
@@ -1653,19 +3365,20 @@ export const RINGS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Cooldown Reduction</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      1,
+      2
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Restraint",
     "type": "Ring",
@@ -1674,6 +3387,20 @@ export const RINGS : Item[] = [
     "stats": [
       {
         "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
@@ -1686,9 +3413,59 @@ export const RINGS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Cooldown Reduction</span>",
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      4,
+      7,
+      8
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "The Compass Rose",
+    "type": "Ring",
+    "rarity": "set",
+    "image": "./assets/ring/thecompassrose.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
         "value": 0,
         "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>MovementSpeed%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
@@ -1698,12 +3475,125 @@ export const RINGS : Item[] = [
     ]
   },
   {
+    "builds": [
+      12
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
-    "name": "The Compass Rose",
+    "name": "Avarice Band",
     "type": "Ring",
-    "rarity": "set",
-    "image": "./assets/ring/thecompassrose.png",
+    "rarity": "legendary",
+    "image": "./assets/ring/avariceband.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      9
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Convention of Elements",
+    "type": "Ring",
+    "rarity": "legendary",
+    "image": "./assets/ring/conventionofelements.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Gain increased damage to a single element for 4 seconds</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Hellfire Ring",
+    "type": "Ring",
+    "forged": true,
+    "rarity": "legendary",
+    "image": "./assets/ring/hellfirering.png",
+    "follower": "Scoundrel",
     "stats": [
       {
         "present": false,
@@ -1713,53 +3603,14 @@ export const RINGS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Cooldown Reduction</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": true,
-    "locked": false,
-    "name": "Avarice Band",
-    "type": "Ring",
-    "rarity": "legendary",
-    "image": "./assets/ring/avariceband.png",
-    "stats": [
-      {
-        "present": true,
         "name": "<span>Attack Speed</span>",
-        "value": 7,
+        "value": 0,
         "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 26,
-        "enchantable": false
-      },
-      {
-        "present": true,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 5,
+        "value": 0,
         "enchantable": false
       },
       {
@@ -1770,106 +3621,205 @@ export const RINGS : Item[] = [
     ]
   },
   {
+    "builds": [
+      3,
+      5,
+      6
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
-    "name": "Convention of Elements",
-    "type": "Ring",
-    "rarity": "legendary",
-    "image": "./assets/ring/conventionofelements.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": true,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 5,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Cooldown Reduction</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": true,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Convention of Elements",
-    "type": "Ring",
-    "rarity": "legendary",
-    "image": "./assets/ring/conventionofelements.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Area Damage</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": true,
     "name": "Obsidian Ring of the Zodiac",
     "type": "Ring",
     "rarity": "legendary",
     "image": "./assets/ring/obsidianringofthezodiac.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Attack Speed</span>",
-        "value": 7,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 4.5,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Cooldown Reduction</span>",
-        "value": 8,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
+        "name": "<span>Resource Cost Reduction</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": true
+        "enchantable": false
       }
     ]
   },
   {
-    "ancient": true,
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Oculus Ring",
+    "type": "Ring",
+    "rarity": "legendary",
+    "image": "./assets/ring/oculusring.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Chance to create an area of focused power on killing a monster. Damage is increased by while standing in the area</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Oculus Ring",
+    "type": "Ring",
+    "rarity": "legendary",
+    "image": "./assets/ring/oculusring.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Chance to create an area of focused power on killing a monster. Damage is increased by while standing in the area</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false,
+        "guaranteed": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Ring of Royal Grandeur",
+    "type": "Ring",
+    "rarity": "legendary",
+    "image": "./assets/ring/ringofroyalgrandeur.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      7,
+      9
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Unity",
     "type": "Ring",
@@ -1877,22 +3827,31 @@ export const RINGS : Item[] = [
     "image": "./assets/ring/unity.png",
     "stats": [
       {
-        "present": true,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 5.5,
-        "enchantable": false
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
-        "present": true,
-        "name": "<span>Elite%</span>",
-        "value": 14,
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
         "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Area Damage</span>",
+        "name": "<span>Critical Hit Chance</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Elite%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -1902,7 +3861,58 @@ export const RINGS : Item[] = [
     ]
   },
   {
+    "builds": [
+      10
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Unity",
+    "type": "Ring",
+    "rarity": "legendary",
+    "image": "./assets/ring/unity.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Elite%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -1914,7 +3924,12 @@ export const RINGS : Item[] = [
 
 export const AMULETS : Item[] = [
   {
+    "builds": [
+      5
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Sunwuko's Shines",
     "type": "Amulet",
@@ -1929,36 +3944,10 @@ export const AMULETS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Damage</span>",
+        "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": true,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "Sunwuko's Shines",
-    "type": "Amulet",
-    "rarity": "set",
-    "image": "./assets/amulet/monk/sunwukosshines.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Fire%</span>",
-        "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
@@ -1975,12 +3964,18 @@ export const AMULETS : Item[] = [
       {
         "present": false,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [
+      8
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "The Traveler's Pledge",
     "type": "Amulet",
@@ -1995,9 +3990,17 @@ export const AMULETS : Item[] = [
       },
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -2013,7 +4016,12 @@ export const AMULETS : Item[] = [
     ]
   },
   {
+    "builds": [
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "The Traveler's Pledge",
     "type": "Amulet",
@@ -2028,9 +4036,17 @@ export const AMULETS : Item[] = [
       },
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -2046,7 +4062,61 @@ export const AMULETS : Item[] = [
     ]
   },
   {
+    "builds": [
+      4
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "The Traveler's Pledge",
+    "type": "Amulet",
+    "rarity": "set",
+    "image": "./assets/amulet/thetravelerspledge.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Physical%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Squirt's Necklace",
     "type": "Amulet",
@@ -2061,9 +4131,17 @@ export const AMULETS : Item[] = [
       },
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -2079,51 +4157,17 @@ export const AMULETS : Item[] = [
     ]
   },
   {
+    "builds": [
+      9
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
-    "name": "The Flavor of Time",
+    "name": "Squirt's Necklace",
     "type": "Amulet",
     "rarity": "legendary",
-    "image": "./assets/amulet/theflavoroftime.png",
-    "stats": [
-      {
-        "present": false,
-        "name": "<span>Cold%</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Damage</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Cooldown Reduction</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Socket</span>",
-        "enchantable": false
-      }
-    ]
-  },
-  {
-    "ancient": false,
-    "locked": false,
-    "name": "The Flavor of Time",
-    "type": "Amulet",
-    "rarity": "legendary",
-    "image": "./assets/amulet/theflavoroftime.png",
+    "image": "./assets/amulet/squirtsnecklace.png",
     "stats": [
       {
         "present": false,
@@ -2133,19 +4177,21 @@ export const AMULETS : Item[] = [
       },
       {
         "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
         "name": "<span>Critical Hit Chance</span>",
-        "value": 0,
-        "enchantable": false
-      },
-      {
-        "present": false,
-        "name": "<span>Cooldown Reduction</span>",
         "value": 0,
         "enchantable": false
       },
@@ -2157,22 +4203,28 @@ export const AMULETS : Item[] = [
     ]
   },
   {
+    "builds": [
+      10
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "The Flavor of Time",
     "type": "Amulet",
     "rarity": "legendary",
     "image": "./assets/amulet/theflavoroftime.png",
+    "follower": "Templar",
     "stats": [
       {
         "present": false,
-        "name": "<span>Lightning%</span>",
+        "name": "<span>Strength</span>",
         "value": 0,
         "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Critical Hit Damage</span>",
+        "name": "<span>Attack Speed</span>",
         "value": 0,
         "enchantable": false
       },
@@ -2186,7 +4238,15 @@ export const AMULETS : Item[] = [
         "present": false,
         "name": "<span>Cooldown Reduction</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>MovementSpeed%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
@@ -2196,7 +4256,245 @@ export const AMULETS : Item[] = [
     ]
   },
   {
+    "builds": [
+      11
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "The Flavor of Time",
+    "type": "Amulet",
+    "rarity": "legendary",
+    "image": "./assets/amulet/theflavoroftime.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Chance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>MovementSpeed%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "The Flavor of Time",
+    "type": "Amulet",
+    "rarity": "legendary",
+    "image": "./assets/amulet/theflavoroftime.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>MovementSpeed%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const BOWS : Item[] = [
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Cluckeye",
+    "type": "Bow",
+    "rarity": "legendary",
+    "image": "./assets/bow/cluckeye.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Chance to cluck when attacking</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const DAGGERS : Item[] = [
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Pig Sticker",
+    "type": "Dagger",
+    "rarity": "legendary",
+    "image": "./assets/dagger/pigsticker.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "value2": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -2208,7 +4506,13 @@ export const AMULETS : Item[] = [
 
 export const DAIBOS : Item[] = [
   {
-    "ancient": true,
+    "builds": [
+      2,
+      3
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Inna's Reach",
     "type": "Daibo",
@@ -2216,11 +4520,12 @@ export const DAIBOS : Item[] = [
     "image": "./assets/daibo/innasreach.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Damage</span>",
-        "value": 1740,
+        "value": 0,
         "enchantable": false,
-        "value2": 2137
+        "value2": 0,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -2229,21 +4534,38 @@ export const DAIBOS : Item[] = [
         "enchantable": false
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 978,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
         "name": "<span>Cooldown Reduction</span>",
         "value": 0,
         "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Resource Cost Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>MysticAlly%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       }
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -2255,7 +4577,13 @@ export const DAIBOS : Item[] = [
 
 export const FISTWEAPONS : Item[] = [
   {
+    "builds": [
+      4,
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Shenlong's Fist of Legend",
     "type": "Fist Weapon",
@@ -2267,7 +4595,8 @@ export const FISTWEAPONS : Item[] = [
         "name": "<span>Damage</span>",
         "value": 0,
         "enchantable": false,
-        "value2": 0
+        "value2": 0,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -2277,20 +4606,33 @@ export const FISTWEAPONS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Area Damage</span>",
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
         "value": 0,
         "enchantable": false
       },
       {
         "present": false,
-        "name": "<span>Cooldown Reduction</span>",
+        "name": "<span>Area Damage</span>",
         "value": 0,
         "enchantable": false
       }
     ]
   },
   {
+    "builds": [
+      4,
+      7
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Shenlong's Relentless Assault",
     "type": "Fist Weapon",
@@ -2298,17 +4640,25 @@ export const FISTWEAPONS : Item[] = [
     "image": "./assets/fistweapon/shenlongsrelentlessassault.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Damage</span>",
-        "value": 998,
+        "value": 0,
         "enchantable": false,
-        "value2": 1260
+        "value2": 0,
+        "guaranteed": true
       },
       {
-        "present": true,
-        "name": "<span>Attack Speed</span>",
-        "value": 7,
+        "present": false,
+        "name": "<span>Damage%</span>",
+        "value": 0,
         "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
@@ -2318,14 +4668,19 @@ export const FISTWEAPONS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Cooldown Reduction</span>",
+        "name": "<span>Life per Hit</span>",
         "value": 0,
         "enchantable": false
       }
     ]
   },
   {
+    "builds": [
+      9
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Kyoshiro's Blade",
     "type": "Fist Weapon",
@@ -2337,7 +4692,21 @@ export const FISTWEAPONS : Item[] = [
         "name": "<span>Damage</span>",
         "value": 0,
         "enchantable": false,
-        "value2": 0
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Damage%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
@@ -2352,15 +4721,69 @@ export const FISTWEAPONS : Item[] = [
         "enchantable": false
       },
       {
+        "present": true,
+        "name": "<span>Increase the damage of Wave of Light by 150%. When the initial impact of your Wave of Light hits 3 or fewer enemies, the damage is increased by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      8
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Lion's Claw",
+    "type": "Fist Weapon",
+    "rarity": "legendary",
+    "image": "./assets/fistweapon/lionsclaw.png",
+    "stats": [
+      {
         "present": false,
-        "name": "<span>Resource Cost Reduction</span>",
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Damage%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
         "value": 0,
         "enchantable": false
       }
     ]
   },
   {
+    "builds": [
+      9
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Rabid Strike",
     "type": "Fist Weapon",
@@ -2372,13 +4795,22 @@ export const FISTWEAPONS : Item[] = [
         "name": "<span>Damage</span>",
         "value": 0,
         "enchantable": false,
-        "value2": 0
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
         "name": "<span>Critical Hit Damage</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
@@ -2395,7 +4827,67 @@ export const FISTWEAPONS : Item[] = [
     ]
   },
   {
+    "builds": [
+      8
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "The Fist of Az'Turrasq",
+    "type": "Fist Weapon",
+    "rarity": "legendary",
+    "image": "./assets/fistweapon/thefistofazturrasq.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Damage%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Exploding Palm's on-death explosion damage is increased by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      5
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Vengeful Wind",
     "type": "Fist Weapon",
@@ -2405,9 +4897,17 @@ export const FISTWEAPONS : Item[] = [
       {
         "present": false,
         "name": "<span>Damage</span>",
-        "value": 981,
+        "value": 0,
         "enchantable": false,
-        "value2": 1175
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
@@ -2417,7 +4917,7 @@ export const FISTWEAPONS : Item[] = [
       },
       {
         "present": false,
-        "name": "<span>Cooldown Reduction</span>",
+        "name": "<span>Life per Hit</span>",
         "value": 0,
         "enchantable": false
       },
@@ -2426,11 +4926,24 @@ export const FISTWEAPONS : Item[] = [
         "name": "<span>Resource Cost Reduction</span>",
         "value": 0,
         "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Increases the maximum stack count of Sweeping Wind by 10 and increases the damage by</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
       }
     ]
   },
   {
-    "ancient": true,
+    "builds": [
+      5,
+      6
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "Won Khim Lau",
     "type": "Fist Weapon",
@@ -2438,17 +4951,32 @@ export const FISTWEAPONS : Item[] = [
     "image": "./assets/fistweapon/wonkhimlau.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Damage</span>",
-        "value": 1520,
+        "value": 0,
         "enchantable": false,
-        "value2": 1843
+        "value2": 0,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Lightning%</span>",
-        "value": 20,
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Damage%</span>",
+        "value": 0,
         "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
       },
       {
         "present": false,
@@ -2463,15 +4991,19 @@ export const FISTWEAPONS : Item[] = [
         "enchantable": false
       },
       {
-        "present": false,
-        "name": "<span>Resource Cost Reduction</span>",
+        "present": true,
+        "name": "<span>Hitting with Tempest Rush will activate Cyclone Strike, and both skills deal increased damage</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "passive": true
       }
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -2483,42 +5015,60 @@ export const FISTWEAPONS : Item[] = [
 
 export const MACES : Item[] = [
   {
-    "ancient": true,
-    "locked": true,
+    "builds": [
+      1
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
     "name": "Echoing Fury",
     "type": "Mace",
     "rarity": "legendary",
     "image": "./assets/mace/echoingfury.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Damage</span>",
-        "value": 1444,
+        "value": 0,
         "enchantable": false,
-        "value2": 1818
+        "value2": 0,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Damage%</span>",
-        "value": 10,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
         "present": false,
         "name": "<span>Dexterity</span>",
         "value": 0,
-        "enchantable": false
+        "enchantable": false,
+        "guaranteed": false
       },
       {
-        "present": true,
-        "name": "<span>Area Damage</span>",
-        "value": 24,
-        "enchantable": true
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
       }
     ]
   },
   {
+    "builds": [],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
@@ -2530,7 +5080,61 @@ export const MACES : Item[] = [
 
 export const SWORDS : Item[] = [
   {
-    "ancient": true,
+    "builds": [
+      6
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Azurewrath",
+    "type": "Sword",
+    "rarity": "legendary",
+    "image": "./assets/sword/azurewrath.png",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Cold%</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Damage%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Area Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Undead and Demon enemies within 25 years take weapon damage as Holy every second and are sometimes knocked into the air</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [
+      1
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "In-Geom",
     "type": "Sword",
@@ -2538,22 +5142,31 @@ export const SWORDS : Item[] = [
     "image": "./assets/sword/ingeom.png",
     "stats": [
       {
-        "present": true,
+        "present": false,
         "name": "<span>Damage</span>",
-        "value": 1560,
+        "value": 0,
         "enchantable": false,
-        "value2": 1940
+        "value2": 0,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Damage%</span>",
-        "value": 10,
-        "enchantable": false
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
       },
       {
-        "present": true,
+        "present": false,
         "name": "<span>Dexterity</span>",
-        "value": 1000,
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": false
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
         "enchantable": false
       },
       {
@@ -2561,16 +5174,403 @@ export const SWORDS : Item[] = [
         "name": "<span>Cooldown Reduction</span>",
         "value": 0,
         "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Your skill cooldowns are reduced by seconds for 15 seconds after killing an elite pack</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
       }
     ]
   },
   {
+    "builds": [
+      10
+    ],
     "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Thunderfury, Blessed Blade of the Windseeker",
+    "type": "Sword",
+    "rarity": "legendary",
+    "image": "./assets/sword/thunderfuryblessedbladeofthewindseeker.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Damage</span>",
+        "value": 0,
+        "enchantable": false,
+        "value2": 0,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Attack Speed</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Chance on hit to blast your enemy with Lightning, dealing weapon damage as Lightning and then jumping to additional nearby enemies. Each enemy hit has their attack speed and movement speed reduced by 30% for 3 seconds. Jumps up to 5 targets</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
     "locked": false,
     "name": "placeholder",
     "type": "",
     "rarity": "",
     "image": "",
     "stats": []
+  }
+]
+
+export const SHIELDS : Item[] = [
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Freeze of Deflection",
+    "type": "Shield",
+    "rarity": "legendary",
+    "image": "./assets/shield/freezeofdeflection.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Block%</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Cooldown Reduction</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": true,
+        "name": "<span>Blocking an attack has a chance to Freeze the attacker for seconds</span>",
+        "value": 0,
+        "enchantable": false,
+        "passive": true
+      },
+      {
+        "present": false,
+        "name": "<span>Socket</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const RELICS : Item[] = [
+  {
+    "builds": [
+      10
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Enchanting Favor",
+    "type": "Relic",
+    "rarity": "legendary",
+    "image": "./assets/relic/templar.png",
+    "follower": "Templar",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Strength</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Block%</span>",
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      11
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Skeleton Key",
+    "type": "Relic",
+    "rarity": "legendary",
+    "image": "./assets/relic/scoundrel.png",
+    "follower": "Scoundrel",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Dexterity</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Critical Hit Damage</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [
+      12
+    ],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "Hand of the Prophet",
+    "type": "Relic",
+    "rarity": "legendary",
+    "image": "./assets/relic/enchantress.png",
+    "follower": "Enchantress",
+    "stats": [
+      {
+        "present": false,
+        "name": "<span>Intelligence</span>",
+        "value": 0,
+        "enchantable": false,
+        "guaranteed": true
+      },
+      {
+        "present": false,
+        "name": "<span>Vitality</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>All Resistance</span>",
+        "value": 0,
+        "enchantable": false
+      },
+      {
+        "present": false,
+        "name": "<span>Life per Hit</span>",
+        "value": 0,
+        "enchantable": false
+      }
+    ]
+  },
+  {
+    "builds": [],
+    "ancient": false,
+    "primal": false,
+    "augmented": false,
+    "locked": false,
+    "name": "placeholder",
+    "type": "",
+    "rarity": "",
+    "image": "",
+    "stats": []
+  }
+]
+
+export const GEMS : Gem[] = [
+  {
+    "builds": [
+      2
+    ],
+    "name": "Bane of the Powerful",
+    "image": "./assets/gems/baneofthepowerful.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "name": "Bane of the Stricken",
+    "image": "./assets/gems/baneofthestricken.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "name": "Bane of the Trapped",
+    "image": "./assets/gems/baneofthetrapped.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      1
+    ],
+    "name": "Boon of the Hoarder",
+    "image": "./assets/gems/boonofthehoarder.png",
+    "level": 0,
+    "maxLevel": 50
+  },
+  {
+    "builds": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "name": "Enforcer",
+    "image": "./assets/gems/enforcer.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      12
+    ],
+    "name": "Esoteric Alteration",
+    "image": "./assets/gems/esotericalteration.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      8
+    ],
+    "name": "Gogok of Swiftness",
+    "image": "./assets/gems/gogokofswiftness.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      9
+    ],
+    "name": "Legacy of Dreams",
+    "image": "./assets/gems/legacyofdreams.png",
+    "level": 0,
+    "maxLevel": 99
+  },
+  {
+    "builds": [
+      3
+    ],
+    "name": "Molten Wildebeest's Gizzard",
+    "image": "./assets/gems/moltenwildebeestsgizzard.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      12
+    ],
+    "name": "Mutilation Guard",
+    "image": "./assets/gems/mutilationguard.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      7
+    ],
+    "name": "Simplicity's Strength",
+    "image": "./assets/gems/simplicitysstrength.png",
+    "level": 0,
+    "maxLevel": 100
+  },
+  {
+    "builds": [
+      5,
+      6
+    ],
+    "name": "Taeguk",
+    "image": "./assets/gems/taeguk.png",
+    "level": 0,
+    "maxLevel": 100
   }
 ]

@@ -21,6 +21,14 @@ export class ColorPipe implements PipeTransform {
         return "<span class='witchdoctor'>Witch Doctor</span>"
       case "Wizard":
         return "<span class='wizard'>Wizard</span>"
+      case "Templar":
+        return "<span class='templar'>Templar</span>"
+      case "Scoundrel":
+        return "<span class='scoundrel'>Scoundrel</span>"
+      case "Enchantress":
+        return "<span class='enchantress'>Enchantress</span>"
+      case "Forged":
+        return "<span class='forged'>Forged</span>"
       default:
         return text;
     }

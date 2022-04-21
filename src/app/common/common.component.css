@@ -1,59 +1,66 @@
 .barbarian {
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 5px;
+    margin: auto 0 auto 5px;
     padding: 0px 3px;
+    height: fit-content;
     background-color: red;
 }
 
 .crusader {
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 5px;
+    margin: auto 0 auto 5px;
     padding: 0px 3px;
+    height: fit-content;
     background-color: yellow;
 }
 
 .demonhunter {
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 5px;
+    margin: auto 0 auto 5px;
     padding: 0px 3px;
     color: white;
+    height: fit-content;
     background-color: purple;
 }
 
 .monk {
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 5px;
+    margin: auto 0 auto 5px;
     padding: 0px 3px;
+    height: fit-content;
     background-color: orange;
 }
 
 .necromancer {
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 5px;
+    margin: auto 0 auto 5px;
     padding: 0px 3px;
+    height: fit-content;
     background-color: turquoise;
 }
 
 .witchdoctor {
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 5px;
+    margin: auto 0 auto 5px;
     padding: 0px 3px;
     color: white;
+    height: fit-content;
     background-color: green;
 }
 
 .wizard {
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 5px;
+    margin: auto 0 auto 5px;
     padding: 0px 3px;
     color: white;
+    height: fit-content;
     background-color: blue;
 }
 
@@ -61,4 +68,39 @@ hr {
     background-color: white;
     height: 1px;
     border: 0;
+}
+
+#barbarian {
+    background-color: red;
+}
+
+#common {
+    background-color: white;
+}
+
+#crusader {
+    background-color: yellow;
+}
+
+#demonhunter {
+    color: white;
+    background-color: purple;
+}
+
+#monk {
+    background-color: orange;
+}
+
+#necromancer {
+    background-color: turquoise;
+}
+
+#witchdoctor {
+    color: white;
+    background-color: green;
+}
+
+#wizard {
+    color: white;
+    background-color: blue;
 }

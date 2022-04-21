@@ -19,6 +19,10 @@
     background-color: purple;
 }
 
+#inspector {
+    background-color: grey;
+}
+
 #monk {
     background-color: orange;
 }

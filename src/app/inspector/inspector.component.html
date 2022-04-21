@@ -1,0 +1,78 @@
+<div class="action-buttons-wrapper" style="padding-bottom: 0px;">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="action-button">
+        <button type="button" mat-raised-button [matMenuTriggerFor]="menuType">{{typePicked}}</button>
+        <mat-menu #menuType="matMenu">
+          <button type="button" *ngFor="let type of types" (click)="chooseType(type)" mat-menu-item>{{type}}</button>
+        </mat-menu>
+    </div>
+    <div *ngIf="showName" class="action-button">
+        <button type="button" mat-raised-button [matMenuTriggerFor]="menuName" innerHTML="{{namePicked.name | highlight:namePicked.rarity}}"></button>
+        <mat-menu #menuName="matMenu">
+          <button type="button" *ngFor="let name of names" (click)="chooseName(name)" mat-menu-item innerHTML="{{name.name | highlight:name.rarity}}"></button>
+        </mat-menu>
+    </div>
+    <mat-checkbox *ngIf="showName" style="margin: 0 12px;" name="ancient" formControlName="ancient">Ancient</mat-checkbox>
+    <br>
+    <div *ngIf="showStats" class="action-button">
+      <mat-form-field>
+        <mat-select formControlName="statPicked1" (selectionChange)="pickStat1()">
+          <mat-option *ngFor="let stat of stats" [value]="stat" innerHTML="{{stat}}"></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field *ngIf="showStat1" style="width: 4em">
+      <input matInput name="statValue1" formControlName="statValue1" type="number" />
+    </mat-form-field>
+    <br>
+    <div *ngIf="showStats" class="action-button">
+      <mat-form-field>
+        <mat-select formControlName="statPicked2" (selectionChange)="pickStat2()">
+          <mat-option *ngFor="let stat of stats" [value]="stat" innerHTML="{{stat}}"></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field *ngIf="showStat2" style="width: 4em">
+      <input matInput name="statValue2" formControlName="statValue2" type="number" />
+    </mat-form-field>
+    <br>
+    <div *ngIf="showStats" class="action-button">
+      <mat-form-field>
+        <mat-select formControlName="statPicked3" (selectionChange)="pickStat3()">
+          <mat-option *ngFor="let stat of stats" [value]="stat" innerHTML="{{stat}}"></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field *ngIf="showStat3" style="width: 4em">
+      <input matInput name="statValue3" formControlName="statValue3" type="number" />
+    </mat-form-field>
+    <br>
+    <div *ngIf="showStats" class="action-button">
+      <mat-form-field>
+        <mat-select formControlName="statPicked4" (selectionChange)="pickStat4()">
+          <mat-option *ngFor="let stat of stats" [value]="stat" innerHTML="{{stat}}"></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field *ngIf="showStat4" style="width: 4em">
+      <input matInput name="statValue4" formControlName="statValue4" type="number" />
+    </mat-form-field>
+    <br>
+    <div *ngIf="showStats" class="action-button">
+      <mat-form-field>
+        <mat-select formControlName="statPicked5" (selectionChange)="pickStat5()">
+          <mat-option *ngFor="let stat of stats" [value]="stat" innerHTML="{{stat}}"></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field *ngIf="showStat5" style="width: 4em">
+      <input matInput name="statValue5" formControlName="statValue5" type="number" />
+    </mat-form-field>
+    <br>
+    <div class="action-button">
+      <button *ngIf="showStat1 && showStat2 && showStat3 && showStat4" mat-raised-button type="submit">Analyze</button>
+    </div>
+    <div class="action-button" *ngIf="showResult" innerHTML="{{resultString}}">
+    </div>
+  </form>
+</div>

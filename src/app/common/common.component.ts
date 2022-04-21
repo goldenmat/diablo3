@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 
-import { HELMS as BARBARIANHELMS, SHOULDERS as BARBARIANSHOULDERS, CHESTARMORS as BARBARIANCHESTARMORS, GLOVES as BARBARIANGLOVES, PANTS as BARBARIANPANTS, BOOTS as BARBARIANBOOTS, BRACERS as BARBARIANBRACERS, BELTS as BARBARIANBELTS, RINGS as BARBARIANRINGS, AMULETS as BARBARIANAMULETS, AXES as BARBARIANAXES, MACES as BARBARIANMACES, SWORDS as BARBARIANSWORDS } from '../entities/barbarian';
-import { HELMS as CRUSADERHELMS, SHOULDERS as CRUSADERSHOULDERS, CHESTARMORS as CRUSADERCHESTARMORS, GLOVES as CRUSADERGLOVES, PANTS as CRUSADERPANTS, BOOTS as CRUSADERBOOTS, BRACERS as CRUSADERBRACERS, BELTS as CRUSADERBELTS, RINGS as CRUSADERRINGS, AMULETS as CRUSADERAMULETS } from '../entities/crusader';
-import { HELMS as DEMONHUNTERHELMS, SHOULDERS as DEMONHUNTERSHOULDERS, CHESTARMORS as DEMONHUNTERCHESTARMORS, GLOVES as DEMONHUNTERGLOVES, PANTS as DEMONHUNTERPANTS, BOOTS as DEMONHUNTERBOOTS, BRACERS as DEMONHUNTERBRACERS, BELTS as DEMONHUNTERBELTS, RINGS as DEMONHUNTERRINGS, AMULETS as DEMONHUNTERAMULETS } from '../entities/demonhunter';
-import { HELMS as MONKHELMS, SHOULDERS as MONKSHOULDERS, CHESTARMORS as MONKCHESTARMORS, GLOVES as MONKGLOVES, PANTS as MONKPANTS, BOOTS as MONKBOOTS, BRACERS as MONKBRACERS, BELTS as MONKBELTS, RINGS as MONKRINGS, AMULETS as MONKAMULETS, MACES as MONKMACES, SWORDS as MONKSWORDS } from '../entities/monk';
-import { HELMS as NECROMANCERHELMS, SHOULDERS as NECROMANCERSHOULDERS, CHESTARMORS as NECROMANCERCHESTARMORS, GLOVES as NECROMANCERGLOVES, PANTS as NECROMANCERPANTS, BOOTS as NECROMANCERBOOTS, BRACERS as NECROMANCERBRACERS, BELTS as NECROMANCERBELTS, RINGS as NECROMANCERRINGS, AMULETS as NECROMANCERAMULETS } from '../entities/necromancer';
-import { HELMS as WITCHDOCTORHELMS, SHOULDERS as WITCHDOCTORSHOULDERS, CHESTARMORS as WITCHDOCTORCHESTARMORS, GLOVES as WITCHDOCTORGLOVES, PANTS as WITCHDOCTORPANTS, BOOTS as WITCHDOCTORBOOTS, BRACERS as WITCHDOCTORBRACERS, BELTS as WITCHDOCTORBELTS, RINGS as WITCHDOCTORRINGS, AMULETS as WITCHDOCTORAMULETS } from '../entities/witchdoctor';
-import { HELMS as WIZARDHELMS, SHOULDERS as WIZARDSHOULDERS, CHESTARMORS as WIZARDCHESTARMORS, GLOVES as WIZARDGLOVES, PANTS as WIZARDPANTS, BOOTS as WIZARDBOOTS, BRACERS as WIZARDBRACERS, BELTS as WIZARDBELTS, RINGS as WIZARDRINGS, AMULETS as WIZARDAMULETS, SWORDS as WIZARDSWORDS } from '../entities/wizard';
+import { HELMS as BARBARIANHELMS, SHOULDERS as BARBARIANSHOULDERS, CHESTARMORS as BARBARIANCHESTARMORS, GLOVES as BARBARIANGLOVES, PANTS as BARBARIANPANTS, BOOTS as BARBARIANBOOTS, BRACERS as BARBARIANBRACERS, BELTS as BARBARIANBELTS, RINGS as BARBARIANRINGS, AMULETS as BARBARIANAMULETS, BOWS as BARBARIANBOWS, DAGGERS as BARBARIANDAGGERS, MACES as BARBARIANMACES, SWORDS as BARBARIANSWORDS, SHIELDS as BARBARIANSHIELDS, RELICS as BARBARIANRELICS } from '../entities/barbarian';
+import { HELMS as CRUSADERHELMS, SHOULDERS as CRUSADERSHOULDERS, CHESTARMORS as CRUSADERCHESTARMORS, GLOVES as CRUSADERGLOVES, PANTS as CRUSADERPANTS, BOOTS as CRUSADERBOOTS, BRACERS as CRUSADERBRACERS, BELTS as CRUSADERBELTS, RINGS as CRUSADERRINGS, AMULETS as CRUSADERAMULETS, BOWS as CRUSADERBOWS, DAGGERS as CRUSADERDAGGERS, SWORDS as CRUSADERSWORDS, TWOHANDEDMACES as CRUSADERTWOHANDEDMACES, SHIELDS as CRUSADERSHIELDS, RELICS as CRUSADERRELICS } from '../entities/crusader';
+import { HELMS as DEMONHUNTERHELMS, SHOULDERS as DEMONHUNTERSHOULDERS, CHESTARMORS as DEMONHUNTERCHESTARMORS, GLOVES as DEMONHUNTERGLOVES, PANTS as DEMONHUNTERPANTS, BOOTS as DEMONHUNTERBOOTS, BRACERS as DEMONHUNTERBRACERS, BELTS as DEMONHUNTERBELTS, RINGS as DEMONHUNTERRINGS, AMULETS as DEMONHUNTERAMULETS, BOWS as DEMONHUNTERBOWS, DAGGERS as DEMONHUNTERDAGGERS, SWORDS as DEMONHUNTERSWORDS, SHIELDS as DEMONHUNTERSHIELDS, RELICS as DEMONHUNTERRELICS } from '../entities/demonhunter';
+import { HELMS as MONKHELMS, SHOULDERS as MONKSHOULDERS, CHESTARMORS as MONKCHESTARMORS, GLOVES as MONKGLOVES, PANTS as MONKPANTS, BOOTS as MONKBOOTS, BRACERS as MONKBRACERS, BELTS as MONKBELTS, RINGS as MONKRINGS, AMULETS as MONKAMULETS, BOWS as MONKBOWS, DAGGERS as MONKDAGGERS, MACES as MONKMACES, SWORDS as MONKSWORDS, SHIELDS as MONKSHIELDS, RELICS as MONKRELICS } from '../entities/monk';
+import { HELMS as NECROMANCERHELMS, SHOULDERS as NECROMANCERSHOULDERS, CHESTARMORS as NECROMANCERCHESTARMORS, GLOVES as NECROMANCERGLOVES, PANTS as NECROMANCERPANTS, BOOTS as NECROMANCERBOOTS, BRACERS as NECROMANCERBRACERS, BELTS as NECROMANCERBELTS, RINGS as NECROMANCERRINGS, AMULETS as NECROMANCERAMULETS, BOWS as NECROMANCERBOWS, DAGGERS as NECROMANCERDAGGERS, SWORDS as NECROMANCERSWORDS, SHIELDS as NECROMANCERSHIELDS, RELICS as NECROMANCERRELICS } from '../entities/necromancer';
+import { HELMS as WITCHDOCTORHELMS, SHOULDERS as WITCHDOCTORSHOULDERS, CHESTARMORS as WITCHDOCTORCHESTARMORS, GLOVES as WITCHDOCTORGLOVES, PANTS as WITCHDOCTORPANTS, BOOTS as WITCHDOCTORBOOTS, BRACERS as WITCHDOCTORBRACERS, BELTS as WITCHDOCTORBELTS, RINGS as WITCHDOCTORRINGS, AMULETS as WITCHDOCTORAMULETS, BOWS as WITCHDOCTORBOWS, DAGGERS as WITCHDOCTORDAGGERS, SWORDS as WITCHDOCTORSWORDS, SHIELDS as WITCHDOCTORSHIELDS, RELICS as WITCHDOCTORRELICS } from '../entities/witchdoctor';
+import { HELMS as WIZARDHELMS, SHOULDERS as WIZARDSHOULDERS, CHESTARMORS as WIZARDCHESTARMORS, GLOVES as WIZARDGLOVES, PANTS as WIZARDPANTS, BOOTS as WIZARDBOOTS, BRACERS as WIZARDBRACERS, BELTS as WIZARDBELTS, RINGS as WIZARDRINGS, AMULETS as WIZARDAMULETS, BOWS as WIZARDBOWS, DAGGERS as WIZARDDAGGERS, SWORDS as WIZARDSWORDS, SHIELDS as WIZARDSHIELDS, RELICS as WIZARDRELICS } from '../entities/wizard';
 
-import { CommonItem, commonItems, getSliderInfo, isSlidable, isWeapon } from '../entities/item';
+import { CommonItem, commonItems, getDifficulty, getSliderInfo, isForged, isFollower, isPassive, isSlidable, isWeapon, toggleEnchantable, Item, Stat } from '../entities/item';
 
 import { ColorPipe } from '../pipes/color.pipe';
 
@@ -31,9 +31,19 @@ export class CommonComponent implements OnInit {
   @ViewChild('beltsAccordion') beltsAccordion!: MatAccordion;
   @ViewChild('ringsAccordion') ringsAccordion!: MatAccordion;
   @ViewChild('amuletsAccordion') amuletsAccordion!: MatAccordion;
-  @ViewChild('axesAccordion') axesAccordion!: MatAccordion;
+  @ViewChild('bowsAccordion') bowsAccordion!: MatAccordion;
+  @ViewChild('daggersAccordion') daggersAccordion!: MatAccordion;
   @ViewChild('macesAccordion') macesAccordion!: MatAccordion;
   @ViewChild('swordsAccordion') swordsAccordion!: MatAccordion;
+  @ViewChild('twohandedmacesAccordion') twohandedmacesAccordion!: MatAccordion;
+  @ViewChild('shieldsAccordion') shieldsAccordion!: MatAccordion;
+  @ViewChild('relicsAccordion') relicsAccordion!: MatAccordion;
+
+  public showFollower: boolean = true;
+  public showForged: boolean = true;
+  public followerButtonName: string = 'Hide Followers';
+  public forgedButtonName: string = 'Hide Forged';
+  public highlighted: string = "";
   
   ngOnInit(): void {
 
@@ -47,9 +57,13 @@ export class CommonComponent implements OnInit {
     this.belts = [];
     this.rings = [];
     this.amulets = [];
-    this.axes = [];
+    this.bows = [];
+    this.daggers = [];
     this.maces = [];
     this.swords = [];
+    this.twohandedmaces = [];
+    this.shields = [];
+    this.relics = [];
 
     // Helms
     BARBARIANHELMS.forEach(helm => {
@@ -631,13 +645,119 @@ export class CommonComponent implements OnInit {
       }
     });
 
-    // Axes
-    BARBARIANAXES.forEach(axe => {
-      if(commonItems.includes(axe.name)) {
-        let newAxe = new CommonItem();
-        newAxe.item = axe;
-        newAxe.class = "Barbarian";
-        this.axes.push(newAxe);
+    // Bows
+    BARBARIANBOWS.forEach(bow => {
+      if(commonItems.includes(bow.name)) {
+        let newBow = new CommonItem();
+        newBow.item = bow;
+        newBow.class = "Barbarian";
+        this.bows.push(newBow);
+      }
+    });
+    CRUSADERBOWS.forEach(bow => {
+      if(commonItems.includes(bow.name)) {
+        let newBow = new CommonItem();
+        newBow.item = bow;
+        newBow.class = "Crusader";
+        this.bows.push(newBow);
+      }
+    });
+    DEMONHUNTERBOWS.forEach(bow => {
+      if(commonItems.includes(bow.name)) {
+        let newBow = new CommonItem();
+        newBow.item = bow;
+        newBow.class = "Demon Hunter";
+        this.bows.push(newBow);
+      }
+    });
+    MONKBOWS.forEach(bow => {
+      if(commonItems.includes(bow.name)) {
+        let newBow = new CommonItem();
+        newBow.item = bow;
+        newBow.class = "Monk";
+        this.bows.push(newBow);
+      }
+    });
+    NECROMANCERBOWS.forEach(bow => {
+      if(commonItems.includes(bow.name)) {
+        let newBow = new CommonItem();
+        newBow.item = bow;
+        newBow.class = "Necromancer";
+        this.bows.push(newBow);
+      }
+    });
+    WITCHDOCTORBOWS.forEach(bow => {
+      if(commonItems.includes(bow.name)) {
+        let newBow = new CommonItem();
+        newBow.item = bow;
+        newBow.class = "Witch Doctor";
+        this.bows.push(newBow);
+      }
+    });
+    WIZARDBOWS.forEach(bow => {
+      if(commonItems.includes(bow.name)) {
+        let newBow = new CommonItem();
+        newBow.item = bow;
+        newBow.class = "Wizard";
+        this.bows.push(newBow);
+      }
+    });
+
+    // Daggers
+    BARBARIANDAGGERS.forEach(dagger => {
+      if(commonItems.includes(dagger.name)) {
+        let newDagger = new CommonItem();
+        newDagger.item = dagger;
+        newDagger.class = "Barbarian";
+        this.daggers.push(newDagger);
+      }
+    });
+    CRUSADERDAGGERS.forEach(dagger => {
+      if(commonItems.includes(dagger.name)) {
+        let newDagger = new CommonItem();
+        newDagger.item = dagger;
+        newDagger.class = "Crusader";
+        this.daggers.push(newDagger);
+      }
+    });
+    DEMONHUNTERDAGGERS.forEach(dagger => {
+      if(commonItems.includes(dagger.name)) {
+        let newDagger = new CommonItem();
+        newDagger.item = dagger;
+        newDagger.class = "Demon Hunter";
+        this.daggers.push(newDagger);
+      }
+    });
+    MONKDAGGERS.forEach(dagger => {
+      if(commonItems.includes(dagger.name)) {
+        let newDagger = new CommonItem();
+        newDagger.item = dagger;
+        newDagger.class = "Monk";
+        this.daggers.push(newDagger);
+      }
+    });
+    NECROMANCERDAGGERS.forEach(dagger => {
+      if(commonItems.includes(dagger.name)) {
+        let newDagger = new CommonItem();
+        newDagger.item = dagger;
+        newDagger.class = "Necromancer";
+        this.daggers.push(newDagger);
+      }
+    });
+    WITCHDOCTORDAGGERS.forEach(dagger => {
+      if(commonItems.includes(dagger.name)) {
+        let newDagger = new CommonItem();
+        newDagger.item = dagger;
+        newDagger.class = "Witch Doctor";
+        this.daggers.push(newDagger);
+      }
+    });
+    WIZARDDAGGERS.forEach(dagger => {
+      if(commonItems.includes(dagger.name)) {
+        let newDagger = new CommonItem();
+        newDagger.item = dagger;
+        newDagger.class = "Wizard";
+        this.daggers.push(newDagger);
       }
     });
 
@@ -668,11 +788,43 @@ export class CommonComponent implements OnInit {
         this.swords.push(newSword);
       }
     });
+    CRUSADERSWORDS.forEach(sword => {
+      if(commonItems.includes(sword.name)) {
+        let newSword = new CommonItem();
+        newSword.item = sword;
+        newSword.class = "Crusader";
+        this.swords.push(newSword);
+      }
+    });
+    DEMONHUNTERSWORDS.forEach(sword => {
+      if(commonItems.includes(sword.name)) {
+        let newSword = new CommonItem();
+        newSword.item = sword;
+        newSword.class = "Demon Hunter";
+        this.swords.push(newSword);
+      }
+    });
     MONKSWORDS.forEach(sword => {
       if(commonItems.includes(sword.name)) {
         let newSword = new CommonItem();
         newSword.item = sword;
         newSword.class = "Monk";
+        this.swords.push(newSword);
+      }
+    });
+    NECROMANCERSWORDS.forEach(sword => {
+      if(commonItems.includes(sword.name)) {
+        let newSword = new CommonItem();
+        newSword.item = sword;
+        newSword.class = "Necromancer";
+        this.swords.push(newSword);
+      }
+    });
+    WITCHDOCTORSWORDS.forEach(sword => {
+      if(commonItems.includes(sword.name)) {
+        let newSword = new CommonItem();
+        newSword.item = sword;
+        newSword.class = "Witch Doctor";
         this.swords.push(newSword);
       }
     });
@@ -682,6 +834,132 @@ export class CommonComponent implements OnInit {
         newSword.item = sword;
         newSword.class = "Wizard";
         this.swords.push(newSword);
+      }
+    });
+
+    // Two Handed Maces
+    CRUSADERTWOHANDEDMACES.forEach(twohandedmace => {
+      if(commonItems.includes(twohandedmace.name)) {
+        let newTwohandedmace = new CommonItem();
+        newTwohandedmace.item = twohandedmace;
+        newTwohandedmace.class = "Crusader";
+        this.twohandedmaces.push(newTwohandedmace);
+      }
+    });
+
+    // Shields
+    BARBARIANSHIELDS.forEach(shield => {
+      if(commonItems.includes(shield.name)) {
+        let newShield = new CommonItem();
+        newShield.item = shield;
+        newShield.class = "Barbarian";
+        this.shields.push(newShield);
+      }
+    });
+    CRUSADERSHIELDS.forEach(shield => {
+      if(commonItems.includes(shield.name)) {
+        let newShield = new CommonItem();
+        newShield.item = shield;
+        newShield.class = "Crusader";
+        this.shields.push(newShield);
+      }
+    });
+    DEMONHUNTERSHIELDS.forEach(shield => {
+      if(commonItems.includes(shield.name)) {
+        let newShield = new CommonItem();
+        newShield.item = shield;
+        newShield.class = "Demon Hunter";
+        this.shields.push(newShield);
+      }
+    });
+    MONKSHIELDS.forEach(shield => {
+      if(commonItems.includes(shield.name)) {
+        let newShield = new CommonItem();
+        newShield.item = shield;
+        newShield.class = "Monk";
+        this.shields.push(newShield);
+      }
+    });
+    NECROMANCERSHIELDS.forEach(shield => {
+      if(commonItems.includes(shield.name)) {
+        let newShield = new CommonItem();
+        newShield.item = shield;
+        newShield.class = "Necromancer";
+        this.shields.push(newShield);
+      }
+    });
+    WITCHDOCTORSHIELDS.forEach(shield => {
+      if(commonItems.includes(shield.name)) {
+        let newShield = new CommonItem();
+        newShield.item = shield;
+        newShield.class = "Witch Doctor";
+        this.shields.push(newShield);
+      }
+    });
+    WIZARDSHIELDS.forEach(shield => {
+      if(commonItems.includes(shield.name)) {
+        let newShield = new CommonItem();
+        newShield.item = shield;
+        newShield.class = "Wizard";
+        this.shields.push(newShield);
+      }
+    });
+
+    // Relics
+    BARBARIANRELICS.forEach(relic => {
+      if(commonItems.includes(relic.name)) {
+        let newRelic = new CommonItem();
+        newRelic.item = relic;
+        newRelic.class = "Barbarian";
+        this.relics.push(newRelic);
+      }
+    });
+    CRUSADERRELICS.forEach(relic => {
+      if(commonItems.includes(relic.name)) {
+        let newRelic = new CommonItem();
+        newRelic.item = relic;
+        newRelic.class = "Crusader";
+        this.relics.push(newRelic);
+      }
+    });
+    DEMONHUNTERRELICS.forEach(relic => {
+      if(commonItems.includes(relic.name)) {
+        let newRelic = new CommonItem();
+        newRelic.item = relic;
+        newRelic.class = "Demon Hunter";
+        this.relics.push(newRelic);
+      }
+    });
+    MONKRELICS.forEach(relic => {
+      if(commonItems.includes(relic.name)) {
+        let newRelic = new CommonItem();
+        newRelic.item = relic;
+        newRelic.class = "Monk";
+        this.relics.push(newRelic);
+      }
+    });
+    NECROMANCERRELICS.forEach(relic => {
+      if(commonItems.includes(relic.name)) {
+        let newRelic = new CommonItem();
+        newRelic.item = relic;
+        newRelic.class = "Necromancer";
+        this.relics.push(newRelic);
+      }
+    });
+    WITCHDOCTORRELICS.forEach(relic => {
+      if(commonItems.includes(relic.name)) {
+        let newRelic = new CommonItem();
+        newRelic.item = relic;
+        newRelic.class = "Witch Doctor";
+        this.relics.push(newRelic);
+      }
+    });
+    WIZARDRELICS.forEach(relic => {
+      if(commonItems.includes(relic.name)) {
+        let newRelic = new CommonItem();
+        newRelic.item = relic;
+        newRelic.class = "Wizard";
+        this.relics.push(newRelic);
       }
     });
 
@@ -755,7 +1033,14 @@ export class CommonComponent implements OnInit {
       return a.item.name.localeCompare(b.item.name);
     });
 
-    this.axes.sort(function(a, b) {
+    this.bows.sort(function(a, b) {
+      if (a.item.rarity != b.item.rarity) {
+        return a.item.rarity === "legendary" ? 1 : -1;
+      }
+      return a.item.name.localeCompare(b.item.name);
+    });
+
+    this.daggers.sort(function(a, b) {
       if (a.item.rarity != b.item.rarity) {
         return a.item.rarity === "legendary" ? 1 : -1;
       }
@@ -776,6 +1061,27 @@ export class CommonComponent implements OnInit {
       return a.item.name.localeCompare(b.item.name);
     });
 
+    this.twohandedmaces.sort(function(a, b) {
+      if (a.item.rarity != b.item.rarity) {
+        return a.item.rarity === "legendary" ? 1 : -1;
+      }
+      return a.item.name.localeCompare(b.item.name);
+    });
+
+    this.shields.sort(function(a, b) {
+      if (a.item.rarity != b.item.rarity) {
+        return a.item.rarity === "legendary" ? 1 : -1;
+      }
+      return a.item.name.localeCompare(b.item.name);
+    });
+
+    this.relics.sort(function(a, b) {
+      if (a.item.rarity != b.item.rarity) {
+        return a.item.rarity === "legendary" ? 1 : -1;
+      }
+      return a.item.name.localeCompare(b.item.name);
+    });
+
   }
 
   openAll() {
@@ -789,9 +1095,13 @@ export class CommonComponent implements OnInit {
     this.beltsAccordion.openAll();
     this.ringsAccordion.openAll();
     this.amuletsAccordion.openAll();
-    this.axesAccordion.openAll();
+    this.bowsAccordion.openAll();
+    this.daggersAccordion.openAll();
     this.macesAccordion.openAll();
     this.swordsAccordion.openAll();
+    this.twohandedmacesAccordion.openAll();
+    this.shieldsAccordion.openAll();
+    this.relicsAccordion.openAll();
   }
 
   closeAll() {
@@ -805,9 +1115,17 @@ export class CommonComponent implements OnInit {
     this.beltsAccordion.closeAll();
     this.ringsAccordion.closeAll();
     this.amuletsAccordion.closeAll();
-    this.axesAccordion.closeAll();
+    this.bowsAccordion.closeAll();
+    this.daggersAccordion.closeAll();
     this.macesAccordion.closeAll();
     this.swordsAccordion.closeAll();
+    this.twohandedmacesAccordion.closeAll();
+    this.shieldsAccordion.closeAll();
+    this.relicsAccordion.closeAll();
+  }
+
+  getDifficulty(item: Item) {
+    return getDifficulty(item);
   }
 
   getSliderInfoStep(name: string, string: string, ancient: boolean, itemName: string): number {
@@ -834,12 +1152,63 @@ export class CommonComponent implements OnInit {
     return getSliderInfo("Damage2", string, ancient, itemName).max;
   }
 
+  highlight(type: string) {
+    if(this.highlighted === type) {
+      this.highlighted = "";
+    }
+    else {
+      this.highlighted = type;
+    }
+  }
+
+  isForged(item: Item) {
+    return isForged(item);
+  }
+
+  isFollower(item: Item) {
+    return isFollower(item);
+  }
+
+  isPassive(stat: Stat) {
+    return isPassive(stat);
+  }
+
   isSlidable(name: string, type: string) {
     return isSlidable(name, type);
   }
 
   isWeapon(name: string) {
     return isWeapon(name);
+  }
+
+  toggleAugmented(item: Item) {
+    item.augmented = item.augmented? false : true;
+  }
+
+  toggleEnchantable(stat: Stat, item: Item) {
+    return toggleEnchantable(stat, item);
+  }
+
+  toggleForged() {
+    this.showForged = !this.showForged;
+
+    if(this.showForged) {
+      this.forgedButtonName = 'Hide Forged';
+    }
+    else {
+      this.forgedButtonName = 'Show Forged';
+    }
+  }
+
+  toggleFollower() {
+    this.showFollower = !this.showFollower;
+
+    if(this.showFollower) {
+      this.followerButtonName = 'Hide Followers';
+    }
+    else {
+      this.followerButtonName = 'Show Followers';
+    }
   }
 
   helms! : CommonItem[];
@@ -852,8 +1221,12 @@ export class CommonComponent implements OnInit {
   belts! : CommonItem[];
   rings! : CommonItem[];
   amulets! : CommonItem[];
-  axes! : CommonItem[];
+  bows! : CommonItem[];
+  daggers! : CommonItem[];
   maces! : CommonItem[];
   swords! : CommonItem[];
+  twohandedmaces! : CommonItem[];
+  shields! : CommonItem[];
+  relics! : CommonItem[];
 
 }

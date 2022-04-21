@@ -1,14 +1,15 @@
 <mat-toolbar class="toolbar">
   <span>Diablo 3 Utilities</span>
   <span class="example-spacer"></span>
-  <button class="button" id="barbarian" routerLink="/barbarian" routerLinkActive="active" mat-raised-button>Barbarian</button>
-  <button class="button" id="crusader" routerLink="/crusader" routerLinkActive="active"  mat-raised-button>Crusader</button>
-  <button class="button" id="demonhunter" routerLink="/demon-hunter" routerLinkActive="active"  mat-raised-button>Demon Hunter</button>
-  <button class="button" id="monk" routerLink="/monk" routerLinkActive="active"  mat-raised-button>Monk</button>
-  <button class="button" id="necromancer" routerLink="/necromancer" routerLinkActive="active"  mat-raised-button>Necromancer</button>
-  <button class="button" id="witchdoctor" routerLink="/witch-doctor" routerLinkActive="active"  mat-raised-button>Witch Doctor</button>
-  <button class="button" id="wizard" routerLink="/wizard" routerLinkActive="active"  mat-raised-button>Wizard</button>
+  <button class="button" id="barbarian" routerLink="/barbarian" routerLinkActive="active" mat-raised-button>Barbarian ({{barbarianMissing}})</button>
+  <button class="button" id="crusader" routerLink="/crusader" routerLinkActive="active"  mat-raised-button>Crusader ({{crusaderMissing}})</button>
+  <button class="button" id="demonhunter" routerLink="/demon-hunter" routerLinkActive="active"  mat-raised-button>Demon Hunter ({{demonhunterMissing}})</button>
+  <button class="button" id="monk" routerLink="/monk" routerLinkActive="active"  mat-raised-button>Monk ({{monkMissing}})</button>
+  <button class="button" id="necromancer" routerLink="/necromancer" routerLinkActive="active"  mat-raised-button>Necromancer ({{necromancerMissing}})</button>
+  <button class="button" id="witchdoctor" routerLink="/witch-doctor" routerLinkActive="active"  mat-raised-button>Witch Doctor ({{witchdoctorMissing}})</button>
+  <button class="button" id="wizard" routerLink="/wizard" routerLinkActive="active"  mat-raised-button>Wizard ({{wizardMissing}})</button>
   <button class="button" id="common" routerLink="/common" routerLinkActive="active"  mat-raised-button>Common</button>
+  <button class="button" id="common" routerLink="/inspector" routerLinkActive="active"  mat-raised-button>Inspector</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
