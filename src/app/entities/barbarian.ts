@@ -3771,7 +3771,7 @@ export const RINGS : Item[] = [
     "ancient": true,
     "primal": false,
     "augmented": false,
-    "locked": false,
+    "locked": true,
     "name": "Ring of Royal Grandeur",
     "type": "Ring",
     "rarity": "legendary",
@@ -3806,9 +3806,9 @@ export const RINGS : Item[] = [
         "guaranteed": false
       },
       {
-        "present": false,
+        "present": true,
         "name": "<span>Socket</span>",
-        "enchantable": false
+        "enchantable": true
       }
     ]
   },
@@ -5388,7 +5388,7 @@ export const GEMS : Gem[] = [
     ],
     "name": "Esoteric Alteration",
     "image": "./assets/gems/esotericalteration.png",
-    "level": 0,
+    "level": 100,
     "maxLevel": 100
   },
   {
@@ -5416,7 +5416,7 @@ export const GEMS : Gem[] = [
     ],
     "name": "Mutilation Guard",
     "image": "./assets/gems/mutilationguard.png",
-    "level": 0,
+    "level": 100,
     "maxLevel": 100
   },
   {
